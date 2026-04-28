@@ -74,6 +74,32 @@
             </div>
         </div>
 
+        @if (config('auth.register_by_invitation.required'))
+            <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
+                Invitation required. Contact the admin.
+            </p>
+
+            <div class="{{ $errors->has('invite_password') ? ' has-error' : '' }}">
+                <div class="flex items-stretch w-full">
+                    <input id="invite_password"
+                           type="password"
+                           class="rounded border p-2 w-full dark:bg-slate-800 dark:border-slate-500"
+                           name="invite_password"
+                           required
+                           placeholder="Invitation Password">
+
+                    <a href="#" id="toggle-invite-password" class="p-2" tabindex="-1" title="Show invitation password">
+                        <i id="toggle-invite-password-icon" class="fa-solid fa-eye" aria-hidden="true"></i>
+                        <span class="sr-only">Show invitation password</span>
+                    </a>
+                </div>
+
+                @if ($errors->has('invite_password'))
+                    <span class="text-red-500">{{ $errors->first('invite_password') }}</span>
+                @endif
+            </div>
+        @endif
+
         <div class="">
             <div id="btn-wait" class="rounded border border-gray-200 px-6 py-2 bg-gray-200 disabled" style="display: none;">
                 <x-icon class="load" />
