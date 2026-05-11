@@ -16,7 +16,7 @@ class Plugin extends Layout
         $columns = [
             'name' => [
                 'key' => 'name',
-                'label' => 'campaigns/plugins.fields.name',
+                'label' => __('campaigns/plugins.fields.name'),
                 'render' => function (\App\Models\Plugin $model) {
                     return '<a href="' . $model->libraryUrl() . '" class="text-link">'
                              . $model->name
@@ -25,7 +25,7 @@ class Plugin extends Layout
             ],
             'update' => [
                 'key' => 'has_update',
-                'label' => 'Has update',
+                'label' => __('campaigns/plugins.info.updates'),
                 'render' => function ($model) {
                     $base = '';
                     if ($model->obsolete()) {
@@ -42,7 +42,7 @@ class Plugin extends Layout
                     }
 
                     return '<a href="' . route('campaign_plugins.update-info', [$this->campaign, $model])
-                            . '" class="btn2 btn-xs btn-accent" data-toggle="dialog-ajax" '
+                            . '" class="btn2 btn-xs" data-toggle="dialog-ajax" '
                             . 'data-target="plugin-update" data-url="'
                             . route('campaign_plugins.update-info', [$this->campaign, $model]) . '">'
                             . __('campaigns/plugins.actions.update_available')
@@ -51,14 +51,14 @@ class Plugin extends Layout
             ],
             'type' => [
                 'key' => 'type_id',
-                'label' => 'campaigns/plugins.fields.type',
+                'label' => __('campaigns/plugins.fields.type'),
                 'render' => function ($model) {
                     return __('campaigns/plugins.types.' . $model->type());
                 },
             ],
             'status' => [
                 'key' => 'pivot_is_active',
-                'label' => 'campaigns/plugins.fields.status',
+                'label' => __('campaigns/plugins.fields.status'),
                 'render' => function ($model) {
                     if (! $model->isTheme()) {
                         return '<i class="fa-regular fa-infinity" data-title="' .

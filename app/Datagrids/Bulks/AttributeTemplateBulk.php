@@ -8,12 +8,15 @@ class AttributeTemplateBulk extends Bulk
         'name',
         // 'attribute_template_id',
         // 'tags',
+        'parent_id',
+        'entity_type_id',
         'private_choice',
+        'enabled_choice',
         'entity_image',
         'entity_header',
     ];
 
-    protected $booleans = [
+    protected array $booleans = [
         'is_enabled',
     ];
 }

@@ -16,7 +16,7 @@ class StoreMap extends FormRequest
     use ApiRequest;
     use ResolvesNewForeignEntities;
 
-    protected array $foreignEntityFields = ['map_id', 'location_id'];
+    protected array $foreignEntityFields = ['location_id'];
 
     /**
      * Determine if the user is authorized to make this request.
@@ -39,7 +39,7 @@ class StoreMap extends FormRequest
             'name' => 'required|max:191',
             'entry' => 'nullable|string',
             'type' => 'nullable|string|max:191',
-            'map_id' => 'nullable|integer|exists:maps,id',
+            'parent_id' => 'nullable|integer|exists:entities,id',
             'location_id' => 'nullable|integer|exists:locations,id',
             'image' => 'mimes:jpeg,png,jpg,gif,webp,svg|max:' . Limit::map()->upload(),
             'image_url' => 'nullable|url|active_url',
@@ -52,16 +52,17 @@ class StoreMap extends FormRequest
             'min_zoom' => 'nullable|numeric|min:' . Map::MIN_ZOOM . '|max:' . Map::MAX_ZOOM_REAL,
             'initial_zoom' => 'nullable|numeric|min:' . Map::MIN_ZOOM . '|max:' . Map::MAX_ZOOM_REAL,
             'attribute' => ['array', new UniqueAttributeNames],
+            'is_private' => 'nullable|boolean',
         ];
 
         /** @var Entity $self */
         $self = request()->route('entity');
-        if (! empty($self) && $self->isMap()) {
-            $rules['map_id'] = [
+        if (! empty($self)) {
+            $rules['parent_id'] = [
                 'nullable',
                 'integer',
-                'exists:maps,id',
-                new Nested(Map::class, $self->child),
+                'exists:entities,id',
+                new Nested($self),
             ];
         }
 

@@ -1,6 +1,6 @@
 /node_modules
 /public/hot
-/public/js/tinymce
+/public/build/js/tinymce
 /public/storage
 /public/.htaccess
 /public/exports
@@ -16,6 +16,9 @@
 /.vagrant
 /.vscode
 /.sail
+/.superpowers
+/.worktrees
+/docs/superpowers
 Homestead.json
 Homestead.yaml
 npm-debug.log

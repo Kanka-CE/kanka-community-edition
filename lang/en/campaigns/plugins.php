@@ -14,7 +14,7 @@ return [
         'import'            => 'Import',
         'update'            => 'Update plugin',
         'update-to'         => 'Update to version :version',
-        'update_available'  => 'Update available!',
+        'update_available'  => 'Update available',
     ],
     'bulks'         => [
         'delete'    => '{1} Removed :count plugin.|[2,*] Removed :count plugins.',
@@ -64,7 +64,7 @@ return [
         'updates'       => 'Updates',
         'versions'      => 'Versions',
     ],
-    'pitch'         => 'Install and manage plugins from the :marketplace.',
+    'pitch'         => 'Extend your campaign with community-built themes, character sheets, and content from the :marketplace.',
     'status'        => [
         'always'    => 'This plugin type is always active unless removed.',
         'disabled'  => 'Disabled',

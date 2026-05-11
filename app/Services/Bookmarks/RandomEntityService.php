@@ -29,7 +29,7 @@ class RandomEntityService
         $entity = Entity::inTags($this->bookmark->tags->pluck('id')->toArray())
             ->inTypes($entityTypeID)
             ->whereNotIn('entities.id', Dashboard::excluding())
-            ->inRandomOrder()
+            ->orderByRaw('RAND()')
             ->first();
 
         if (empty($entity) || $entity->isMissingChild()) {

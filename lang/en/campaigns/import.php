@@ -20,7 +20,7 @@ return [
         'type_helper'       => 'Select the category you want to import the new entries into.',
         'validation_error'  => 'At least 1 column must be fully populated',
     ],
-    'description_v2'    => 'Import entries, articles, properties, galleries, and other data from a campaign export  or new entries from a .CSV file into this campaign. The import runs in the background and may take some time. You and any other  admins will be notified when it finishes.',
+    'description_v2'    => 'Import entries, articles, properties, galleries, and other data from an export  or new entries from a .CSV file into this campaign. The import runs in the background and may take some time. You and any other  admins will be notified when it finishes.',
     'fields'            => [
         'file_v2'   => 'CSV file or export ZIP file',
         'updated'   => 'Last updated',
@@ -39,6 +39,9 @@ return [
         'ready'         => 'Ready for mapping',
         'running'       => 'Running',
         'validating'    => 'Validating',
+    ],
+    'subscription'      => [
+        'pitch' => 'Restore a campaign backup or bring in an export from another campaign. Available on :wyvern or :elemental plans.',
     ],
     'title'             => 'Import',
 ];

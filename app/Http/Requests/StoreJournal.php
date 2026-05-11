@@ -4,7 +4,6 @@ namespace App\Http\Requests;
 
 use App\Facades\Limit;
 use App\Models\Entity;
-use App\Models\Journal;
 use App\Rules\Nested;
 use App\Rules\UniqueAttributeNames;
 use App\Traits\ApiRequest;
@@ -16,7 +15,7 @@ class StoreJournal extends FormRequest
     use ApiRequest;
     use ResolvesNewForeignEntities;
 
-    protected array $foreignEntityFields = ['journal_id', 'location_id'];
+    protected array $foreignEntityFields = ['location_id'];
 
     /**
      * Determine if the user is authorized to make this request.
@@ -47,8 +46,9 @@ class StoreJournal extends FormRequest
             'entity_image_uuid' => 'nullable|exists:images,id',
             'entity_header_uuid' => 'nullable|exists:images,id',
             'template_id' => 'nullable',
-            'journal_id' => 'nullable|integer|exists:journals,id',
+            'parent_id' => 'nullable|integer|exists:entities,id',
             'attribute' => ['array', new UniqueAttributeNames],
+            'is_private' => 'nullable|boolean',
         ];
 
         if (request()->has('calendar_id') && request()->post('calendar_id') !== null && ! request()->has('calendar_skip')) {
@@ -63,11 +63,11 @@ class StoreJournal extends FormRequest
         /** @var Entity $self */
         $self = request()->route('entity');
         if (! empty($self)) {
-            $rules['journal_id'] = [
+            $rules['parent_id'] = [
                 'nullable',
                 'integer',
-                'exists:journals,id',
-                new Nested(Journal::class, $self->child),
+                'exists:entities,id',
+                new Nested($self),
             ];
         }
 

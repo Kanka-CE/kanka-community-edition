@@ -7,7 +7,7 @@ class FamilyBulk extends Bulk
     protected array $fields = [
         'name',
         'type',
-        'family_id',
+        'parent_id',
         'location_id',
         'tags',
         'private_choice',
@@ -16,7 +16,7 @@ class FamilyBulk extends Bulk
         'entity_header',
     ];
 
-    protected $booleans = [
+    protected array $booleans = [
         'is_extinct',
     ];
 }

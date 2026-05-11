@@ -8,6 +8,8 @@ use App\Http\Resources\ImageResource as Resource;
 use App\Models\Campaign;
 use App\Models\Image;
 use App\Services\Gallery\SummernoteService;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Http\JsonResponse;
 
 class CampaignImageApiController extends ApiController
 {
@@ -28,7 +30,7 @@ class CampaignImageApiController extends ApiController
                 ->where('is_default', false)
                 ->defaultOrder()
                 ->lastSync(request()->get('lastSync'))
-                ->paginate()
+                ->paginate(auth()->user()->isSubscriber() ? 100 : 45)
         );
     }
 
@@ -62,9 +64,9 @@ class CampaignImageApiController extends ApiController
     }
 
     /**
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      *
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws AuthorizationException
      */
     public function destroy(Campaign $campaign, Image $image)
     {

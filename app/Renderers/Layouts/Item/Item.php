@@ -21,27 +21,27 @@ class Item extends Layout
             ],
             'name' => [
                 'key' => 'name',
-                'label' => Module::singular(config('entities.ids.item'), 'entities.item'),
+                'label' => Module::singular(config('entities.ids.item'), __('entities.item')),
                 'render' => Standard::ENTITYLINK,
             ],
             'type' => [
                 'key' => 'type',
-                'label' => 'crud.fields.type',
+                'label' => __('crud.fields.type'),
                 'render' => function (\App\Models\Item $model) {
                     return $model->entity->type;
                 },
             ],
             'price' => [
                 'key' => 'price',
-                'label' => 'items.fields.price',
+                'label' => __('items.fields.price'),
             ],
             'size' => [
                 'key' => 'size',
-                'label' => 'items.fields.size',
+                'label' => __('items.fields.size'),
             ],
             'weight' => [
                 'key' => 'weight',
-                'label' => 'items.fields.weight',
+                'label' => __('items.fields.weight'),
             ],
         ];
 

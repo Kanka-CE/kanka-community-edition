@@ -2,8 +2,6 @@
 
 namespace App\Datagrids\Filters;
 
-use App\Models\Item;
-
 class ItemFilter extends DatagridFilter
 {
     /**
@@ -14,18 +12,11 @@ class ItemFilter extends DatagridFilter
         $this
             ->add('name')
             ->add('type')
+            ->parent(config('entities.ids.item'))
             ->add('price')
             ->add('size')
             ->add('weight')
             ->add('is_equipped')
-            ->add([
-                'field' => 'item_id',
-                'label' => __('crud.fields.parent'),
-                'type' => 'select2',
-                'route' => route('search-list', [$this->campaign, config('entities.ids.item')]),
-                'placeholder' => __('crud.placeholders.parent'),
-                'model' => Item::class,
-            ])
             ->location()
             ->character()
             ->isPrivate()

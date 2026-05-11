@@ -17,35 +17,35 @@ class Marker extends Layout
         $columns = [
             'name' => [
                 'key' => 'name',
-                'label' => 'crud.fields.name',
+                'label' => __('crud.fields.name'),
                 'render' => function ($model) {
                     return $model->markerLink();
                 },
             ],
             'entity_id' => [
-                'label' => 'fields.description.label',
+                'label' => __('fields.description.label'),
                 'render' => Standard::ENTITYLINK,
             ],
             'groups' => [
-                'label' => 'maps/markers.fields.group',
+                'label' => __('maps/markers.fields.group'),
                 'render' => function ($model) {
                     return $model->group?->name;
                 },
             ],
             'type' => [
-                'label' => 'crud.fields.type',
+                'label' => __('crud.fields.type'),
                 'render' => function ($model) {
                     return $model->typeLabel();
                 },
             ],
             'icon' => [
-                'label' => 'maps/markers.fields.icon',
+                'label' => __('maps/markers.fields.icon'),
                 'render' => function ($model) {
                     return $model->datagridMarkerIcon();
                 },
             ],
             'visibility' => [
-                'label' => 'crud.fields.visibility',
+                'label' => __('crud.fields.visibility'),
                 'render' => Standard::VISIBILITY,
             ],
         ];

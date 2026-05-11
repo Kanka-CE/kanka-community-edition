@@ -7,8 +7,8 @@ class TagBulk extends Bulk
     protected array $fields = [
         'name',
         'type',
-        'colour',
-        'tag_id',
+        'colour_picker',
+        'parent_id',
         'private_choice',
         'auto_applied_choice',
         'hide_choice',
@@ -18,6 +18,7 @@ class TagBulk extends Bulk
     ];
 
     protected array $booleans = [
+        'colour',
         'is_auto_applied',
         'is_hidden',
     ];

@@ -7,7 +7,7 @@ class RaceBulk extends Bulk
     protected array $fields = [
         'name',
         'type',
-        'race_id',
+        'parent_id',
         'locations',
         'tags',
         'private_choice',
@@ -16,7 +16,7 @@ class RaceBulk extends Bulk
         'entity_header',
     ];
 
-    protected $booleans = [
+    protected array $booleans = [
         'is_extinct',
     ];
 }

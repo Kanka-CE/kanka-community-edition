@@ -38,8 +38,17 @@ class SubmenuService
             ] : null,
         ];
 
+        $childCount = $this->entity->children()->count();
+        if ($childCount > 0) {
+            $this->items['second']['children'] = [
+                'name' => __('entities/children.title'),
+                'route' => 'entities.children',
+                'count' => $childCount,
+                'entity' => true,
+            ];
+        }
+
         // Each entity can have relations
-        //        if (!isset($this->model->hasRelations) || $this->model->hasRelations === true) {
         $this->items['first']['relations'] = [
             'name' => __('entries/tabs.relations'),
             'route' => 'entities.relations.index',
@@ -47,7 +56,6 @@ class SubmenuService
             'entity' => true,
             'icon' => 'fa-regular fa-users',
         ];
-        //        }
 
         // Each entity can have abilities
         if ($this->campaign->enabled('abilities') && ! $this->entity->isAbility()) {
@@ -143,8 +151,9 @@ class SubmenuService
                 $object->user($this->user);
             }
 
-            // @phpstan-ignore-next-line
-            $this->items += $object->entity($this->entity)->campaign($this->campaign)->extra();
+            foreach ($object->entity($this->entity)->campaign($this->campaign)->extra() as $section => $sectionItems) {
+                $this->items[$section] = array_merge($this->items[$section] ?? [], $sectionItems);
+            }
         } catch (\Exception $e) {
             // Some modules like convos have no submenu
         }
@@ -156,8 +165,9 @@ class SubmenuService
     {
         /** @var CustomSubmenu $service */
         $service = app()->make(CustomSubmenu::class);
-        // @phpstan-ignore-next-line
-        $this->items += $service->entity($this->entity)->campaign($this->campaign)->extra();
+        foreach ($service->entity($this->entity)->campaign($this->campaign)->extra() as $section => $sectionItems) {
+            $this->items[$section] = array_merge($this->items[$section] ?? [], $sectionItems);
+        }
 
         return $this;
     }

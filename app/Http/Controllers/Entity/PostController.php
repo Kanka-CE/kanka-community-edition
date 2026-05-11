@@ -35,11 +35,15 @@ class PostController extends Controller
     {
         $this->authorize('post', [$entity, 'add']);
         $parentRoute = $entity->entityType->pluralCode();
-        $templates = Post::postTemplates($campaign)->orderBy('name')->pluck('name', 'id')->all();
+        $templates = Post::postTemplates($campaign)->orderBy('name')->get();
 
+        $data = [];
         $template = request()->input('template');
         if (! empty($template) && $this->authorize('useTemplates', $campaign)) {
-            $template = Post::postTemplates($campaign)->where('posts.id', $template)->first();
+            $template = Post::template()->with('entity')->has('entity')->where('posts.id', $template)->first();
+            $data['model'] = $template;
+            $data['model']->name = '';
+            $data['model']->position = null;
         }
 
         /** @var PostLayout[] $layouts */
@@ -67,7 +71,7 @@ class PostController extends Controller
             'parentRoute',
             'templates',
             'template',
-        ));
+        ))->with($data);
     }
 
     public function show(Campaign $campaign, Entity $entity, Post $post)

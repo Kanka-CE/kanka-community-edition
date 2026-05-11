@@ -20,23 +20,23 @@ class Layer extends Layout
             ],
             'name' => [
                 'key' => 'name',
-                'label' => 'crud.fields.name',
+                'label' => __('crud.fields.name'),
                 'render' => function ($model) {
                     return '<a href="' . $model->getLink() . '" class="text-link">' . $model->name . '</a>';
                 },
             ],
             'position' => [
                 'key' => 'position',
-                'label' => 'maps/layers.fields.position',
+                'label' => __('maps/layers.fields.position'),
             ],
             'type' => [
-                'label' => 'maps/layers.fields.type',
+                'label' => __('maps/layers.fields.type'),
                 'render' => function ($model) {
                     return __('maps/layers.short_types.' . $model->typeName());
                 },
             ],
             'visibility' => [
-                'label' => 'crud.fields.visibility',
+                'label' => __('crud.fields.visibility'),
                 'render' => Standard::VISIBILITY,
             ],
         ];
