@@ -1,0 +1,73 @@
+# .github/workflows/sync-upstream.yml
+# Repo: kanka-community-edition
+#
+# Keeps the "upstream" as an exact, untouched mirror of the official Kanka repo 
+# (from the branch "develop"). 
+#
+# The resulting branch is bot-owned: never commit to it by hand, or the next 
+# run will fail (on purpose).
+
+name: Sync upstream branch
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'
+
+permissions:
+  contents: write
+
+env:
+  UPSTREAM_REPO: https://github.com/owlchester/kanka.git
+  UPSTREAM_BRANCH: develop
+
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kanka-community-edition
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Checkout the upstream branch
+        run: |
+          git checkout -B upstream origin/upstream
+
+      - name: Save current commit hash
+        id: before
+        run: |
+          echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Add upstream remote
+        run: |
+          git remote add kanka-upstream "${UPSTREAM_REPO}"
+          git fetch kanka-upstream "${UPSTREAM_BRANCH}"
+
+      - name: Fast-forward to latest upstream
+        run: |
+          # --ff-only is intentional: if upstream ever force-pushes / rebases,
+          # this fails loudly instead of silently rewriting history for us.
+          git merge --ff-only "kanka-upstream/${UPSTREAM_BRANCH}"
+
+      - name: Save new commit hash
+        id: after
+        run: |
+          echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+      # Case 1: No new commits:
+      - name: Done
+        if: steps.before.outputs.hash == steps.after.outputs.hash
+        run: |
+          echo "No new commits."
+
+      # Case 2: New commits - run updates
+      - name: Push upstream branch
+        if: steps.before.outputs.hash != steps.after.outputs.hash
+        run: |
+          git push origin upstream

@@ -1,0 +1,113 @@
+name: Build Release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 3 * * *'
+      timezone: "Europe/Berlin"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kanka-community-edition
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.WORKFLOWS}}
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Get latest tag on Kanka-CE
+        id: origintag
+        run: |
+          # Get latest tag sorted by version
+          LATEST_TAG=$(git tag -l --sort=-v:refname | head -n 1)
+          echo "tag=$LATEST_TAG" >> $GITHUB_OUTPUT
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/owlchester/kanka.git
+          git fetch upstream --tags --force
+
+      - name: Determine latest upstream tag
+        id: upstreamtag
+        run: |
+          # Get latest tag sorted by version
+          LATEST_TAG=$(git ls-remote --tags --refs upstream | awk -F/ '{print $NF}' | sort -V | tail -n1)
+          echo "tag=$LATEST_TAG" >> $GITHUB_OUTPUT
+
+      - name: Compare origin vs upstream tag
+        id: comparetags
+        run: |
+          ORIGIN="${{ steps.origintag.outputs.tag }}"
+          UPSTREAM="${{ steps.upstreamtag.outputs.tag }}"
+
+          # Determine which tag is greater using version sort
+          GREATER=$(printf '%s\n%s' "$ORIGIN" "$UPSTREAM" | sort -V | tail -n1)
+
+          if [ "$GREATER" = "$UPSTREAM" ] && [ "$UPSTREAM" != "$ORIGIN" ]; then
+              echo "update_needed=true" >> $GITHUB_OUTPUT
+          else
+              echo "update_needed=false" >> $GITHUB_OUTPUT
+          fi
+
+      # Case 1: No new release
+      - name: Build only if upstream is newer
+        if: steps.comparetags.outputs.update_needed == 'false'
+        run: | 
+          echo "No new release."
+
+      # Case 2: Build new release
+      - name: Checkout new tag
+        if: steps.comparetags.outputs.update_needed == 'true'
+        run: | 
+          UPSTREAM="${{ steps.upstreamtag.outputs.tag }}"
+          git checkout "$UPSTREAM"
+
+      - name: Get patch tooling
+        if: steps.comparetags.outputs.update_needed == 'true'
+        run: |
+          git clone --depth 1 https://github.com/Kanka-CE/kanka-ce-container.git ce-tools
+          chmod +x ce-tools/apply-patches.sh
+
+      - name: Apply patches
+        if: steps.comparetags.outputs.update_needed == 'true'
+        # This script automatically stages and commits the changes
+        run: |
+          ./ce-tools/apply-patches.sh
+
+      - name: Create the tag and push the tag
+        if: steps.comparetags.outputs.update_needed == 'true'
+        run: |
+          UPSTREAM="${{ steps.upstreamtag.outputs.tag }}"
+          git tag -d "$UPSTREAM"
+          git tag "$UPSTREAM"
+          git push origin "$UPSTREAM"
+
+      - name: Create GitHub Release
+        if: steps.comparetags.outputs.update_needed == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.upstreamtag.outputs.tag }}
+          name: Release ${{ steps.upstreamtag.outputs.tag }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Repository dispatch to trigger docker-kanka-ce build
+        if: steps.comparetags.outputs.update_needed == 'true'
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.PAT }}
+          repository: Kanka-CE/kanka-ce-container
+          event-type: ce-release-published
+          client-payload: '{"version": "${{ steps.upstreamtag.outputs.tag }}"}'

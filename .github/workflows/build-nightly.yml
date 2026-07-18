@@ -1,0 +1,46 @@
+name: Build Nightly from latest Upstream
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - upstream
+
+permissions:
+  contents: write
+
+jobs:
+  build-nightly:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kanka-community-edition
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Checkout the upstream branch
+        run: |
+          git checkout -B upstream origin/upstream
+
+      - name: Recreate the nightly branch
+        run: |
+          git branch -D nightly
+          git checkout -b nightly
+
+      - name: Get patch tooling
+        run: |
+          git clone --depth 1 https://github.com/Kanka-CE/kanka-ce-container.git ce-tools
+          chmod +x ce-tools/apply-patches.sh
+
+      - name: Apply patches
+        # This script automatically stages and commit the changes
+        run: ./ce-tools/apply-patches.sh
+
+      - name: Push updated nightly branch
+        run: |
+          git push origin nightly --force-with-lease
