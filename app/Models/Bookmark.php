@@ -268,15 +268,15 @@ class Bookmark extends Model
         if (! empty($this->icon)) {
             return e($this->icon);
         } elseif ($this->target) {
-            return 'fa-regular fa-arrow-circle-right';
+            return 'fa-solid fa-arrow-circle-right';
         } elseif ($this->isRandom()) {
-            return 'fa-regular fa-question';
+            return 'fa-solid fa-question';
         }
         if (! empty($this->entityType->icon)) {
             return $this->entityType->icon;
         }
 
-        return 'fa-regular fa-th-list';
+        return 'fa-solid fa-th-list';
     }
 
     /**

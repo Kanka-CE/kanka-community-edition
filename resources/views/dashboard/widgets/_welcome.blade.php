@@ -14,11 +14,11 @@
     <p>
         {!! __('dashboards/widgets/welcome.intros.2', [
             'new-entity' => '<a class="btn2 btn-primary btn-xs" href="#" tabindex="0" role="button" data-pulse=".quick-creator-button" data-content="' . __('dashboards/widgets/welcome.focus.text') . '">
-                <i class="fa-regular fa-plus" aria-hidden="true"></i> ' . __('crud.create') . '
+                <i class="fa-solid fa-plus" aria-hidden="true"></i> ' . __('crud.create') . '
             </a>',
             'letter' => '<kbd>N</kbd>',
-            'characters' => '<span class="badge border select-none flex items-center gap-2"><i class="fa-regular fa-user" aria-hidden="true"></i> ' . __('entities.character') . '</span>',
-            'entities' => '<a target="_blank" href="https://docs.kanka.io/en/latest/entries/overview.html" class="text-link">' . __('entities.entries') . ' <i class="fa-regular fa-external-link" aria-hidden="true"></i></a>',
+            'characters' => '<span class="badge border select-none flex items-center gap-2"><i class="fa-solid fa-user" aria-hidden="true"></i> ' . __('entities.character') . '</span>',
+            'entities' => '<a target="_blank" href="https://docs.kanka.io/en/latest/entries/overview.html" class="text-link">' . __('entities.entries') . ' <i class="fa-solid fa-external-link" aria-hidden="true"></i></a>',
         ]) !!}
     </p>
     <p class="font-bold">
@@ -30,28 +30,28 @@
         <li class="">
             {!! __('dashboards/widgets/welcome.tricks.1', [
     'code' => '<code>@</code>',
-    'mention' => '<a target="_blank" href="https://docs.kanka.io/en/latest/features/mentions.html" class="text-link">' . __('dashboards/widgets/welcome.tricks.mention') . ' <i class="fa-regular fa-external-link" aria-hidden="true"></i></a>',
+    'mention' => '<a target="_blank" href="https://docs.kanka.io/en/latest/features/mentions.html" class="text-link">' . __('dashboards/widgets/welcome.tricks.mention') . ' <i class="fa-solid fa-external-link" aria-hidden="true"></i></a>',
 ]) !!}
         </li>
         <li class="">
             {!! __('dashboards/widgets/welcome.tricks.2', [
-'world' => '<a href="' . route('overview', $campaign) . '" class="text-link"><i class="fa-regular fa-cog" aria-hidden="true"></i> ' . __('sidebar.settings') . '</a>',
-'edit' => '<span class="badge border select-none flex items-center gap-2"><i class="fa-regular fa-pencil" aria-hidden="true"></i> ' . __('campaigns.show.actions.edit') . '</span>',
+'world' => '<a href="' . route('overview', $campaign) . '" class="text-link"><i class="fa-solid fa-cog" aria-hidden="true"></i> ' . __('sidebar.settings') . '</a>',
+'edit' => '<span class="badge border select-none flex items-center gap-2"><i class="fa-solid fa-pencil" aria-hidden="true"></i> ' . __('campaigns.show.actions.edit') . '</span>',
 ]) !!}
         </li>
         <li class="">
             {!! __('dashboards/widgets/welcome.tricks.3', [
-    'posts' => '<a target="_blank" href="https://docs.kanka.io/en/latest/features/articles.html" class="text-link">' . __('entities.articles') . ' <i class="fa-regular fa-external-link" aria-hidden="true"></i></a>']) !!}
+    'posts' => '<a target="_blank" href="https://docs.kanka.io/en/latest/features/articles.html" class="text-link">' . __('entities.articles') . ' <i class="fa-solid fa-external-link" aria-hidden="true"></i></a>']) !!}
         </li>
         <li class="">
             {!! __('dashboards/widgets/welcome.tricks.4', [
- 'world' => '<a href="' . route('overview', $campaign) . '" class="text-link"><i class="fa-regular fa-cog" aria-hidden="true"></i> ' . __('sidebar.settings') . '</a>',
+ 'world' => '<a href="' . route('overview', $campaign) . '" class="text-link"><i class="fa-solid fa-cog" aria-hidden="true"></i> ' . __('sidebar.settings') . '</a>',
 'members' => '<a href="' . route('campaign_users.index', $campaign) . '" class="text-link">' . __('campaigns.show.tabs.members') . '</a>',
 ]) !!}
         </li>
         <li class="">
             {!! __('dashboards/widgets/welcome.tricks.5', [
-'button' => '<span class="badge border select-none flex items-center gap-2"><i class="fa-regular fa-cog" aria-hidden="true"></i> ' . __('dashboard.actions.customise') . '</span>'
+'button' => '<span class="badge border select-none flex items-center gap-2"><i class="fa-solid fa-cog" aria-hidden="true"></i> ' . __('dashboard.actions.customise') . '</span>'
 ]) !!}
         </li>
     </ul>

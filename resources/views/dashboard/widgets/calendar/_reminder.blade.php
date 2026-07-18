@@ -26,11 +26,11 @@ if ($reminder->remindable instanceof \App\Models\Post && !$reminder->remindable-
 
     <div class="flex gap-1 items-center">
         @if (!empty($reminder->comment))
-            <x-icon class="fa-regular fa-comment" tooltip title="{{ $reminder->comment }}" />
+            <x-icon class="fa-solid fa-comment" tooltip title="{{ $reminder->comment }}" />
         @endif
         @if ($reminder->is_recurring)
-            <x-icon class="fa-regular fa-arrows-rotate" title="{{ __('calendars.fields.is_recurring') }}" tooltip />
+            <x-icon class="fa-solid fa-arrows-rotate" title="{{ __('calendars.fields.is_recurring') }}" tooltip />
         @endif
-        <x-icon class="fa-regular fa-calendar" title="{{ $reminder->readableDate() }}" tooltip />
+        <x-icon class="fa-solid fa-calendar" title="{{ $reminder->readableDate() }}" tooltip />
     </div>
 </li>

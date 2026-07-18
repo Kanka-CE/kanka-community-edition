@@ -71,23 +71,23 @@ if (!empty($themeOverride) && in_array($themeOverride, ['dark', 'midnight', 'bas
                                     </a>
                                     <div class="dropdown">
                                         <button type="button" class="btn2 btn-primary btn-sm join-item" data-dropdown aria-expanded="false">
-                                            <x-icon class="fa-regular fa-caret-down" />
+                                            <x-icon class="fa-solid fa-caret-down" />
                                             <span class="sr-only">{{ __('crud.actions.actions') }}</span>
                                         </button>
                                         <div class="dropdown-menu hidden" role="menu">
                                             <x-dropdowns.item
                                                 :link="route('maps.map_layers.index', [$campaign, $map])"
-                                                icon="fa-regular fa-layer-group">
+                                                icon="fa-solid fa-layer-group">
                                                 {{ __('maps.panels.layers') }}
                                             </x-dropdowns.item>
                                             <x-dropdowns.item
                                                 :link="route('maps.map_groups.index', [$campaign, $map])"
-                                                icon="fa-regular fa-map-signs">
+                                                icon="fa-solid fa-map-signs">
                                                 {{ __('maps.panels.groups') }}
                                             </x-dropdowns.item>
                                             <x-dropdowns.item
                                                 :link="route('maps.map_markers.index', [$campaign, $map])"
-                                                icon="fa-regular fa-map-pin">
+                                                icon="fa-solid fa-map-pin">
                                                 {{ __('maps.panels.markers') }}
                                             </x-dropdowns.item>
                                         </div>

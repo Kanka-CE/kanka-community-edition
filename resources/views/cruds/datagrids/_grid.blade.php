@@ -24,7 +24,7 @@
 
                 @if ($model->is_private)
                     <div class="bubble-private absolute left-1.5 top-1.5 shadow-xs flex justify-center align-items-center items-center aspect-square rounded-full w-6 h-6 bg-box text-xs opacity-80 text-base-content">
-                        <x-icon class="fa-regular fa-lock" :title="__('crud.is_private')" />
+                        <x-icon class="fa-solid fa-lock" :title="__('crud.is_private')" />
                     </div>
                 @endif
             </a>
@@ -34,12 +34,12 @@
                 </a>
                 @if ($model instanceof \App\Models\Map && $model->explorable())
                     <a href="{{ route('maps.explore', [$campaign, $model]) }}" class="block text-center h-12 p-4 text-link" target="_blank" title="{{ __('maps.actions.explore') }}">
-                        <x-icon class="fa-regular fa-map" />
+                        <x-icon class="fa-solid fa-map" />
                         <span class="sr-only">{{ __('maps.actions.explore') }}</span>
                     </a>
                 @elseif ($model instanceof \App\Models\Whiteboard)
                     <a href="{{ route('whiteboards.draw', [$campaign, $model]) }}" class="block text-center h-12 p-4 text-link" target="_blank" title="{{ __('whiteboards.actions.draw') }}">
-                        <x-icon class="fa-regular fa-chalkboard" />
+                        <x-icon class="fa-solid fa-chalkboard" />
                         <span class="sr-only">{{ __('whiteboards.actions.draw') }}</span>
                     </a>
                 @endif
@@ -57,7 +57,7 @@
         <a href="{{ route('entities.show', [$campaign, $model->entity]) }}" class="block avatar grow relative cover-background" style="background-image: url('{{ Avatar::entity($model->entity)->fallback()->size(192, 144)->thumbnail() }}')">
             @if ($model->is_private)
                 <div class="bubble-private absolute left-1.5 top-1.5 shadow-xs flex justify-center align-items-center items-center aspect-square rounded-full w-6 h-6 text-xs bg-box opacity-80 text-base-content">
-                    <x-icon class="fa-regular fa-lock" :title="__('crud.is_private')" />
+                    <x-icon class="fa-solid fa-lock" :title="__('crud.is_private')" />
                 </div>
             @endif
         </a>
@@ -67,12 +67,12 @@
             </a>
             @if ($model instanceof \App\Models\Map && $model->explorable())
                 <a href="{{ route('maps.explore', [$campaign, $model]) }}" class="block text-center h-12 p-4 text-link" target="_blank" title="{{ __('maps.actions.explore') }}">
-                    <x-icon class="fa-regular fa-map" />
+                    <x-icon class="fa-solid fa-map" />
                     <span class="sr-only">{{ __('maps.actions.explore') }}</span>
                 </a>
             @elseif ($model instanceof \App\Models\Whiteboard)
                 <a href="{{ route('whiteboards.draw', [$campaign, $model]) }}" class="block text-center h-12 p-4 text-link" target="_blank" title="{{ __('whiteboards.actions.draw') }}">
-                    <x-icon class="fa-regular fa-chalkboard" />
+                    <x-icon class="fa-solid fa-chalkboard" />
                     <span class="sr-only">{{ __('whiteboards.actions.draw') }}</span>
                 </a>
             @endif

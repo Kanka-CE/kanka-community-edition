@@ -74,7 +74,7 @@ class MoonService
         $this->addPhase($newMoon + $quarterMonth, $moon, '1first_quarter', 'fa-solid fa-circle-half-stroke');
     }
 
-    protected function addPhase(float $nextFullMoon, array $moon, string $type = 'full', string $class = 'fa-regular fa-circle'): void
+    protected function addPhase(float $nextFullMoon, array $moon, string $type = 'full', string $class = 'fa-solid fa-circle'): void
     {
         // Moons can be float so we "floor" them
         $nextFullMoon = (int) floor($nextFullMoon);

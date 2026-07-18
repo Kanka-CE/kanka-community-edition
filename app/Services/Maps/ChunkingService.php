@@ -236,7 +236,7 @@ class ChunkingService
             $user = $this->map->entity->creator;
             $user->notify(new Header(
                 'map.chunked',
-                'fa-regular fa-map',
+                'fa-solid fa-map',
                 'success',
                 ['name' => $this->map->name]
             ));

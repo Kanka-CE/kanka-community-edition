@@ -23,7 +23,7 @@ const initAjaxTooltips = () => {
             delay: 500,
             appendTo: e.dataset.append ?? document.body,
             content:
-                '<i class="fa-solid fa-spin fa-spinner" aria-hidden="true" aria-label="loading..." />',
+                '<i class="fa-solid fa-spinner fa-spinner" aria-hidden="true" aria-label="loading..." />',
             arrow: true,
             onShow(instance) {
                 let id = e.dataset.id;

@@ -117,7 +117,7 @@ tr.tr-hover {
 summary { display: list-item; }
 
 /* RPG awesome dropdown icon margin */
-.dropdown-menu > li > a > :is(.fas, .fab, .far, .ra, .fa-solid, .fa-light, .fa-thin, .fa-regular) {
+.dropdown-menu > li > a > :is(.fas, .fab, .far, .ra, .fa-solid, .fa-light, .fa-thin, .fa-solid) {
     margin-right: 10px;
     width: 14px;
 }
@@ -189,7 +189,7 @@ button.loading {
     display: inline-block;
     font-family: "Font Awesome 6 Pro";
     font-weight: 900;
-    animation: fa-spin 2s linear infinite;
+    animation: fa-spinner 2s linear infinite;
     content: "\f110";
 }
 

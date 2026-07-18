@@ -161,7 +161,7 @@ const exitSourceMode = () => {
                 class="btn btn-xs btn-ghost"
                 title="Exit source mode"
             >
-                <i class="fa-regular fa-eye" aria-hidden="true" />
+                <i class="fa-solid fa-eye" aria-hidden="true" />
                 Visual Editor
             </button>
         </div>

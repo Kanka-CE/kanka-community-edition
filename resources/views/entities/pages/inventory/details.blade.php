@@ -15,7 +15,7 @@
                         @if ($inventory->item->price)
                             <div class="flex gap-2 items-center">
                                 <div class="text-accent text-3xl">
-                                    <x-icon class="fa-duotone fa-coins" />
+                                    <x-icon class="fa-solid fa-coins" />
                                 </div>
                                 <div class="flex flex-col gap-0">
                                     <div class="font-extrabold text-xl">
@@ -31,7 +31,7 @@
                         @if ($inventory->item->size)
                             <div class="flex gap-2 items-center">
                                 <div class="text-accent text-3xl">
-                                    <x-icon class="fa-duotone fa-up-right-and-down-left-from-center" />
+                                    <x-icon class="fa-solid fa-up-right-and-down-left-from-center" />
                                 </div>
                                 <div class="flex flex-col gap-0">
                                     <div class="font-extrabold text-xl">
@@ -47,7 +47,7 @@
                         @if ($inventory->item->weight)
                             <div class="flex gap-2 items-center">
                                 <div class="text-accent text-3xl">
-                                    <x-icon class="fa-duotone fa-weight-hanging" />
+                                    <x-icon class="fa-solid fa-weight-hanging" />
                                 </div>
                                 <div class="flex flex-col gap-0">
                                     <div class="font-extrabold text-xl">
@@ -63,7 +63,7 @@
                         @if ($inventory->item->location)
                             <div class="flex gap-2 items-center">
                                 <div class="text-accent text-3xl">
-                                    <x-icon class="fa-duotone fa-location-dot" />
+                                    <x-icon class="fa-solid fa-location-dot" />
                                 </div>
                                 <div class="flex flex-col gap-0">
                                     <div class="font-extrabold text-xl">

@@ -16,7 +16,7 @@
     </div>
     <div class="navigation-drawer bg-base-100 h-full fixed top-0 right-0 rounded-l-2xl shadow-lg flex flex-col" v-if="is_expanded" v-click-outside="onClickOutside">
         <div class="temporary p-8 text-center" v-if="is_loading">
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
         </div>
         <template v-else>
             <div class="header flex flex-none">
@@ -112,8 +112,8 @@
                                 <div class="text-base-content" v-else>
                                     {{ profile.subscription.call_to_action }}
                                     <div class="link flex gap-1 items-center">{{ profile.subscription.call_to_action_2 }}
-                                        <i class="fa-duotone fa-credit-card" aria-hidden="true" v-if="pro"></i>
-                                        <i class="fa-regular fa-credit-card" aria-hidden="true" v-else></i>
+                                        <i class="fa-solid fa-credit-card" aria-hidden="true" v-if="pro"></i>
+                                        <i class="fa-solid fa-credit-card" aria-hidden="true" v-else></i>
                                         <i class="fa-brands fa-paypal" aria-hidden="true"></i>
                                     </div>
                                 </div>
@@ -129,7 +129,7 @@
                               {{campaigns.texts.campaigns }}
                             </div>
                             <a v-bind:href="campaigns.urls.reorder" class="text-link" v-if="campaigns.member.length > 0">
-                                <i class="fa-regular fa-arrow-up-arrow-down" aria-hidden="true"></i>
+                                <i class="fa-solid fa-arrow-up-arrow-down" aria-hidden="true"></i>
                                 {{ campaigns.texts.reorder}}
                             </a>
                         </div>
@@ -141,7 +141,7 @@
 
                             <a v-bind:href="campaigns.urls.new" class="new-campaign flex items-center text-center border-dashed border rounded-lg h-24 p-2 overflow-hidden text-link">
                                 <span class="text-xs text-break uppercase">
-                                    <i class="fa-regular fa-plus" aria-hidden="true" style="display: none"></i>
+                                    <i class="fa-solid fa-plus" aria-hidden="true" style="display: none"></i>
                                     {{ campaigns.texts.new }}
                                 </span>
                             </a>
@@ -172,32 +172,32 @@
             <div class="flex-none p-5" v-if="view_profile">
                 <div class="flex flex-col" v-if="!profile.is_impersonating">
                     <a v-bind:href="profile.urls.settings.url" class="p-2 text-link flex items-center gap-3">
-                        <i class="fa-regular fa-cog text-neutral-content" aria-hidden="true"></i>
+                        <i class="fa-solid fa-cog text-neutral-content" aria-hidden="true"></i>
                         {{ profile.urls.settings.name }}
                     </a>
                     <a v-bind:href="profile.urls.profile.url" class="p-2 text-link flex items-center gap-3">
-                        <i class="fa-regular fa-user text-neutral-content" aria-hidden="true"></i>
+                        <i class="fa-solid fa-user text-neutral-content" aria-hidden="true"></i>
                         {{ profile.urls.profile.name }}
                     </a>
                     <a href="https://plugins.kanka.io"  class="p-2 text-link flex items-center gap-3">
-                        <i class="fa-regular fa-puzzle-piece text-neutral-content" aria-hidden="true"></i>
+                        <i class="fa-solid fa-puzzle-piece text-neutral-content" aria-hidden="true"></i>
                         {{ marketplace.title }}
                     </a>
                     <a href="https://docs.kanka.io/en/latest/" class="p-2 text-link flex items-center gap-3" target="_blank">
-                        <i class="fa-regular fa-question-circle text-neutral-content" aria-hidden="true"></i>
+                        <i class="fa-solid fa-question-circle text-neutral-content" aria-hidden="true"></i>
                         {{ profile.urls.help.name }}
                     </a>
 
                     <hr class="my-2" />
 
                     <a href="#" v-on:click="logout()" class="p-2 text-link flex items-center gap-3">
-                        <i class="fa-regular fa-sign-out " aria-hidden="true"></i>
+                        <i class="fa-solid fa-sign-out " aria-hidden="true"></i>
                         {{ profile.urls.logout.name }}
                     </a>
                 </div>
                 <div class="flex flex-col" v-else>
                     <a v-bind:href="profile.return.url" class="p-2 text-link flex items-center gap-3">
-                        <i class="fa-regular fa-sign-out-alt" aria-hidden="true"></i>
+                        <i class="fa-solid fa-sign-out-alt" aria-hidden="true"></i>
                         {{ profile.return.name }}
                     </a>
                 </div>

@@ -20,7 +20,7 @@
                         {{ __('bug-report.discord') }}
                     </a>
                     <a href="mailto:{{ config('app.email') }}" class="btn2">
-                        <x-icon class="fa-regular fa-envelope" />
+                        <x-icon class="fa-solid fa-envelope" />
                         {{ config('app.email') }}
                     </a>
                 </div>

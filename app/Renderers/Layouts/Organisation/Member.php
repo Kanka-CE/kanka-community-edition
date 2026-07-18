@@ -35,19 +35,19 @@ class Member extends Layout
                     $icon = '';
                     if ($model->inactive()) {
                         $icon =
-                            '<i class="fa-regular fa-user-slash" data-title="' .
+                            '<i class="fa-solid fa-user-slash" data-title="' .
                             __('organisations.members.status.inactive') .
                             '" data-toggle="tooltip"></i>';
                     } elseif ($model->unknown()) {
                         $icon =
-                            '<i class="fa-regular fa-question" data-title="' .
+                            '<i class="fa-solid fa-question" data-title="' .
                             __('organisations.members.status.unknown') .
                             '" data-toggle="tooltip"></i>';
                     }
                     $private = '';
                     if ($model->is_private) {
                         $private =
-                            '<i class="fa-regular fa-lock" aria-hidden="true"></i> ';
+                            '<i class="fa-solid fa-lock" aria-hidden="true"></i> ';
                     }
 
                     return $icon . $private . $model->role;
@@ -69,7 +69,7 @@ class Member extends Layout
                 'with' => 'character.entity',
             ],
             'pinned' => [
-                'label' => '<i class="fa-regular fa-map-pin" data-title="' .
+                'label' => '<i class="fa-solid fa-map-pin" data-title="' .
                     __('organisations.members.fields.pinned') .
                     '" data-toggle="tooltip"></i>',
                 'render' => function ($model) {
@@ -77,16 +77,16 @@ class Member extends Layout
                         return '';
                     }
                     if ($model->pinnedToCharacter()) {
-                        return '<i class="fa-regular fa-user" data-toggle="tooltip" data-title="' .
+                        return '<i class="fa-solid fa-user" data-toggle="tooltip" data-title="' .
                             __('entities.character') .
                             '"></i>';
                     } elseif ($model->pinnedToOrganisation()) {
-                        return '<i class="fa-regular fa-screen-users" data-toggle="tooltip" data-title="' .
+                        return '<i class="fa-solid fa-users-between-lines" data-toggle="tooltip" data-title="' .
                             __('entities.organisation') .
                             '"></i>';
                     }
 
-                    return '<i class="fa-regular fa-map-pin" data-toggle="tooltip" data-title="' .
+                    return '<i class="fa-solid fa-map-pin" data-toggle="tooltip" data-title="' .
                         __('organisations.members.pinned.both') .
                         '"></i>';
                 },

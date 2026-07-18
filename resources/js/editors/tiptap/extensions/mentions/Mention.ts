@@ -232,7 +232,7 @@ export const Mention = Node.create<MentionOptions>({
                 innerContent.push([
                     'i',
                     {
-                        class: 'fa-regular fa-masks-theater',
+                        class: 'fa-solid fa-masks-theater',
                     }
                 ])
             }

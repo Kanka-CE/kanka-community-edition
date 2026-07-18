@@ -29,7 +29,7 @@
                             <input type="hidden" name="race_privates[{{ $race->race_id }}]" :value="isPrivate ? 1 : 0" />
                             <i class="cursor-pointer hover:text-accent"
                                @click="isPrivate = !isPrivate"
-                               :class="isPrivate ? 'fa-solid fa-lock-keyhole' : 'fa-regular fa-unlock-keyhole'"
+                               :class="isPrivate ? 'fa-solid fa-lock-keyhole' : 'fa-solid fa-unlock-keyhole'"
                                :title="isPrivate ? '{{ __('entities/attributes.visibility.private') }}' : '{{ __('entities/attributes.visibility.public') }}'"></i>
                         </div>
                     </x-reorder.child>

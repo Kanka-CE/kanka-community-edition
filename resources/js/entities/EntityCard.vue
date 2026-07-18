@@ -9,10 +9,10 @@
                 <div v-if="entity.is_private && !selecting"
                      class="bubble-private absolute left-1.5 top-1.5 text-xs shadow-xs flex justify-center items-center aspect-square rounded-full w-6 h-6 bg-box opacity-80 text-base-content"
                      :title="i18n.is_private">
-                    <i class="fa-regular fa-lock" :aria-label="i18n.is_private" />
+                    <i class="fa-solid fa-lock" :aria-label="i18n.is_private" />
                 </div>
                 <div v-else-if="selecting" :class="selectorClass">
-                    <i v-if="entity.selected" class="fa-regular fa-check" aria-label="selected" />
+                    <i v-if="entity.selected" class="fa-solid fa-check" aria-label="selected" />
                 </div>
                 <!-- Avatar bubbles for children -->
                 <div v-if="nested && entity.children_preview?.length" class="absolute bottom-2 right-2 flex flex-row-reverse">
@@ -47,10 +47,10 @@
             <div v-if="entity.is_private && !selecting"
                  class="bubble-private absolute left-1.5 top-1.5 text-xs shadow-xs flex justify-center items-center aspect-square rounded-full w-6 h-6 bg-box opacity-80 text-base-content"
                  :title="i18n.is_private">
-                <i class="fa-regular fa-lock" :aria-label="i18n.is_private" />
+                <i class="fa-solid fa-lock" :aria-label="i18n.is_private" />
             </div>
             <div v-else-if="selecting" :class="selectorClass">
-                <i v-if="entity.selected" class="fa-regular fa-check" aria-label="selected" />
+                <i v-if="entity.selected" class="fa-solid fa-check" aria-label="selected" />
             </div>
         </a>
         <a :href="entity.urls.show" class="block text-center relative truncate h-12 p-4 text-link"

@@ -2,38 +2,38 @@
     <div class="flex gap-4 justify-between flex-wrap text-xs">
         <div class="flex items-center flex-wrap  gap-4">
             <button @click="addAttribute($event, '')" :class="btnClass()">
-                <i class="fa-regular fa-shield md:text-xl" aria-hidden="true" />
+                <i class="fa-solid fa-shield md:text-xl" aria-hidden="true" />
                 <span v-html="trans('types.attribute')"></span>
             </button>
 
             <button @click="addAttribute($event, 'multiline')" :class="btnClass()">
-                <i class="fa-regular fa-align-justify md:text-xl" aria-hidden="true" />
+                <i class="fa-solid fa-align-justify md:text-xl" aria-hidden="true" />
                 <span v-html="trans('types.multiline')"></span>
             </button>
 
             <button @click="addAttribute($event, 'number')" :class="btnClass()">
-                <i class="fa-regular fa-hashtag md:text-xl" aria-hidden="true" />
+                <i class="fa-solid fa-hashtag md:text-xl" aria-hidden="true" />
                 <span v-html="trans('types.number')"></span>
             </button>
 
             <button @click="addAttribute($event, 'section')" :class="btnClass()">
-                <i class="fa-regular fa-layer-group md:text-xl" aria-hidden="true" />
+                <i class="fa-solid fa-layer-group md:text-xl" aria-hidden="true" />
                 <span v-html="trans('types.section')"></span>
             </button>
 
             <button @click="addAttribute($event, 'checkbox')" :class="secondaryBtnClass()">
-                <i class="fa-regular fa-check-square md:text-xl" aria-hidden="true" />
+                <i class="fa-solid fa-check-square md:text-xl" aria-hidden="true" />
                 <span v-html="trans('types.checkbox')"></span>
             </button>
 
             <button @click="addAttribute($event, 'random')" :class="secondaryBtnClass()">
-                <i class="fa-regular fa-question-circle md:text-xl" aria-hidden="true" />
+                <i class="fa-solid fa-question-circle md:text-xl" aria-hidden="true" />
                 <span v-html="trans('types.random')" class="text-xs truncate"></span>
             </button>
         </div>
 
         <button @click="openTemplates($event)" :class="secondaryBtnClass()" data-tooltip :data-title="trans('actions.load')">
-            <i class="fa-regular fa-file-import md:text-xl" aria-hidden="true" />
+            <i class="fa-solid fa-file-import md:text-xl" aria-hidden="true" />
             <span v-html="trans('types.templates')" class="text-xs truncate"></span>
         </button>
     </div>

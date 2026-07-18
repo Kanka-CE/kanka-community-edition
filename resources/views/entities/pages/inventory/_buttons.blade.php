@@ -1,7 +1,7 @@
 <div class="dropdown entity-actions-dropdown join-item">
     <div data-dropdown aria-expanded="false" aria-haspopup="menu" aria-controls="inventories-submenu" class="btn2 btn-sm join-item entity-actions-button">
         {{ __('crud.add') }}
-        <x-icon class="fa-regular fa-caret-down" />
+        <x-icon class="fa-solid fa-caret-down" />
     </div>
 
     <div class="dropdown-menu hidden" role="menu" id="inventories-submenu">
@@ -17,7 +17,7 @@
         <x-dropdowns.item
             link="#"
             :dialog="route('entities.inventory.generate', [$campaign, $entity])"
-            icon="fa-regular fa-dice"
+            icon="fa-solid fa-dice-d20"
             data-toggle="dialog" data-target="inventories-dialog" data-url="{{ route('entities.inventory.generate', [$campaign, $entity]) }}" data-title="{{ __('entities/inventories.actions.generate') }}" data-toggle="tooltip"
         >
             {{ __('entities/inventories.actions.generate') }}
@@ -26,7 +26,7 @@
         <x-dropdowns.item
             link="#"
             :dialog="route('entities.inventory.copy', [$campaign, $entity])"
-            icon="fa-regular fa-copy"
+            icon="fa-solid fa-copy"
             data-toggle="dialog" data-target="inventories-dialog" data-url="{{ route('entities.inventory.copy', [$campaign, $entity]) }}" data-title="{{ __('entities/inventories.actions.copy_from') }}" data-toggle="tooltip"
         >
             {{ __('entities/inventories.actions.copy_from_entity') }}
@@ -34,7 +34,7 @@
 
         <x-dropdowns.divider />
 
-        <x-dropdowns.item :link="'https://docs.kanka.io/en/latest/features/inventory.html'" icon="fa-regular fa-book">
+        <x-dropdowns.item :link="'https://docs.kanka.io/en/latest/features/inventory.html'" icon="fa-solid fa-book">
             <span class="grow">{{ __('general.learn-more') }}</span>
         </x-dropdowns.item>
     </div>

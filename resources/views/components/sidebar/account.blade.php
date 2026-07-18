@@ -13,35 +13,35 @@
             <li class="px-2 {{ $active('profile') }}">
                 <x-sidebar.element
                     :url="route('settings.profile')"
-                    icon="fa-regular fa-user"
+                    icon="fa-solid fa-user"
                     :text="__('settings.menu.profile')"
                 ></x-sidebar.element>
             </li>
             <li class="px-2 {{ $active('account') }}">
                 <x-sidebar.element
                     :url="route('settings.account')"
-                    icon="fa-regular fa-lock"
+                    icon="fa-solid fa-lock"
                     :text="__('settings.menu.account')"
                 ></x-sidebar.element>
             </li>
             <li class="px-2 {{ $active('security') }}">
                 <x-sidebar.element
                     :url="route('settings.security')"
-                    icon="fa-regular fa-shield"
+                    icon="fa-solid fa-shield"
                     :text="__('settings.menu.security')"
                 ></x-sidebar.element>
             </li>
             <li class="px-2 {{ $active('appearance') }}">
                 <x-sidebar.element
                     :url="route('settings.appearance')"
-                    icon="fa-regular fa-swatchbook"
+                    icon="fa-solid fa-swatchbook"
                     :text="__('settings.menu.appearance')"
                 ></x-sidebar.element>
             </li>
             <li class="px-2 {{ $active('newsletter') }}">
                 <x-sidebar.element
                     :url="route('settings.newsletter')"
-                    icon="fa-regular fa-bell"
+                    icon="fa-solid fa-bell"
                     :text="__('settings.menu.notifications')"
                 ></x-sidebar.element>
             </li>
@@ -53,7 +53,7 @@
                         <li class="px-2 {{ $active('subscription') }} subsection">
                             <x-sidebar.element
                                 :url="route('settings.subscription')"
-                                icon="fa-regular fa-heart"
+                                icon="fa-solid fa-heart"
                                 :text="__('billing/menu.overview')"
                             ></x-sidebar.element>
                         </li>
@@ -61,7 +61,7 @@
                             <li class="px-2 {{ $active('boosters') }} subsection">
                                 <x-sidebar.element
                                     :url="route('settings.boost')"
-                                    icon="fa-regular fa-rocket"
+                                    icon="fa-solid fa-rocket"
                                     :text="__('settings.menu.boosters')"
                                 ></x-sidebar.element>
                             </li>
@@ -69,7 +69,7 @@
                             <li class="px-2 {{ $active('premium') }} subsection">
                                 <x-sidebar.element
                                     :url="route('settings.premium')"
-                                    icon="fa-regular fa-gem"
+                                    icon="fa-solid fa-gem"
                                     :text="__('settings.menu.premium')"
                                 ></x-sidebar.element>
                             </li>
@@ -80,14 +80,14 @@
                         <li class="px-2 {{ $active('payment-method', 3) }} subsection">
                             <x-sidebar.element
                                 :url="route('billing.payment-method')"
-                                icon="fa-regular fa-credit-card"
+                                icon="fa-solid fa-credit-card"
                                 :text="__('billing/menu.payment-method')"
                             ></x-sidebar.element>
                         </li>
                         <li class="px-2 {{ $active('history', 3) }} subsection">
                             <x-sidebar.element
                                 :url="route('billing.history')"
-                                icon="fa-regular fa-receipt"
+                                icon="fa-solid fa-receipt"
                                 :text="__('billing/menu.history')"
                             ></x-sidebar.element>
                         </li>
@@ -118,14 +118,14 @@
                         <li class="px-2 {{ $active('referrals') }} subsection">
                             <x-sidebar.element
                                 :url="route('settings.referrals')"
-                                icon="fa-regular fa-users"
+                                icon="fa-solid fa-users"
                                 :text="__('settings.referrals.title')"
                             ></x-sidebar.element>
                         </li>
                     <li class="px-2 {{ $active('api') }} subsection">
                         <x-sidebar.element
                             :url="route('settings.api')"
-                            icon="fa-regular fa-code"
+                            icon="fa-solid fa-code"
                             :text="__('settings.menu.api')"
                         ></x-sidebar.element>
                     </li>

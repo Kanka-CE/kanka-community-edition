@@ -4,21 +4,21 @@
 
     <div class="cell col-span-1 flex">
         @include('campaigns.modules.box', [
-    'icon' => 'fa-regular fa-suitcase',
+    'icon' => 'fa-solid fa-suitcase',
     'module' => 'inventories',
     'name' => __('entities.inventories')
     ])
     </div>
     <div class="cell col-span-1 flex">
         @include('campaigns.modules.box', [
-    'icon' => 'fa-regular fa-table',
+    'icon' => 'fa-solid fa-table',
     'module' => 'entity_attributes',
     'name' => __('entries/tabs.properties')
     ])
     </div>
     <div class="cell col-span-1 flex">
         @include('campaigns.modules.box', [
-    'icon' => 'fa-regular fa-folder',
+    'icon' => 'fa-solid fa-folder',
     'module' => 'media',
     'name' => __('entries/tabs.media'),
     'helper' => __('campaigns/categories.helpers.media')
@@ -26,7 +26,7 @@
     </div>
     <div class="cell col-span-1 flex">
         @include('campaigns.modules.box', [
-    'icon' => 'fa-regular fa-folder',
+    'icon' => 'fa-solid fa-folder',
     'module' => 'aliases',
     'name' => __('entries/tabs.aliases'),
     'helper' => __('campaigns/categories.helpers.aliases')

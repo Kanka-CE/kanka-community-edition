@@ -2,7 +2,7 @@
     <div class="flex gap-2 items-center justify-between">
         <div class="flex gap-1 items-center w-full">
             <span class="cmd-icon flex-0" aria-hidden="true">
-                <i class="fa-regular fa-magnifying-glass"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
             </span>
             <input
                 ref="inputRef"
@@ -25,7 +25,7 @@
                 :class="mode === 'name' ? 'bg-base-100' : 'bg-transparent text-neutral-content'"
                 @click="setMode('name')"
             >
-                <i class="fa-regular fa-magnifying-glass" aria-hidden="true"></i>
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                 {{ entitiesLabel }}
             </button>
             <button
@@ -34,7 +34,7 @@
                 :class="mode === 'fulltext' ? 'bg-base-100' : 'bg-transparent text-neutral-content'"
                 @click="setMode('fulltext')"
             >
-                <i class="fa-regular fa-plus" aria-hidden="true"></i>
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
                  {{ everywhereLabel }}
             </button>
         </div>

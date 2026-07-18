@@ -28,12 +28,12 @@ $all = $model->posts()->count();
         @can('update', $entity)
             <div class="dropdown flex items-center">
                 <button type="button" data-dropdown aria-expanded="false" aria-haspopup="menu" class="btn2 btn-sm">
-                    <x-icon class="fa-regular fa-ellipsis-h" />
+                    <x-icon class="fa-solid fa-ellipsis-h" />
                 </button>
                 <div class="dropdown-menu hidden" role="menu">
                     <x-dropdowns.item
                         :link="route('tags.transfer.posts', [$campaign, $model])"
-                        icon="fa-regular fa-arrow-right"
+                        icon="fa-solid fa-arrow-right"
                     >
                         {{ __('tags.transfer.transfer') }}
                     </x-dropdowns.item>

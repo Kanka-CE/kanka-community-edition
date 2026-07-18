@@ -58,7 +58,7 @@ class Theme extends Layout
                 'label' => __('campaigns/styles.fields.is_enabled'),
                 'render' => function (CampaignStyle $model) {
                     return $model->is_enabled
-                        ? '<i class="fa-regular fa-check-circle" aria-hidden="true"></i><span class="sr-only">' .
+                        ? '<i class="fa-solid fa-check-circle" aria-hidden="true"></i><span class="sr-only">' .
                                 __('campaigns/styles.fields.is_enabled') .
                                 '</span>'
                         : null;
@@ -79,13 +79,13 @@ class Theme extends Layout
                 'can' => 'disable',
                 'route' => 'campaign_styles.toggle',
                 'label' => 'campaigns/styles.actions.disable',
-                'icon' => 'fa-regular fa-ban',
+                'icon' => 'fa-solid fa-ban',
             ],
             'enable' => [
                 'can' => 'enable',
                 'route' => 'campaign_styles.toggle',
                 'label' => 'campaigns/styles.actions.enable',
-                'icon' => 'fa-regular fa-check',
+                'icon' => 'fa-solid fa-check',
             ],
             self::ACTION_DELETE,
         ];
@@ -103,12 +103,12 @@ class Theme extends Layout
             [
                 'action' => 'enable',
                 'label' => 'campaigns/styles.actions.enable',
-                'icon' => 'fa-regular fa-check',
+                'icon' => 'fa-solid fa-check',
             ],
             [
                 'action' => 'disable',
                 'label' => 'campaigns/styles.actions.disable',
-                'icon' => 'fa-regular fa-ban',
+                'icon' => 'fa-solid fa-ban',
             ],
             self::ACTION_DELETE,
         ];
