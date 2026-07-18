@@ -110,3 +110,4 @@ jobs:
           token: ${{ secrets.PAT }}
           repository: Kanka-CE/kanka-ce-container
           event-type: ce-release-published
+          client-payload: '{"version": "${{ steps.upstreamtag.outputs.tag }}"}'
