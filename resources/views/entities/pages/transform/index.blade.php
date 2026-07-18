@@ -53,7 +53,7 @@
 
             <x-dialog.footer class="px-0!">
                 <button class="btn2 btn-primary">
-                    <x-icon class="fa-regular fa-arrows-rotate" />
+                    <x-icon class="fa-solid fa-arrows-rotate" />
                     {{ __('entities/transform.actions.convert') }}
                 </button>
             </x-dialog.footer>

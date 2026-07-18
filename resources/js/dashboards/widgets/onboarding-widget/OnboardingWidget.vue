@@ -1,6 +1,6 @@
 <template>
     <div v-if="loading" class="flex items-center gap-2 py-4">
-        <i class="fa-solid fa-spinner fa-spin"></i>
+        <i class="fa-solid fa-spinner fa-spinner"></i>
     </div>
 
     <div v-else class="flex flex-col gap-6">
@@ -24,7 +24,7 @@
                 </button>
             </div>
             <p v-if="savingIntent" class="text-xs text-neutral-content">
-                <i class="fa-solid fa-spinner fa-spin mr-1"></i>{{ i18n['step1.saving'] }}
+                <i class="fa-solid fa-spinner fa-spinner mr-1"></i>{{ i18n['step1.saving'] }}
             </p>
         </div>
 
@@ -42,7 +42,7 @@
                     class="btn2 btn-primary"
                     :disabled="creating || !entityName.trim()"
                     @click="createEntity(step2Config.type, 3)">
-                    <i v-if="creating" class="fa-solid fa-spinner fa-spin mr-1"></i>
+                    <i v-if="creating" class="fa-solid fa-spinner fa-spinner mr-1"></i>
                     {{ creating ? i18n['step2.creating'] : i18n['step2.button'] }}
                 </button>
             </div>
@@ -65,7 +65,7 @@
                     class="btn2 btn-primary"
                     :disabled="creating || !entityName.trim()"
                     @click="createEntity(step3Config.type, 4)">
-                    <i v-if="creating" class="fa-solid fa-spinner fa-spin mr-1"></i>
+                    <i v-if="creating" class="fa-solid fa-spinner fa-spinner mr-1"></i>
                     {{ creating ? i18n['step3.creating'] : i18n['step3.button'] }}
                 </button>
             </div>

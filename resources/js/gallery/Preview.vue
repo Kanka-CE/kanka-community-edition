@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div v-else class="h-full w-full flex items-center justify-center align-middle text-6xl text-neutral-content">
-                <i class="fa-regular fa-folder" aria-hidden="true" />
+                <i class="fa-solid fa-folder" aria-hidden="true" />
             </div>
         </div>
         <div class="flex-none w-20 md:w-full h-16 md:h-32 cover-background" v-else-if="hasThumbnail()" :style="{backgroundImage: previewImage(file.thumbnail)}">
@@ -79,15 +79,15 @@ const fileClass = () => {
 const visibilityClass = () => {
     switch(parseInt(props.file.visibility_id)) {
         case 2:
-            return 'fa-regular fa-lock'
+            return 'fa-solid fa-lock'
         case 3: // admin-self
-            return 'fa-regular fa-user-lock'
+            return 'fa-solid fa-user-lock'
         case 4:
-            return 'fa-regular fa-user-secret'
+            return 'fa-solid fa-user-secret'
         case 5:
-            return 'fa-regular fa-users'
+            return 'fa-solid fa-users'
         default:
-            return 'fa-regular fa-eye'
+            return 'fa-solid fa-eye'
     }
 }
 

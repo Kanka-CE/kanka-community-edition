@@ -233,7 +233,7 @@ class MentionsService
     {
         $this->text = preg_replace_callback('`\[([a-z_-]+):(.*?)\]`i', function ($matches) {
             // Icons
-            $fontAwesomes = ['fa ', 'fas ', 'far ', 'fab ', 'ra ', 'fa-solid ', 'fa-regular ', 'fa-brands '];
+            $fontAwesomes = ['fa ', 'fas ', 'far ', 'fab ', 'ra ', 'fa-solid ', 'fa-solid ', 'fa-brands '];
             if ($matches[1] == 'icon' && Str::startsWith($matches[2], $fontAwesomes)) {
                 return '<i class="' . e($matches[2]) . '" aria-hidden="true"></i>';
             }
@@ -437,7 +437,7 @@ class MentionsService
                     . ' data-id="' . $entity->id . '"'
                     . ' data-url="' . $dataUrl . '"'
 //                    . ' data-mention-url="' . route('entities.tooltip', $entity). '"'
-//                    . ' title="<i class=\'fa fa-spinner fa-spin\'></i>"'
+//                    . ' title="<i class=\'fa fa-spinner fa-spinner\'></i>"'
                     . '>'
                     . Arr::get($data, 'text', $entity->name)
                     . '</a>';
@@ -932,7 +932,7 @@ class MentionsService
             . ' data-id="' . $post->entity->id . '"'
             . ' data-url="' . $tooltipUrl . '"'
 //                    . ' data-mention-url="' . route('entities.tooltip', $entity). '"'
-//                    . ' title="<i class=\'fa fa-spinner fa-spin\'></i>"'
+//                    . ' title="<i class=\'fa fa-spinner fa-spinner\'></i>"'
             . '>'
             . Arr::get($data, 'text', $post->name)
             . '</a>';

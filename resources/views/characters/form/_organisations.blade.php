@@ -58,7 +58,7 @@ $statuses = [
                         <i
                             class="cursor-pointer hover:text-accent"
                             @click="isPrivate = !isPrivate"
-                            :class="isPrivate ? 'fa-solid fa-lock-keyhole' : 'fa-regular fa-unlock-keyhole'"
+                            :class="isPrivate ? 'fa-solid fa-lock-keyhole' : 'fa-solid fa-unlock-keyhole'"
                             :title="isPrivate ? '{{ __('entities/attributes.visibility.private') }}' : '{{ __('entities/attributes.visibility.public') }}'"></i>
                     </div>
                 @endif
@@ -108,7 +108,7 @@ $statuses = [
             @if ($isAdmin)
                 <div class="text-lg">
                     <input type="hidden" name="organisation_privates[]" value="0"/>
-                    <i class="fa-regular fa-unlock-keyhole cursor-pointer hover:text-accent " data-toggle="private" data-private="{{ __('entities/attributes.visibility.private') }}" data-public="{{ __('entities/attributes.visibility.public') }}"></i>
+                    <i class="fa-solid fa-unlock-keyhole cursor-pointer hover:text-accent " data-toggle="private" data-private="{{ __('entities/attributes.visibility.private') }}" data-public="{{ __('entities/attributes.visibility.public') }}"></i>
                 </div>
             @endif
             <div class="text-lg">

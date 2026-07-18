@@ -24,7 +24,7 @@
         }"
     >
         <i
-            class="fa-regular text-xs"
+            class="fa-solid text-xs"
             :class="{
                 'fa-minus': state === 'inherit' && !inherited,
                 'fa-check': (state === 'inherit' && inherited) || state === 'allow',

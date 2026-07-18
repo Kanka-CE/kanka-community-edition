@@ -14,7 +14,7 @@
         <x-learn-more url="features/connections.html" />
         @if ($mode == 'map' || (empty($mode) && $campaign->boosted()))
             <a href="{{ route('entities.relations.index', [$campaign, $entity, 'mode' => 'table']) }}" class="btn2 btn-sm" data-toggle="tooltip" data-title="{{ __('entities/relations.actions.mode-table') }}">
-                <x-icon class="fa-regular fa-list-ul" />
+                <x-icon class="fa-solid fa-list-ul" />
             </a>
         @else
             <a href="{{ route('entities.relations.index', [$campaign, $entity, 'mode' => 'map']) }}" class="btn2 btn-sm" data-toggle="tooltip" data-title="{{ __('entities/relations.actions.mode-map') }}">

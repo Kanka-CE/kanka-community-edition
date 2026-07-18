@@ -7,9 +7,9 @@
     <div class="flex justify-between items-center gap-2">
         <div class="flex gap-2 items-center text-lg">
             @if ($enabled)
-                <x-icon class="fa-regular fa-check-circle text-green-500" tooltip title="{{ __('campaigns/modules.states.enabled') }}" ></x-icon>
+                <x-icon class="fa-solid fa-check-circle text-green-500" tooltip title="{{ __('campaigns/modules.states.enabled') }}" ></x-icon>
             @else
-                <x-icon class="fa-regular fa-times text-red-500 text-xl" tooltip title="{{ __('campaigns/modules.states.disabled') }}" ></x-icon>
+                <x-icon class="fa-solid fa-times text-red-500 text-xl" tooltip title="{{ __('campaigns/modules.states.disabled') }}" ></x-icon>
             @endif
             @if ($image)
                 <div class="w-6 h-6 rounded-full bg-cover bg-center overflow-hidden">

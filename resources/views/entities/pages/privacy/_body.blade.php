@@ -38,8 +38,8 @@
                             </p>
                         </label>
                     </div>
-                    <i class="fa-solid fa-spinner fa-spin text-neutral-content" x-show="saving && private === '1'" x-cloak aria-label="Saving..."></i>
-                    <i class="fa-regular fa-check-double text-success" x-show="status === true" x-cloak aria-label="Saved" data-title="{{ __('entities/permissions.quick.success.private', ['entity' => $entity->name]) }}" data-toggle="tooltip"></i>
+                    <i class="fa-solid fa-spinner fa-spinner text-neutral-content" x-show="saving && private === '1'" x-cloak aria-label="Saving..."></i>
+                    <i class="fa-solid fa-check-double text-success" x-show="status === true" x-cloak aria-label="Saved" data-title="{{ __('entities/permissions.quick.success.private', ['entity' => $entity->name]) }}" data-toggle="tooltip"></i>
                 </div>
                 <div class="rounded-xl border border-base-300 p-2 flex gap-2 items-start cursor-pointer hover:shadow-sm">
                     <input type="radio" name="is_private" id="visibility-public" value="0" class="mt-1" @if (!$entity->is_private) checked="checked" @endif" x-model="private">
@@ -51,8 +51,8 @@
                             </p>
                         </label>
                     </div>
-                    <i class="fa-solid fa-spinner fa-spin text-neutral-content" x-show="saving && private === '0'" x-cloak aria-label="Saving..."></i>
-                    <i class="fa-regular fa-check-double text-success" x-show="status === false" x-cloak aria-label="Saved" data-title="{{ __('entities/permissions.quick.success.public', ['entity' => $entity->name]) }}" data-toggle="tooltip"></i>
+                    <i class="fa-solid fa-spinner fa-spinner text-neutral-content" x-show="saving && private === '0'" x-cloak aria-label="Saving..."></i>
+                    <i class="fa-solid fa-check-double text-success" x-show="status === false" x-cloak aria-label="Saved" data-title="{{ __('entities/permissions.quick.success.public', ['entity' => $entity->name]) }}" data-toggle="tooltip"></i>
                 </div>
             </div>
         </x-forms.field>
@@ -68,7 +68,7 @@
             <div class="flex flex-wrap gap-2 items-center " :class="{ 'line-through text-neutral-content': private === '1'}">
                 @foreach ($visibility['roles'] as $role)
                     <span>
-                        <x-icon class="fa-regular fa-user-group" />
+                        <x-icon class="fa-solid fa-user-group" />
                         @can('update', $role)
                             <a href="{{ route('campaign_roles.edit', [$campaign, $role]) }}" class="text-link">
                                 {!! $role->name !!}
@@ -77,7 +77,7 @@
                             {!! $role->name !!}
                         @endif
                         @if ($role->isPublic() && $campaign->isPrivate())
-                            <x-icon class="fa-regular fa-exclamation-triangle text-accent" tooltip :title="__('campaigns.roles.permissions.helpers.not_public')" />
+                            <x-icon class="fa-solid fa-exclamation-triangle text-accent" tooltip :title="__('campaigns.roles.permissions.helpers.not_public')" />
                         @endif
                     </span>
                 @endforeach
@@ -86,7 +86,7 @@
                         @if ($user->hasAvatar())
                             <x-users.avatar :user="$user" class="w-5 h-5" />
                         @else
-                            <x-icon class="fa-regular fa-user" />
+                            <x-icon class="fa-solid fa-user" />
                         @endif
                         {!! $user->name !!}
                     </div>

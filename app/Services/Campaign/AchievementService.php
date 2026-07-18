@@ -69,7 +69,7 @@ class AchievementService
 
         $stats = [
             'spotlighted' => [
-                'icon' => 'fa-duotone fa-stars',
+                'icon' => 'fa-solid fa-stars',
                 'amount' => $spotlight ? 1 : 0,
                 'target' => 1,
                 'level' => $spotlight ? 5 : 0,
@@ -126,7 +126,7 @@ class AchievementService
                 'module' => $this->moduleName('event'),
             ],
             'dead' => [
-                'icon' => 'fa-regular fa-skull',
+                'icon' => 'fa-solid fa-skull',
                 'amount' => $dead,
                 'target' => $this->target($dead, 2),
                 'level' => $this->level($dead, 2),
@@ -140,21 +140,21 @@ class AchievementService
                 'history' => 'tagged',
             ],
             'plugins' => [
-                'icon' => 'fa-duotone fa-store',
+                'icon' => 'fa-solid fa-store',
                 'amount' => $plugins,
                 'target' => $this->target($plugins, 3),
                 'level' => $this->level($plugins, 3),
                 'history' => 'plugins',
             ],
             'markers' => [
-                'icon' => 'fa-duotone fa-map-location',
+                'icon' => 'fa-solid fa-map-location',
                 'amount' => $markers,
                 'target' => $this->target($markers, 2),
                 'level' => $this->level($markers, 2),
                 'history' => 'markers',
             ],
             'connections' => [
-                'icon' => 'fa-duotone fa-heart',
+                'icon' => 'fa-solid fa-heart',
                 'amount' => $connections,
                 'target' => $this->target($connections, 2),
                 'level' => $this->level($connections, 2),
@@ -232,14 +232,14 @@ class AchievementService
                 'goal' => __('campaigns/stats.achievements.murderer.goal'),
                 'amount' => $dead,
                 'target' => 100,
-                'icon' => 'fa-regular fa-skull',
+                'icon' => 'fa-solid fa-skull',
             ],
             'calendars' => [
                 'title' => __('campaigns/stats.achievements.calendars.title'),
                 'goal' => __('campaigns/stats.achievements.calendars.goal'),
                 'amount' => $calendars,
                 'target' => 3,
-                'icon' => 'fa-regular fa-calendar',
+                'icon' => 'fa-solid fa-calendar',
             ],
         ];
 

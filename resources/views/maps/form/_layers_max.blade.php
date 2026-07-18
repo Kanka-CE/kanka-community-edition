@@ -14,7 +14,7 @@
     @if ($campaign->boosted())
         <x-box class="rounded-xl flex flex-col gap-4 p-6">
             <h2 class="text-2xl">
-                <x-icon class="fa-regular fa-exclamation-triangle" />
+                <x-icon class="fa-solid fa-exclamation-triangle" />
                 {{ __('maps/groups.pitch.max.limit') }}
             </h2>
             <x-helper>

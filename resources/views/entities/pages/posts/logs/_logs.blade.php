@@ -44,12 +44,12 @@
                     <div class="">
                         @if ($campaign->superboosted() && !empty($log->changes))
                             <a @click="opened = !opened" class="btn2 btn-xs btn-outline">
-                                <x-icon class="fa-regular fa-eye" />
+                                <x-icon class="fa-solid fa-eye" />
                                 {{ __('entities/logs.actions.reveal') }}
                             </a>
                         @elseif (!$campaign->superboosted())
                             <a @click="opened = !opened" class="btn2 btn-sm btn-outline">
-                                <x-icon class="fa-regular fa-eye" />
+                                <x-icon class="fa-solid fa-eye" />
                                 {{ __('entities/logs.actions.reveal') }}
                             </a>
                         @endif

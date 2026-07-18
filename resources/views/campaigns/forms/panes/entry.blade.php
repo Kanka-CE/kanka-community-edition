@@ -34,7 +34,7 @@
 
                 <input type="text" maxlength="45" name="vanity" class="w-full" data-url="{{ route('campaign.vanity-validate', $model) }}" value="{{ old('vanity') }}" placeholder="exandria-unlimited" />
                 <p class="text-neutral-content text-xs">
-                    <x-icon class="fa-regular fa-circle-info" />
+                    <x-icon class="fa-solid fa-circle-info" />
                     {!! __('campaigns/vanity.forever', ['docs' => '<a href="https://docs.kanka.io/en/latest/features/campaigns/vanity-url.html" class="text-link">' . __('general.learn-more') . '</a>']) !!}
                 </p>
                 <p class="hidden" id="vanity-loading">

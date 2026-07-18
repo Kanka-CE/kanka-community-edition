@@ -4,12 +4,12 @@
             v-if="loading"
             class="text-2xl flex items-center justify-center h-32"
         >
-            <i class="fa-solid fa-spinner fa-spin" aria-label="Loading"></i>
+            <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading"></i>
         </div>
         <div class="flex flex-col gap-4" v-else-if="!focusing">
             <div class="flex items-center gap-2">
                 <div class="flex items-center gap-1 grow">
-                    <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+                    <i class="fa-solid fa-clipboard" aria-hidden="true"></i>
                     <span class="font-extrabold" v-html="trans('details')"></span>
                 </div>
                 <div class="cursor-pointer" @click="closeFile">
@@ -32,7 +32,7 @@
 
             <div class="flex flex-col gap-1" v-if="canManage">
                 <label class="font-extrabold flex gap-1 items-center">
-                    <i class="fa-regular fa-users" aria-hidden="true" />
+                    <i class="fa-solid fa-users" aria-hidden="true" />
                     <span  v-html="trans('visibility')"></span>
                 </label>
                 <select
@@ -54,7 +54,7 @@
                     @click="toggleMentions"
                 >
                     <div class="grow font-bold flex gap-1 items-center">
-                        <i class="fa-regular fa-cubes" aria-hidden="true" />
+                        <i class="fa-solid fa-cubes" aria-hidden="true" />
                         <span v-html="trans('used_in')"></span>
                     </div>
                     <i
@@ -76,11 +76,11 @@
                         class="rounded-xl bg-base-200 px-4 py-1 flex gap-1 items-center"
                     >
                         <i
-                            class="fa-regular fa-image"
+                            class="fa-solid fa-image"
                             v-if="mention.type === 'image'"
                             aria-hidden="true"
                         />
-                        <i class="fa-regular fa-pen" v-else aria-hidden="true" />
+                        <i class="fa-solid fa-pen" v-else aria-hidden="true" />
                         <span class="truncate" v-html="mention.name"></span>
                     </a>
                     <span class="text-neutral-content" v-if="!hasMentions()" v-html="trans('unused')"></span>
@@ -106,7 +106,7 @@
 
             <div class="flex gap-2 items-center justify-between">
                 <i
-                    class="fa-solid fa-spinner fa-spin text-error-content"
+                    class="fa-solid fa-spinner fa-spinner text-error-content"
                     v-if="deleting"
                     aria-label="Deleting"
                 ></i>
@@ -115,7 +115,7 @@
                     @click="deleteFile"
                     v-else-if="canManage"
                 >
-                    <i class="fa-regular fa-trash-can" aria-hidden="true" />
+                    <i class="fa-solid fa-trash-can" aria-hidden="true" />
                     <span v-if="!confirmed" v-html="trans('delete')"></span>
                     <span v-else v-html="trans('confirm')"></span>
                 </span>
@@ -124,13 +124,13 @@
                     @click="focus"
                     class="rounded border p-2 flex gap-1 items-center"
                 >
-                    <i class="fa-regular fa-bullseye" aria-hidden="true" />
+                    <i class="fa-solid fa-bullseye" aria-hidden="true" />
                     <span class="truncate" v-html="trans('focus_point')"></span>
                 </button>
 
                 <div class="grow text-right text-neutral-content" v-if="saving">
                     <i
-                        class="fa-solid fa-spinner fa-spin"
+                        class="fa-solid fa-spinner fa-spinner"
                         aria-hidden="true"
                     ></i>
                     <span  v-html="trans('saving')"></span>
@@ -140,7 +140,7 @@
                 class="text-right text-neutral-content flex gap-1 self-end items-center text-xs"
                 v-if="saved"
             >
-                <i class="fa-regular fa-check-double" aria-hidden="true"></i>
+                <i class="fa-solid fa-check-double" aria-hidden="true"></i>
                 <span v-html="trans('saved')"></span>
             </div>
         </div>
@@ -157,7 +157,7 @@
                         @click="resetFocus"
                     >
                         <i
-                            class="fa-duotone fa-arrow-up-left-from-circle hover:text-error-content"
+                            class="fa-solid fa-arrow-up-left-from-circle hover:text-error-content"
                             aria-label="Focus point"
                         />
                     </div>

@@ -37,7 +37,7 @@
                     <div class="dropdown">
                         <button type="button" class="btn2" data-dropdown
                                 aria-expanded="false">
-                            <x-icon class="fa-regular fa-ellipsis-h" />
+                            <x-icon class="fa-solid fa-ellipsis-h" />
                             <span class="sr-only">{{ __('crud.actions.actions') }}</span>
                         </button>
                         <div class="dropdown-menu hidden" role="menu">
@@ -45,7 +45,7 @@
                                 link="#"
                                 css="text-error-content hover:bg-error"
                                 :dialog="route('campaign.leave', $campaign)"
-                                icon="fa-regular fa-person-walking ">
+                                icon="fa-solid fa-person-walking ">
                                 {{ __('campaigns.leave.action') }}
                             </x-dropdowns.item>
                         </div>

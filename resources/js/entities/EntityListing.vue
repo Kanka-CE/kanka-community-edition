@@ -8,7 +8,7 @@
             <div class="flex gap-2 items-center">
                 <button class="btn2 btn-disabled" disabled="disabled">
                     <i
-                        class="fa-solid fa-spinner fa-spin"
+                        class="fa-solid fa-spinner fa-spinner"
                         aria-label="Loading"
                     ></i>
                 </button>
@@ -18,7 +18,7 @@
             <div
                 class="rounded shadow-xs w-[47%] xs:w-[25%] sm:w-48 aspect-square flex items-center justify-center text-xl text-neutral-content"
             >
-                <i class="fa-solid fa-spinner fa-spin" aria-label="Loading"></i>
+                <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading"></i>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
                     :title="i18n.filters"
                     @click="openFilters"
                 >
-                    <i class="fa-regular fa-filter" aria-hidden="true"></i>
+                    <i class="fa-solid fa-filter" aria-hidden="true"></i>
                     <span class="hidden sm:inline" v-html="i18n.filters"></span>
                 </button>
 
@@ -53,7 +53,7 @@
                     class="join"
                 >
                     <button class="btn2 btn-sm join-item" @click="openFilters">
-                        <i class="fa-regular fa-filter" aria-hidden="true"></i>
+                        <i class="fa-solid fa-filter" aria-hidden="true"></i>
                         <span
                             class="hidden sm:inline"
                             v-html="i18n.filters"
@@ -70,7 +70,7 @@
                         @click="bookmark"
                     >
                         <i
-                            class="fa-regular fa-bookmark"
+                            class="fa-solid fa-book-bookmark"
                             aria-hidden="true"
                         ></i>
                     </button>
@@ -79,7 +79,7 @@
                         :title="i18n.clearFilters"
                         @click="clearFilters"
                     >
-                        <i class="fa-regular fa-times" aria-hidden="true"></i>
+                        <i class="fa-solid fa-times" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                     "
                 >
                     <i
-                        class="fa-solid fa-spinner fa-spin"
+                        class="fa-solid fa-spinner fa-spinner"
                         aria-label="Loading"
                     ></i>
                 </button>
@@ -123,7 +123,7 @@
                         v-tippy="i18n.nest"
                     >
                         <i
-                            class="fa-regular fa-layer-group"
+                            class="fa-solid fa-layer-group"
                             aria-hidden="true"
                         ></i>
                     </button>
@@ -138,7 +138,7 @@
                         v-tippy="i18n.flatten"
                     >
                         <i
-                            class="fa-regular fa-boxes-stacked"
+                            class="fa-solid fa-boxes-stacked"
                             aria-hidden="true"
                         ></i>
                     </button>
@@ -165,7 +165,7 @@
                         "
                         v-tippy="i18n.layout_grid"
                     >
-                        <i class="fa-regular fa-grid-2" aria-hidden="true"></i>
+                        <i class="fa-solid fa-grid-2" aria-hidden="true"></i>
                     </button>
                     <button
                         @click="
@@ -180,7 +180,7 @@
                         "
                         v-tippy="i18n.layout_table"
                     >
-                        <i class="fa-regular fa-list-ul" aria-hidden="true"></i>
+                        <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
                     </button>
                 </div>
 
@@ -191,7 +191,7 @@
                         class="btn2 btn-sm"
                         :title="i18n.display"
                     >
-                        <i class="fa-regular fa-gear" aria-hidden="true"></i>
+                        <i class="fa-solid fa-gear" aria-hidden="true"></i>
                         <span
                             class="hidden sm:inline"
                             v-html="i18n.display"
@@ -206,7 +206,7 @@
                     class="btn2 hidden btn-sm sm:flex"
                 >
                     <i
-                        class="fa-regular fa-check-square"
+                        class="fa-solid fa-check-square"
                         aria-hidden="true"
                     ></i>
                     <span class="hidden sm:inline" v-html="i18n.select"></span>
@@ -218,7 +218,7 @@
                         :href="urls.create"
                         class="btn2 btn-primary btn-sm join-item btn-new-entity"
                     >
-                        <i class="fa-regular fa-plus" aria-hidden="true"></i>
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
                         <span
                             class="hidden md:inline"
                             v-html="entityType.singular"
@@ -234,7 +234,7 @@
                             aria-haspopup="menu"
                         >
                             <i
-                                class="fa-regular fa-caret-down"
+                                class="fa-solid fa-caret-down"
                                 aria-hidden="true"
                             ></i>
                         </button>
@@ -262,7 +262,7 @@
                         class="btn2 btn-primary btn-sm join-item"
                         @click="bulkActions.bulkDialog(urls.batch, actionsBtn)"
                     >
-                        <i class="fa-regular fa-pencil" aria-hidden="true"></i>
+                        <i class="fa-solid fa-pencil" aria-hidden="true"></i>
                         <span
                             class="hidden md:inline"
                             v-html="i18n.bulkEdit"
@@ -278,7 +278,7 @@
                             aria-haspopup="menu"
                         >
                             <i
-                                class="fa-regular fa-caret-down"
+                                class="fa-solid fa-caret-down"
                                 aria-hidden="true"
                             ></i>
                         </button>
@@ -290,7 +290,7 @@
                         class="btn2 btn-primary join-item"
                         @click="bulkActions.bulkPrint(printForm, actionsBtn)"
                     >
-                        <i class="fa-regular fa-print" aria-hidden="true"></i>
+                        <i class="fa-solid fa-print" aria-hidden="true"></i>
                         <span
                             class="hidden md:inline"
                             v-html="i18n.bulkPrint"
@@ -306,7 +306,7 @@
                             aria-haspopup="menu"
                         >
                             <i
-                                class="fa-regular fa-caret-down"
+                                class="fa-solid fa-caret-down"
                                 aria-hidden="true"
                             ></i>
                         </button>
@@ -316,7 +316,7 @@
                     @click="bulkActions.toggleSelecting()"
                     class="btn2 btn-ghost btn-sm"
                 >
-                    <i class="fa-regular fa-times" aria-hidden="true"></i>
+                    <i class="fa-solid fa-times" aria-hidden="true"></i>
                     <span v-html="i18n.done"></span>
                 </button>
             </div>
@@ -328,7 +328,7 @@
                 v-if="entityApi.apiError.value"
                 class="flex flex-col gap-2 items-center justify-center w-full py-12 text-center text-neutral-content"
             >
-                <i class="fa-regular fa-triangle-exclamation text-2xl" aria-hidden="true"></i>
+                <i class="fa-solid fa-triangle-exclamation text-2xl" aria-hidden="true"></i>
                 <p v-html="i18n.loadError || 'Something went wrong loading this list. Please try refreshing the page.'"></p>
             </div>
             <EntityGrid
@@ -386,7 +386,7 @@
                 @pagination-change-page="getEntities"
             />
             <div v-else class="flex items-center">
-                <i class="fa-solid fa-spinner fa-spin" aria-label="Loading"></i>
+                <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading"></i>
             </div>
         </div>
         <!-- Empty state -->
@@ -402,7 +402,7 @@
                 :href="urls.create"
                 class="btn2 btn-primary mb-2"
             >
-                <i class="fa-regular fa-plus" aria-hidden="true"></i>
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
                 <span v-html="entityType.singular"></span>
             </a>
             <div class="flex gap-4 items-center justify-center flex-wrap">
@@ -410,7 +410,7 @@
                     :href="emptyState.publicUrl"
                     class="text-link flex gap-1 items-center"
                 >
-                    <i class="fa-regular fa-sparkles" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
                     <span v-html="emptyState.public"></span>
                 </a>
                 <a
@@ -419,7 +419,7 @@
                     class="text-link flex gap-1 items-center"
                     target="_blank"
                 >
-                    <i class="fa-regular fa-book" aria-hidden="true"></i>
+                    <i class="fa-solid fa-book" aria-hidden="true"></i>
                     <span v-html="emptyState.learn"></span>
                 </a>
             </div>
@@ -500,7 +500,7 @@
                                     perPageComposable.isSubscriberOnly(n) &&
                                     !perPageComposable.isSubscriber.value
                                 "
-                                class="fa-regular fa-gem ml-1"
+                                class="fa-solid fa-gem ml-1"
                                 aria-hidden="true"
                             ></i>
                         </button>
@@ -536,8 +536,8 @@
                             <i
                                 :class="
                                     columnsComposable.isColumnVisible(col.key)
-                                        ? 'fa-regular fa-check text-primary'
-                                        : 'fa-regular fa-circle text-neutral-content'
+                                        ? 'fa-solid fa-check text-primary'
+                                        : 'fa-solid fa-circle text-neutral-content'
                                 "
                             ></i>
                         </div>
@@ -547,7 +547,7 @@
                         class="mt-1.5 px-2 py-1.5 hover:bg-base-200 rounded-lg flex items-center gap-2 text-xs text-base-content w-full"
                     >
                         <i
-                            class="fa-regular fa-rotate-left"
+                            class="fa-solid fa-rotate-left"
                             aria-hidden="true"
                         ></i>
                         <span v-html="i18n.resetDefaults"></span>
@@ -564,7 +564,7 @@
                     class="px-2 py-2 hover:bg-base-200 rounded-xl flex items-center gap-1.5 text-xs transition-all duration-150 text-base-content"
                 >
                     <i
-                        class="fa-regular fa-star text-neutral-content w-5"
+                        class="fa-solid fa-star text-neutral-content w-5"
                         aria-hidden="true"
                     ></i>
                     <span v-html="template.name"></span>
@@ -575,7 +575,7 @@
                     class="px-2 py-2 hover:bg-base-200 rounded-xl flex items-center gap-1.5 transition-all duration-150 text-base-content text-xs"
                 >
                     <i
-                        class="fa-regular fa-external-link text-neutral-content w-5"
+                        class="fa-solid fa-external-link text-neutral-content w-5"
                         aria-hidden="true"
                     ></i>
                     <span class="text-nowrap" v-html="i18n.templates"></span>
@@ -595,7 +595,7 @@
                     "
                     class="flex items-center gap-2 px-2 py-1 cursor-pointer text-nowrap hover:text-primary"
                 >
-                    <i class="fa-regular fa-lock" aria-hidden="true"></i>
+                    <i class="fa-solid fa-lock" aria-hidden="true"></i>
                     <span v-html="i18n.bulkPermissions"></span>
                 </button>
                 <button
@@ -604,7 +604,7 @@
                     class="flex items-center gap-2 px-2 py-1 cursor-pointer text-nowrap hover:text-primary"
                 >
                     <i
-                        class="fa-regular fa-exchange-alt"
+                        class="fa-solid fa-exchange-alt"
                         aria-hidden="true"
                     ></i>
                     <span v-html="i18n.bulkTransform"></span>
@@ -613,7 +613,7 @@
                     @click="bulkActions.bulkDialog(urls.copy, actionsBtn)"
                     class="flex items-center gap-2 px-2 py-1 cursor-pointer text-nowrap hover:text-primary"
                 >
-                    <i class="fa-regular fa-clone" aria-hidden="true"></i>
+                    <i class="fa-solid fa-clone" aria-hidden="true"></i>
                     <span v-html="i18n.bulkCopy"></span>
                 </button>
                 <button
@@ -621,7 +621,7 @@
                     @click="bulkActions.bulkDialog(urls.template, actionsBtn)"
                     class="flex items-center gap-2 px-2 py-1 cursor-pointer text-nowrap hover:text-primary"
                 >
-                    <i class="fa-regular fa-table" aria-hidden="true"></i>
+                    <i class="fa-solid fa-table" aria-hidden="true"></i>
                     <span v-html="i18n.bulkTemplate"></span>
                 </button>
                 <button
@@ -629,7 +629,7 @@
                     @click="bulkActions.bulkPrint(printForm, actionsBtn)"
                     class="flex items-center gap-2 px-2 py-1 cursor-pointer text-nowrap hover:text-primary"
                 >
-                    <i class="fa-regular fa-print" aria-hidden="true"></i>
+                    <i class="fa-solid fa-print" aria-hidden="true"></i>
                     <span v-html="i18n.bulkPrint"></span>
                 </button>
                 <button
@@ -637,7 +637,7 @@
                     @click="bulkActions.bulkDialog(urls.delete, actionsBtn)"
                     class="flex items-center gap-2 px-2 py-1 cursor-pointer text-error-content hover:bg-error rounded"
                 >
-                    <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
+                    <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
                     <span v-html="i18n.bulkDelete"></span>
                 </button>
             </div>

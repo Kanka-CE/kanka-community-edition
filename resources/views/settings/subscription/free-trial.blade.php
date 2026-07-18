@@ -22,7 +22,7 @@
 ]) !!}</x-slot>
         <x-form method="POST" :action="['settings.free-trial.accept']">
         <button type="submit" class="btn2 btn-primary mt-4 mb-1">
-            <x-icon class="fa-regular fa-gift" />
+            <x-icon class="fa-solid fa-gift" />
             {{ __('subscriptions/free-trial.actions.accept') }}
         </button>
         <x-helper class="text-xs">
@@ -34,7 +34,7 @@
     <x-grid type="1/1">
         <div id="included" class="flex flex-col gap-4 bg-box p-4 rounded-2xl">
             <h2 class="text-2xl">
-                <x-icon class="fa-regular fa-check-square" />
+                <x-icon class="fa-solid fa-check-square" />
                 {{ __('subscriptions/free-trial.included.title') }}
             </h2>
 
@@ -55,7 +55,7 @@
 
         <div id="why" class="flex flex-col gap-4 bg-box p-4 rounded-2xl">
             <h2 class="text-2xl">
-                <x-icon class="fa-regular fa-trophy" />
+                <x-icon class="fa-solid fa-trophy" />
                 {{ __('subscriptions/free-trial.why.title') }}
             </h2>
             <p>{!! __('subscriptions/free-trial.why.helper', [
@@ -66,7 +66,7 @@
 
         <div id="tease" class="flex flex-col gap-4 bg-box p-4 rounded-2xl">
             <h2 class="text-2xl">
-                <x-icon class="fa-regular fa-mountain" />
+                <x-icon class="fa-solid fa-mountain" />
                 {{ __('subscriptions/free-trial.tease.title') }}
             </h2>
             <p>{!! __('subscriptions/free-trial.tease.helper', [
@@ -78,7 +78,7 @@
         <div class="flex flex-col gap-2">
             <p>
                 <button type="submit" class="btn2 btn-primary mt-4 mb-1">
-                    <x-icon class="fa-regular fa-gift" />
+                    <x-icon class="fa-solid fa-gift" />
                     {{ __('subscriptions/free-trial.final.title') }}
                 </button>
             </p>

@@ -9,7 +9,7 @@
             <i class="fa-solid fa-times" aria-hidden="true"></i>
         </div>
         <div class="flex-none p-2" v-else>
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
         </div>
     </div>
     <div :class="backgroundClass(notification)" :data-id="notification.id" v-else-if="!is_dismissed">
@@ -19,10 +19,10 @@
         <div class="grow p-2" v-html="notification.text"></div>
 
         <div class="flex-none p-2 cursor-pointer dismissable" v-on:click="dismiss(notification)" v-if="!is_loading" :title="notification.dismiss_text">
-            <i class="fa-regular fa-times" aria-hidden="true"></i>
+            <i class="fa-solid fa-times" aria-hidden="true"></i>
         </div>
         <div class="flex-none p-2" v-else>
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
         </div>
     </div>
 </template>
@@ -49,7 +49,7 @@ const backgroundClass = (notification) => {
     return css + ' unread';
 };
 const iconClass = (notification) => {
-    let icon = 'fa-regular fa-' + notification.icon;
+    let icon = 'fa-solid fa-' + notification.icon;
     if (notification.colour === 'red') {
         icon += ' text-red';
     }

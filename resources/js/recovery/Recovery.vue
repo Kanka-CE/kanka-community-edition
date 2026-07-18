@@ -1,6 +1,6 @@
 <template>
     <div v-if="!initiated" class="text-center text-4xl p-4">
-        <i class="fa-solid fa-spinner fa-spin" aria-label="Loading" />
+        <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading" />
     </div>
     <div v-else class="flex flex-col gap-4 md:gap-5">
         <div class="flex gap-4 flex-wrap sticky top-14 z-50">
@@ -10,7 +10,7 @@
                 </div>
                 <div class="relative">
                     <button class="btn2 btn-default btn-sm" @click="toggleFilters">
-                        <i class="fa-regular fa-filter" aria-hidden="true" />
+                        <i class="fa-solid fa-filter" aria-hidden="true" />
                         <span v-html="trans('order_by_' + filter)" class="hidden md:inline"></span>
                     </button>
                     <div class="border shadow-sm rounded bg-base-100 p-4 absolute right-0 flex flex-col gap-5 w-60" v-if="showFilters"  v-click-outside="onClickOutside">
@@ -23,15 +23,15 @@
             <div class="flex gap-2 self-end flex-wrap">
 
                 <button class="btn2 btn-default btn-sm" v-if="!hasSelection()" @click="selectAll">
-                    <i class="fa-regular fa-list-check" aria-hidden="true" />
+                    <i class="fa-solid fa-list-check" aria-hidden="true" />
                     <span v-html="trans('select_all')"></span>
                 </button>
                 <button class="btn2 btn-default btn-sm" v-if="hasSelection()" @click="deselectAll">
-                    <i class="fa-regular fa-xmark" aria-hidden="true" />
+                    <i class="fa-solid fa-xmark" aria-hidden="true" />
                     <span v-html="trans('deselect_all')"></span>
                 </button>
                 <button class="btn2 btn-primary btn-sm" v-if="hasSelection()" @click="bulkRecover">
-                    <i class="fa-regular fa-plus" aria-hidden="true" />
+                    <i class="fa-solid fa-plus" aria-hidden="true" />
                     <span v-html="trans('restore_selected')"></span>
                     <span v-html="countSelected()"></span>
                 </button>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="text-center text-4xl p-4" v-if="loading">
-            <i class="fa-solid fa-spinner fa-spin" aria-label="Loading" />
+            <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading" />
         </div>
         <div class="flex flex-col gap-4" v-else>
             <div class="flex gap-2 flex-row">
@@ -61,7 +61,7 @@
         <header class="flex gap-6 items-center p-4 md:p-6 justify-between">
             <h4 v-html="trans('premium_title')" class="text-lg font-normal"></h4>
             <button type="button" class="text-base-content" @click="closeModal(premiumDialog)" title="Close">
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">Close</span>
             </button>
         </header>

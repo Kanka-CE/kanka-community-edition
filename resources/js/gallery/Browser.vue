@@ -4,7 +4,7 @@
         <header class="flex gap-6 items-center p-4 md:p-6 justify-between">
             <h4 v-html="trans.browse.title" class="text-lg font-normal"></h4>
             <button type="button" class="text-base-content" @click="closeBrowser()" title="Close">
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">Close</span>
             </button>
         </header>
@@ -21,7 +21,7 @@
                         :class="mode === 'large' ? 'bg-base-100' : 'bg-transparent text-neutral-content'"
                         @click="toggle('large')"
                     >
-                        <i class="fa-regular fa-grid-2" aria-hidden="true"></i>
+                        <i class="fa-solid fa-grid-2" aria-hidden="true"></i>
                         {{ trans.browse.layouts.large }}
                     </button>
                     <button
@@ -30,14 +30,14 @@
                         :class="mode === 'small' ? 'bg-base-100' : 'bg-transparent text-neutral-content'"
                         @click="toggle('small')"
                     >
-                        <i class="fa-regular fa-grid-4" aria-hidden="true"></i>
+                        <i class="fa-solid fa-grid-4" aria-hidden="true"></i>
                          {{ trans.browse.layouts.small }}
                     </button>
                 </div>
             </div>
 
             <div class="md:h-36 md:w-80 text-center flex items-center justify-center w-full" v-if="loading || searching">
-                <i class="fa-solid fa-spinner fa-spin" aria-label="Loading"></i>
+                <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading"></i>
             </div>
 
             <template v-else class="flex flex-col gap-4">
@@ -46,7 +46,7 @@
                 <p class="text-sm text-left uppercase font-medium text-neutral-content" v-if="!error && term">{{ trans.browse.search.results?.replace(':term', term) }}</p>
 
                 <div class="text-center py-4" v-if="!error && term && !images.length">
-                    <i class="fa-regular fa-search text-neutral-content text-2xl mb-4" aria-hidden="true"></i>
+                    <i class="fa-solid fa-search text-neutral-content text-2xl mb-4" aria-hidden="true"></i>
                     <p>{{ trans.browse.search.no_results?.replace(':term', term) }}</p>
                     <p class="text-base-content/60 text-sm mt-1">{{ trans.browse.search.try_again }}</p>
                 </div>
@@ -65,7 +65,7 @@
                             <div class="truncate w-full font-medium" :class="mode === 'large' ? 'text-sm' : 'text-xs'">{{ folder.name }}</div>
                             <div class="text-xs text-neutral-content" v-if="folder.image_count !== null && folder.image_count !== undefined">{{ Number(folder.image_count) === 1 ? trans.browse.folder_count_one : trans.browse.folder_count?.replace(':count', String(folder.image_count)) }}</div>
                         </div>
-                        <i class="fa-regular fa-chevron-right text-neutral-content" aria-label="Open folder" v-if="folder.image_count !== undefined && folder.image_count !== null" />
+                        <i class="fa-solid fa-chevron-right text-neutral-content" aria-label="Open folder" v-if="folder.image_count !== undefined && folder.image_count !== null" />
                     </div>
                 </div>
 

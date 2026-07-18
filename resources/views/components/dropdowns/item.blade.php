@@ -23,7 +23,7 @@
             </span>
         </div>
         @if ($active)
-            <x-icon class="fa-regular fa-check" />
+            <x-icon class="fa-solid fa-check" />
         @endif
         @if (!empty($shortcut))
             <span class="text-neutral-content hidden md:inline-block px-1" data-title="Keyboard shortcut" data-tooltip>
