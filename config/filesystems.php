@@ -137,5 +137,22 @@ return [
                 false,
             ),
         ],
+
+        /**
+         * Added by Kanka-CE-Tools: MinIO backend
+         * This can be used for selfhosting.
+         */
+        "minio" => [
+            "driver" => "s3",
+            "key" => env("MINIO_ACCESS_KEY_ID"),
+            "secret" => env("MINIO_PASSWORD"),
+            "region" => "local",
+            "bucket" => env("MINIO_BUCKET"),
+            "root" => env("APP_ENV") != "production" ? env("APP_ENV") : null,
+            "visibility" => "public",
+            "url" => env("MINIO_URL") . ':' . env("MINIO_PORT") . '/' . env("MINIO_BUCKET"),
+            "endpoint" => env("MINIO_URL") . ':' . env("MINIO_PORT"),
+            "use_path_style_endpoint" => env(true),
+        ],
     ],
 ];
