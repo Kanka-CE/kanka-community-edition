@@ -1,0 +1,6 @@
+
+# --- Kanka-CE ignores ---
+# Kanka-CE-Tools
+# During patching the the tools are downloaded
+# into the source folder, let git ignore them:
+ce-tools
