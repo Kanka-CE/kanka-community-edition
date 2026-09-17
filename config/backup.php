@@ -178,11 +178,11 @@ return [
         'notifiable' => Notifiable::class,
 
         'mail' => [
-            'to' => env('APP_EMAIL'),
+            'to' => env('APP_EMAIL', 'admin@example.com'),
 
             'from' => [
-                'address' => env('MAIL_FROM_ADDRESS', env('APP_EMAIL')),
-                'name' => env('MAIL_FROM_NAME'),
+                'address' => env('MAIL_FROM_ADDRESS', env('APP_EMAIL', 'admin@example.com')),
+                'name' => env('MAIL_FROM_NAME', 'admin@example.com'),
             ],
         ],
 
