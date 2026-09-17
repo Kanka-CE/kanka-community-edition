@@ -8,7 +8,7 @@
         data-title="{{ __('header.qq.tooltip') }} [ N ]"
         data-tooltip
         tabindex="0">
-        <x-icon class="flex-none fa-regular fa-plus" />
+        <x-icon class="flex-none fa-solid fa-plus" />
         <span class="grow hidden sm:inline-block">
             {{ __('crud.create') }}
         </span>

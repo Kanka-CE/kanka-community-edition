@@ -21,7 +21,7 @@
             <x-slot name="actions">
                 @can('recover', $campaign)
                     <a href="#" class="btn2 btn-sm" data-toggle="dialog" data-target="reset-confirm">
-                        <x-icon class="fa-regular fa-eraser" />
+                        <x-icon class="fa-solid fa-eraser" />
                         {{ __('crud.actions.reset') }}
                     </a>
                     @if ($campaign->boosted())
@@ -64,7 +64,7 @@
                         @else
                             <a href="{{ route('settings.subscription', ['f' => 'cta', 's' => 'placeholder-images', 'w' => $campaign->id]) }}" class="btn2 btn-primary">
                                 {!! __('callouts.actions.subscription') !!}
-                                <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                             </a>
                         @endif
                     @endcan

@@ -57,7 +57,7 @@ const getImageFloat = (): 'left' | 'right' | null => {
                 :class="buttonClass(getImageWidth() === null)"
                 title="Reset width"
             >
-                <i class="fa-regular fa-undo" aria-hidden="true" />
+                <i class="fa-solid fa-undo" aria-hidden="true" />
             </button>
         </div>
         <!-- Float controls -->
@@ -67,21 +67,21 @@ const getImageFloat = (): 'left' | 'right' | null => {
                 :class="buttonClass(getImageFloat() === 'left')"
                 title="Float left"
             >
-                <i class="fa-regular fa-align-left" aria-hidden="true" />
+                <i class="fa-solid fa-align-left" aria-hidden="true" />
             </button>
             <button
                 @click.prevent="setImageFloat('right')"
                 :class="buttonClass(getImageFloat() === 'right')"
                 title="Float right"
             >
-                <i class="fa-regular fa-align-right" aria-hidden="true" />
+                <i class="fa-solid fa-align-right" aria-hidden="true" />
             </button>
             <button
                 @click.prevent="setImageFloat(null)"
                 :class="buttonClass(getImageFloat() === null)"
                 title="No float"
             >
-                <i class="fa-regular fa-align-justify" aria-hidden="true" />
+                <i class="fa-solid fa-align-justify" aria-hidden="true" />
             </button>
         </div>
         <!-- Delete -->
@@ -90,7 +90,7 @@ const getImageFloat = (): 'left' | 'right' | null => {
             class="hover:text-error-content px-2 py-1"
             title="Delete image"
         >
-            <i class="fa-regular fa-trash" aria-hidden="true" />
+            <i class="fa-solid fa-trash" aria-hidden="true" />
         </button>
     </div>
 </template>

@@ -8,7 +8,7 @@
         <input type="checkbox" name="stealth" value="1" data-dropdown-option-checkbox @checked(old('stealth', false)) />
         <span class="leading-none">{{ __('crud.fields.stealth_edit') }}</span>
         <i
-            class="fa-regular fa-question-circle text-link"
+            class="fa-solid fa-question-circle text-link"
             role="button"
             tabindex="0"
             data-dropdown-option-help-toggle

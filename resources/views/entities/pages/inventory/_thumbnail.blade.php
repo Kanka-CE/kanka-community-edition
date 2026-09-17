@@ -7,6 +7,6 @@
     </div>
 @else
     <div class="w-24 h-24 rounded-full bg-base-200 flex items-center justify-center align-center">
-        <x-icon class="fa-duotone fa-gem text-6xl text-accent" />
+        <x-icon class="fa-solid fa-gem text-6xl text-accent" />
     </div>
 @endif

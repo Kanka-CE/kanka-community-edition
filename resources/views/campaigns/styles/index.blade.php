@@ -22,7 +22,7 @@ use App\Facades\Datagrid ?>
             <x-slot name="actions">
                 @if ($campaign->boosted())
                     <a href="{{ route('campaign_styles.builder', $campaign) }}" class="btn2 btn-primary btn-sm">
-                        <x-icon class="fa-regular fa-palette" />
+                        <x-icon class="fa-solid fa-palette" />
                         {{ __('campaigns/styles.actions.builder') }}
                     </a>
                     <a href="{{ route('campaign_styles.create', $campaign) }}" class="btn2 btn-primary btn-sm">
@@ -75,7 +75,7 @@ use App\Facades\Datagrid ?>
 
                         <a href="{{ route('settings.subscription', ['f' => 'cta', 's' => 'theming', 'w' => $campaign->id]) }}" class="btn2 btn-primary">
                             {!! __('callouts.actions.subscription') !!}
-                            <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     @endif
 

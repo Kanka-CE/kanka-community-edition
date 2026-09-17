@@ -1,12 +1,12 @@
 <template>
     <div v-if="!initiated" class="text-center text-4xl p-4">
-        <i class="fa-solid fa-spinner fa-spin" aria-label="Loading" />
+        <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading" />
     </div>
     <div v-else class="flex flex-col gap-4 md:gap-5">
         <div class="flex gap-4 items-end">
             <div class="flex flex-col gap-1 grow">
                 <div class="flex gap-1 items-center">
-                    <i class="fa-regular fa-cloud text-xl" aria-hidden="true"></i>
+                    <i class="fa-solid fa-cloud text-xl" aria-hidden="true"></i>
                     <span class="font-extrabold" v-html="trans('storage')"></span>
                 </div>
                 <div class="flex gap-1 items-center">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="relative">
                     <button class="btn2 btn-default btn-sm" @click="toggleFilters">
-                        <i class="fa-regular fa-filter" aria-hidden="true" />
+                        <i class="fa-solid fa-filter" aria-hidden="true" />
                         <span v-html="trans('filters')" class="hidden md:inline"></span>
                         <span v-if="showUnused">(1)</span>
                     </button>
@@ -45,7 +45,7 @@
 
                 <div class="relative">
                     <button class="btn2 btn-default btn-sm" @click="toggleSort">
-                        <i class="fa-regular fa-arrow-up-arrow-down" aria-hidden="true" />
+                        <i class="fa-solid fa-arrow-up-arrow-down" aria-hidden="true" />
                         <span v-html="trans('sort')" class="hidden md:inline"></span>
                         <span v-if="sortAsc || sortDesc">(1)</span>
                     </button>
@@ -57,21 +57,21 @@
                         <ul class="flex flex-col gap-1 list-none m-0 p-0">
                             <li>
                             <span class="cursor-pointer flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-100 transition" @click="sort('default')">
-                                <i v-if="sortDefault" class="fa-regular fa-check" aria-hidden="true" />
+                                <i v-if="sortDefault" class="fa-solid fa-check" aria-hidden="true" />
                                 <span v-html="trans('sort_default')" class="inline"></span>
                             </span>
                             </li>
 
                             <li>
                             <span class="cursor-pointer flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-100 transition" @click="sort('asc')">
-                                <i v-if="sortAsc" class="fa-regular fa-check" aria-hidden="true" />
+                                <i v-if="sortAsc" class="fa-solid fa-check" aria-hidden="true" />
                                 <span v-html="trans('sort_asc')" class="inline"></span>
                             </span>
                             </li>
 
                             <li>
                             <span class="cursor-pointer flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-100 transition" @click="sort('desc')">
-                                <i v-if="sortDesc" class="fa-regular fa-check" aria-hidden="true" />
+                                <i v-if="sortDesc" class="fa-solid fa-check" aria-hidden="true" />
                                 <span v-html="trans('sort_desc')" class="inline"></span>
                             </span>
                             </li>
@@ -82,24 +82,24 @@
             <div class="flex gap-2 self-end flex-wrap">
 
                 <button class="btn2 btn-default btn-sm" v-if="!isBulking && folder" @click="openFolderDetails">
-                    <i class="fa-regular fa-clipboard" aria-hidden="true" />
+                    <i class="fa-solid fa-clipboard" aria-hidden="true" />
                     <span v-html="trans('details')"></span>
                 </button>
                 <button class="btn2 btn-default btn-sm" v-if="!isBulking && canManage" @click="openNewFolder">
-                    <i class="fa-regular fa-plus" aria-hidden="true" />
+                    <i class="fa-solid fa-plus" aria-hidden="true" />
                     <span v-html="trans('new_folder')"></span>
                 </button>
                 <button class="btn2 btn-default btn-sm" v-if="!isBulking && canManage" @click="startBulking">
-                    <i class="fa-regular fa-list-check" aria-hidden="true" />
+                    <i class="fa-solid fa-list-check" aria-hidden="true" />
                     <span v-html="trans('select')"></span>
                 </button>
                 <button class="btn2 btn-primary btn-sm" v-if="isBulking" @click="openUpdate">
-                    <i class="fa-regular fa-pencil" aria-hidden="true" />
+                    <i class="fa-solid fa-pencil" aria-hidden="true" />
                     <span v-html="trans('update')"></span>
                     <span v-html="countSelected()"></span>
                 </button>
                 <button class="btn2 btn-error btn-sm" v-if="isBulking" @click="deleteBulk">
-                    <i class="fa-regular fa-trash-can" aria-hidden="true" />
+                    <i class="fa-solid fa-trash-can" aria-hidden="true" />
                     <span v-html="trans('remove')"></span>
                     <span v-html="countSelected()"></span>
                 </button>
@@ -112,7 +112,7 @@
         </div>
 
         <div class="text-center text-4xl p-4" v-if="loading">
-            <i class="fa-solid fa-spinner fa-spin" aria-label="Loading" />
+            <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading" />
         </div>
         <div class="flex flex-col gap-4" v-else>
             <div v-if="folder" class="flex gap-1 flex-wrap text-xl">
@@ -127,11 +127,11 @@
                     <div v-if="canUpload && !showUnused" class="rounded-xl shadow bg-base-100 overflow-hidden col-span-2 sm:col-span-3 md:w-48 cursor-pointer flex justify-center items-center flex-col gap-4" @click="selectFiles">
                         <div class="flex flex-col gap-4 p-2" v-if="!uploading">
                             <div class="flex flex-col gap-2 items-center">
-                                <i class="fa-regular fa-image text-4xl text-neutral-content" aria-hidden="true"></i>
+                                <i class="fa-solid fa-image text-4xl text-neutral-content" aria-hidden="true"></i>
                                 <span>Upload files</span>
                             </div>
                             <div class="text-center text-xs">
-                                <i class="fa-regular fa-info-circle mr-1 text-base" aria-hidden="true" />
+                                <i class="fa-solid fa-info-circle mr-1 text-base" aria-hidden="true" />
                                 <span v-html="trans('upload_hint')" class="text-neutral-content"></span>
                             </div>
                         </div>
@@ -173,7 +173,7 @@
 
     <div ref="infiniteScrollTrigger" class="h-4">
         <div v-if="loadingMore" class="text-center text-4xl p-4">
-            <i class="fa-solid fa-spinner fa-spin" aria-label="Loading" />
+            <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading" />
         </div>
     </div>
 
@@ -181,7 +181,7 @@
         <header class="flex gap-6 items-center p-4 md:p-6 justify-between">
             <h4 v-html="trans('new_folder')" class="text-lg font-normal"></h4>
             <button type="button" class="text-base-content" @click="closeModal(newDialog)" title="Close">
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">Close</span>
             </button>
         </header>
@@ -209,7 +209,7 @@
         <header class="flex gap-6 items-center p-4 md:p-6 justify-between">
             <h4 v-html="trans('update')" class="text-lg font-normal"></h4>
             <button type="button" class="text-base-content" @click="closeModal(updateDialog)" title="Close">
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">Close</span>
             </button>
         </header>

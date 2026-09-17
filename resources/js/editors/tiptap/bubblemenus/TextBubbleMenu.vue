@@ -40,9 +40,9 @@ const setHighlightColor = (color: string | null) => {
 }
 
 const currentHeadingIcon = computed(() => {
-    if (!props.editor) return 'fa-regular fa-paragraph'
-    if (props.editor.isActive('paragraph')) return 'fa-regular fa-paragraph'
-    return 'fa-regular fa-heading'
+    if (!props.editor) return 'fa-solid fa-paragraph'
+    if (props.editor.isActive('paragraph')) return 'fa-solid fa-paragraph'
+    return 'fa-solid fa-heading'
 })
 
 const currentHeadingLevel = () => {
@@ -72,10 +72,10 @@ const closeDropdown = () => {
 }
 
 const getCurrentListIcon = computed(() => {
-    if (!props.editor) return 'fa-regular fa-list-ol'
-    if (props.editor.isActive('bulletList')) return 'fa-regular fa-list-ul'
-    if (props.editor.isActive('orderedList')) return 'fa-regular fa-list-ol'
-    return 'fa-regular fa-list-ul'
+    if (!props.editor) return 'fa-solid fa-list-ol'
+    if (props.editor.isActive('bulletList')) return 'fa-solid fa-list-ul'
+    if (props.editor.isActive('orderedList')) return 'fa-solid fa-list-ol'
+    return 'fa-solid fa-list-ul'
 })
 
 const toggleList = (type: 'bullet' | 'ordered') => {
@@ -96,9 +96,9 @@ const closeListDropdown = () => {
 }
 
 const currentAlignIcon = computed(() => {
-    if (props.editor.isActive({ textAlign: 'center' })) return 'fa-regular fa-align-center'
-    if (props.editor.isActive({ textAlign: 'right' })) return 'fa-regular fa-align-right'
-    return 'fa-regular fa-align-left'
+    if (props.editor.isActive({ textAlign: 'center' })) return 'fa-solid fa-align-center'
+    if (props.editor.isActive({ textAlign: 'right' })) return 'fa-solid fa-align-right'
+    return 'fa-solid fa-align-left'
 })
 
 const cycleAlignment = () => {
@@ -128,7 +128,7 @@ const clearFormatting = () => {
             <sub v-if="editor.isActive('heading')" class="text-xs">
                 <span v-html="currentHeadingLevel()"></span>
             </sub>
-            <i class="fa-regular fa-chevron-down" aria-label="Toggle paragraph styles"></i>
+            <i class="fa-solid fa-chevron-down" aria-label="Toggle paragraph styles"></i>
         </button>
         <div
             v-show="showHeadingDropdown"
@@ -141,7 +141,7 @@ const clearFormatting = () => {
                 :class="{ 'text-semibold text-base-content': editor.isActive('paragraph') }"
             >
                 Paragraph
-                <i class="fa-regular fa-check" v-if="editor.isActive('paragraph')"></i>
+                <i class="fa-solid fa-check" v-if="editor.isActive('paragraph')"></i>
             </button>
             <button
                 @click.prevent="setHeading(1)"
@@ -149,7 +149,7 @@ const clearFormatting = () => {
                 :class="{ 'font-semibold text-base-content': editor.isActive('heading', { level: 1 }) }"
             >
                 Heading 1
-                <i class="fa-regular fa-check" v-if="editor.isActive('heading', { level: 1 })"></i>
+                <i class="fa-solid fa-check" v-if="editor.isActive('heading', { level: 1 })"></i>
             </button>
             <button
                 @click.prevent="setHeading(2)"
@@ -157,7 +157,7 @@ const clearFormatting = () => {
                 :class="{ 'font-semibold text-base-content': editor.isActive('heading', { level: 2 }) }"
             >
                 Heading 2
-                <i class="fa-regular fa-check" v-if="editor.isActive('heading', { level: 2 })"></i>
+                <i class="fa-solid fa-check" v-if="editor.isActive('heading', { level: 2 })"></i>
             </button>
             <button
                 @click.prevent="setHeading(3)"
@@ -165,7 +165,7 @@ const clearFormatting = () => {
                 :class="{ 'font-semibold text-base-content': editor.isActive('heading', { level: 3 }) }"
             >
                 Heading 3
-                <i class="fa-regular fa-check" v-if="editor.isActive('heading', { level: 3 })"></i>
+                <i class="fa-solid fa-check" v-if="editor.isActive('heading', { level: 3 })"></i>
             </button>
             <button
                 @click.prevent="setHeading(4)"
@@ -173,7 +173,7 @@ const clearFormatting = () => {
                 :class="{ 'font-semibold text-base-content': editor.isActive('heading', { level: 4 }) }"
             >
                 Heading 4
-                <i class="fa-regular fa-check" v-if="editor.isActive('heading', { level: 4 })"></i>
+                <i class="fa-solid fa-check" v-if="editor.isActive('heading', { level: 4 })"></i>
             </button>
             <button
                 @click.prevent="setHeading(5)"
@@ -181,7 +181,7 @@ const clearFormatting = () => {
                 :class="{ 'font-semibold text-base-content': editor.isActive('heading', { level: 5 }) }"
             >
                 Heading 5
-                <i class="fa-regular fa-check" v-if="editor.isActive('heading', { level: 5 })"></i>
+                <i class="fa-solid fa-check" v-if="editor.isActive('heading', { level: 5 })"></i>
             </button>
         </div>
     </div>
@@ -190,38 +190,38 @@ const clearFormatting = () => {
         @click.prevent="editor.chain().focus().toggleBold().run()"
         :class="buttonClass(editor.isActive('bold'))"
     >
-        <i class="fa-regular fa-bold" aria-label="Bold" />
+        <i class="fa-solid fa-bold" aria-label="Bold" />
     </button>
     <button
         @click.prevent="editor.chain().focus().toggleItalic().run()"
         :class="buttonClass(editor.isActive('italic'))"
     >
-        <i class="fa-regular fa-italic" aria-label="Italic" />
+        <i class="fa-solid fa-italic" aria-label="Italic" />
     </button>
     <button
         @click.prevent="editor.chain().focus().toggleStrike().run()"
         :class="buttonClass(editor.isActive('strike'))"
     >
-        <i class="fa-regular fa-strikethrough" aria-label="Strikethrough" />
+        <i class="fa-solid fa-strikethrough" aria-label="Strikethrough" />
     </button>
     <button
         @click.prevent="editor.chain().focus().toggleUnderline().run()"
         :class="buttonClass(editor.isActive('underline'))"
     >
-        <i class="fa-regular fa-underline" aria-label="Underline" />
+        <i class="fa-solid fa-underline" aria-label="Underline" />
     </button>
 
     <div class="flex items-center gap-0.5 border-r border-base-300 pr-2 mr-1">
         <ColorPicker
             :current-color="currentTextColor"
-            icon="fa-regular fa-font"
+            icon="fa-solid fa-font"
             title="Text color"
             @select="setTextColor"
         />
 
         <ColorPicker
             :current-color="currentHighlightColor"
-            icon="fa-regular fa-fill"
+            icon="fa-solid fa-fill"
             title="Highlight color"
             @select="setHighlightColor"
         />
@@ -232,13 +232,13 @@ const clearFormatting = () => {
             @click.prevent="emit('openLink')"
             :class="buttonClass(editor.isActive('link'))"
         >
-            <i class="fa-regular fa-link" aria-label="Link" />
+            <i class="fa-solid fa-link" aria-label="Link" />
         </button>
         <button
             @click.prevent="editor.chain().focus().toggleBlockquote().run()"
             :class="buttonClass(editor.isActive('blockquote'))"
         >
-            <i class="fa-regular fa-quote-right" aria-label="Quote" />
+            <i class="fa-solid fa-quote-right" aria-label="Quote" />
         </button>
         <button
             @click.prevent="cycleAlignment"
@@ -256,7 +256,7 @@ const clearFormatting = () => {
                 @blur="closeListDropdown"
             >
                 <i :class="getCurrentListIcon"></i>
-                <i class="fa-regular fa-chevron-down" aria-label="Toggle paragraph styles"></i>
+                <i class="fa-solid fa-chevron-down" aria-label="Toggle paragraph styles"></i>
             </button>
             <div
                 v-show="showListDropdown"
@@ -269,10 +269,10 @@ const clearFormatting = () => {
                     :class="{ 'text-semibold text-base-content': editor.isActive('bulletList') }"
                 >
                     <div class="flex gap-1 items-center">
-                        <i class="fa-regular fa-list-ul" aria-hidden="true"></i>
+                        <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
                         List
                     </div>
-                    <i class="fa-regular fa-check" v-if="editor.isActive('bulletList')"></i>
+                    <i class="fa-solid fa-check" v-if="editor.isActive('bulletList')"></i>
                 </button>
                 <button
                     @click.prevent="toggleList('ordered')"
@@ -280,10 +280,10 @@ const clearFormatting = () => {
                     :class="{ 'text-semibold text-base-content': editor.isActive('orderedList') }"
                 >
                     <div class="flex gap-1 items-center">
-                        <i class="fa-regular fa-list-ol" aria-hidden="true"></i>
+                        <i class="fa-solid fa-list-ol" aria-hidden="true"></i>
                         Numbered list
                     </div>
-                    <i class="fa-regular fa-check" v-if="editor.isActive('orderedList')"></i>
+                    <i class="fa-solid fa-check" v-if="editor.isActive('orderedList')"></i>
                 </button>
             </div>
         </div>
@@ -295,6 +295,6 @@ const clearFormatting = () => {
         :class="buttonClass(false)"
         title="Clear formatting"
     >
-        <i class="fa-regular fa-paint-roller" aria-label="Clear formatting" />
+        <i class="fa-solid fa-paint-roller" aria-label="Clear formatting" />
     </button>
 </template>

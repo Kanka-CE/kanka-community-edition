@@ -21,7 +21,7 @@
 
         <article v-if="showPremiumCta" class="p-4 md:p-6 flex flex-col gap-3 w-full overflow-x-hidden">
             <div class="flex flex-col items-center gap-3 text-center">
-                <i class="fa-regular fa-gem text-3xl text-primary" aria-hidden="true" />
+                <i class="fa-solid fa-gem text-3xl text-primary" aria-hidden="true" />
                 <p class="font-semibold">{{ i18n.group_limit_reached }}</p>
                 <p class="text-sm text-neutral-content">{{ i18n.group_limit_upgrade }}</p>
             </div>

@@ -20,7 +20,7 @@
                             <a href="{{ route('entities.show', [$campaign, $entity, '#post-' . $log->parent->id]) }}" data-title="{{ __('entities/logs.tooltips.post') }}" data-toggle="tooltip" class="text-link">
                                 {!! $log->parent->name !!}
                             </a>
-                            <x-icon class="fa-regular fa-chevron-right" />
+                            <x-icon class="fa-solid fa-chevron-right" />
                         @endif
                         <span class="font-bold ">{!! __('entities/logs.actions.' . $log->actionCode()) !!}</span>
                     </div>
@@ -49,12 +49,12 @@
                     <div class="">
                         @if ($campaign->superboosted() && !empty($log->changes))
                             <a @click="opened = !opened" class="btn2 btn-xs btn-outline">
-                                <x-icon class="fa-regular fa-eye" />
+                                <x-icon class="fa-solid fa-eye" />
                                 {{ __('entities/logs.actions.reveal') }}
                             </a>
                         @elseif (!$campaign->superboosted())
                             <a @click="opened = !opened" class="btn2 btn-sm btn-outline">
-                                <x-icon class="fa-regular fa-eye" />
+                                <x-icon class="fa-solid fa-eye" />
                                 {{ __('entities/logs.actions.reveal') }}
                             </a>
                         @endif

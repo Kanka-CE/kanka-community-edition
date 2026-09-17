@@ -19,7 +19,7 @@
             :class="embedded ? 'h-80' : 'min-h-80'"
         >
             <div v-show="loading" class="absolute inset-0 flex items-center justify-center text-xg bg-box z-10">
-                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+                <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
             </div>
             <div v-show="empty" class="absolute inset-0 flex items-center justify-center text-base-content z-10">
                 <span>{{ emptyLabel }}</span>

@@ -9,7 +9,7 @@
     @if ($dismissible)
     <div class="flex-none">
         <button type="button" class="text-xl opacity-50 hover:opacity-100 focus:opacity-100 cursor-pointer text-decoration-none" data-dismisses=".{{ $unique }}" aria-label="{{ __('Close') }}">
-            <x-icon class="fa-regular fa-circle-xmark" />
+            <x-icon class="fa-solid fa-circle-xmark" />
             <span class="sr-only">{{ __('Close') }}</span>
     </div>
     @endif

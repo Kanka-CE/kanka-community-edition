@@ -32,7 +32,7 @@ if ($item->item) {
     @if ($item->isEquipped())
         <div class="left-2 top-2 absolute flex gap-1 text-neutral-content z-10">
             <div class="rounded-full bg-base-200 w-6 h-6 flex items-center justify-center">
-                <x-icon class="fa-regular fa-backpack" tooltip="1" :title="__('entities/inventories.tooltips.equipped')" />
+                <x-icon class="fa-solid fa-bag-shopping" tooltip="1" :title="__('entities/inventories.tooltips.equipped')" />
             </div>
             @if (!$item->isVisibleAll())
                 <div class="rounded-full bg-base-200 w-6 h-6 flex items-center justify-center">
@@ -46,7 +46,7 @@ if ($item->item) {
 
         <div class="grow flex items-center justify-center text-neutral-content text-4xl text-opacity-50">
             @if ($image === false)
-                <x-icon class="fa-regular fa-treasure-chest"></x-icon>
+                <x-icon class="fa-solid fa-sack-dollar"></x-icon>
             @endif
         </div>
         <div class="flex flex-col gap-0 items-center overflow-hidden bg-base-100 p-1 px-1.5 text-base-content justify-center h-12 z-10" >
@@ -65,19 +65,19 @@ if ($item->item) {
                 @if ($item->item)
                     @if (!empty($item->item->price))
                         <div class="object-price truncate" x-cloak x-show="showPrice" data-toggle="tooltip" data-title="{{ $item->item->price }}">
-                            <x-icon class="fa-duotone fa-coins text-accent" />
+                            <x-icon class="fa-solid fa-coins text-accent" />
                             {{ $item->item->price }}
                         </div>
                     @endif
                     @if (!empty($item->item->size))
                         <div class="object-size truncate" x-cloak x-show="showSize" data-toggle="tooltip" data-title="{{ $item->item->size }}">
-                            <x-icon class="fa-duotone fa-up-right-and-down-left-from-center text-accent" />
+                            <x-icon class="fa-solid fa-up-right-and-down-left-from-center text-accent" />
                             {{ $item->item->size }}
                         </div>
                     @endif
                     @if (!empty($item->item->weight))
                         <div class="object-weight truncate" x-cloak x-show="showWeight" data-toggle="tooltip" data-title="{{ $item->item->weight }}">
-                            <x-icon class="fa-duotone fa-weight-hanging text-accent" />
+                            <x-icon class="fa-solid fa-weight-hanging text-accent" />
                             {{ $item->item->weight }}
                         </div>
                     @endif

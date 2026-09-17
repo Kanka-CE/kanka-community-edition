@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-full flex items-center justify-center" v-if="loading || error">
         <div class="flex items-center gap-2" v-if="loading && !error">
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true" />
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true" />
             <span>{{ loadingText }}</span>
         </div>
         <div class="flex flex-col items-center gap-2 text-error-content" v-else-if="error">

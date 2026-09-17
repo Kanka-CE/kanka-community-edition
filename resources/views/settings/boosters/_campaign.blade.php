@@ -23,13 +23,13 @@ $boost = isset($boost) ? $boost : $campaign->boosts->first();?>
         'time' => $boost->created_at->format('M Y')
         ]) !!}
                 @elseif ($campaign->superboosted())
-                    <x-icon class="fa-regular fa-rocket" />
+                    <x-icon class="fa-solid fa-rocket" />
                     {!! __('settings/boosters.campaign.superboosted', [
         'user' => '<a href="' . route('users.profile', $boost->user_id) . '" class="text-link">' . $boost->user->displayName() . '</a>',
         'time' => $boost->created_at->format('M Y')
         ]) !!}
                 @elseif ($campaign->boosted())
-                    <x-icon class="fa-regular fa-rocket" />
+                    <x-icon class="fa-solid fa-rocket" />
                     {!! __('settings/boosters.campaign.boosted', [
         'user' => '<a href="' . route('users.profile', $boost->user_id) . '" class="text-link">' . $boost->user->displayName() . '</a>',
         'time' => $boost->created_at->format('M Y')
@@ -45,7 +45,7 @@ $boost = isset($boost) ? $boost : $campaign->boosts->first();?>
         @if (auth()->user()->hasBoosterNomenclature())
         <div class="dropdown">
             <a class="dropdown-toggle p-2 btn2 btn-ghost" data-dropdown aria-expanded="false" data-placement="right" data-tree="escape">
-                <i class="fa-regular fa-ellipsis-h" data-tree="escape"></i>
+                <i class="fa-solid fa-ellipsis-h" data-tree="escape"></i>
                 <span class="sr-only">{{ __('crud.actions.actions') }}</span>
             </a>
             <div class="dropdown-menu hidden" role="menu">

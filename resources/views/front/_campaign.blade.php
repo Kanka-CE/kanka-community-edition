@@ -4,7 +4,7 @@
         <img src="{{ $campaign->image ? $campaign->thumbnail(320, 240) : 'https://th.kanka.io/zzKcBpijSBvm4rPWdzRpI82pTNQ=/320x240/smart/src/app/backgrounds/mountain-background-medium.jpg' }}" alt="{{ $campaign->name }}" class="w-80 h-60">
         @if ($campaign->is_prioritised)
             <span class="absolute top-2 left-2 bg-purple text-white text-xs font-semibold px-2 py-1 rounded">
-                <x-icon class="fa-regular fa-star" />
+                <x-icon class="fa-solid fa-star" />
                 {{ __('campaigns/applications.setup.prioritised') }}
             </span>
         @endif
@@ -26,12 +26,12 @@
                 {{ \Illuminate\Support\Number::format($campaign->visible_entity_count) }}
             </span>
             <span class="" title="{{ __('campaigns.fields.followers') }}" data-toggle="tooltip">
-                <x-icon class="fa-regular fa-eye" />
+                <x-icon class="fa-solid fa-eye" />
                 {{ \Illuminate\Support\Number::format($campaign->follower()) }}
             </span>
             @if ($campaign->locale)
                 <span class="" title="{{ __('languages.codes.' . $campaign->locale) }}" data-toggle="tooltip">
-                    <x-icon class="fa-regular fa-language" />
+                    <x-icon class="fa-solid fa-language" />
                     {{ $campaign->locale }}
                 </span>
             @endif

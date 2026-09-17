@@ -5,7 +5,7 @@
            class="entity w-[47%] xs:w-[25%] sm:w-48 overflow-hidden rounded flex flex-col shadow-xs hover:shadow-md text-link"
            @click.prevent="$emit('back')">
             <div class="flex items-center justify-center grow text-6xl">
-                <i class="fa-regular fa-arrow-left" aria-hidden="true"></i>
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
             </div>
             <div class="block text-center p-4 h-12 bg-box">
                 <span v-html="parent.links.back"></span>

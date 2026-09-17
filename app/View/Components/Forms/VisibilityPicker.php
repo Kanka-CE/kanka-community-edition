@@ -38,11 +38,11 @@ class VisibilityPicker extends Component
     protected function buildIconMap(): array
     {
         return [
-            Visibility::All->value => 'fa-regular fa-eye',
-            Visibility::Admin->value => 'fa-regular fa-lock',
-            Visibility::AdminSelf->value => 'fa-regular fa-user-lock',
-            Visibility::Self->value => 'fa-regular fa-user-secret',
-            Visibility::Member->value => 'fa-regular fa-users',
+            Visibility::All->value => 'fa-solid fa-eye',
+            Visibility::Admin->value => 'fa-solid fa-lock',
+            Visibility::AdminSelf->value => 'fa-solid fa-user-lock',
+            Visibility::Self->value => 'fa-solid fa-user-secret',
+            Visibility::Member->value => 'fa-solid fa-users',
         ];
     }
 }

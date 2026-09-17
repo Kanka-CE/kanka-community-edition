@@ -73,7 +73,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Source',
         description: 'Edit raw HTML source',
-        icon: 'fa-regular fa-code',
+        icon: 'fa-solid fa-code',
         command: (editor: Editor) => {
             window.dispatchEvent(new CustomEvent('tiptap:source-mode'))
         },
@@ -81,7 +81,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Gallery',
         description: 'Insert an image from gallery',
-        icon: 'fa-regular fa-images',
+        icon: 'fa-solid fa-images',
         searchTerms: ['image', 'photo', 'picture', 'media'],
         command: (editor: Editor) => {
             editor.commands.openGallery()
@@ -90,7 +90,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Insert Media',
         description: 'Upload an image from your device',
-        icon: 'fa-regular fa-upload',
+        icon: 'fa-solid fa-upload',
         searchTerms: ['image', 'photo', 'picture', 'media', 'upload', 'file'],
         command: (editor: Editor) => {
             editor.commands.uploadMedia()
@@ -99,7 +99,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Table',
         description: 'Insert a table',
-        icon: 'fa-regular fa-table',
+        icon: 'fa-solid fa-table',
         command: (editor: Editor) => {
             editor
                 .chain()
@@ -111,7 +111,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Heading 1',
         description: 'Huge heading',
-        icon: 'fa-regular fa-heading',
+        icon: 'fa-solid fa-heading',
         command: (editor: Editor) => {
             editor.chain().focus().toggleHeading({ level: 1 }).run()
         },
@@ -119,7 +119,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Heading 2',
         description: 'Large heading',
-        icon: 'fa-regular fa-heading',
+        icon: 'fa-solid fa-heading',
         command: (editor: Editor) => {
             editor.chain().focus().toggleHeading({ level: 2 }).run()
         },
@@ -127,7 +127,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Heading 3',
         description: 'Medium heading',
-        icon: 'fa-regular fa-heading',
+        icon: 'fa-solid fa-heading',
         command: (editor: Editor) => {
             editor.chain().focus().toggleHeading({ level: 3 }).run()
         },
@@ -135,7 +135,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Bullet List',
         description: 'Create a bullet list',
-        icon: 'fa-regular fa-list-ul',
+        icon: 'fa-solid fa-list-ul',
         command: (editor: Editor) => {
             editor.chain().focus().toggleBulletList().run()
         },
@@ -143,7 +143,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Numbered List',
         description: 'Create a numbered list',
-        icon: 'fa-regular fa-list-ol',
+        icon: 'fa-solid fa-list-ol',
         command: (editor: Editor) => {
             editor.chain().focus().toggleOrderedList().run()
         },
@@ -151,7 +151,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Task List',
         description: 'Create a checklist',
-        icon: 'fa-regular fa-square-check',
+        icon: 'fa-solid fa-square-check',
         searchTerms: ['checkbox', 'checklist', 'todo', 'task'],
         command: (editor: Editor) => {
             editor.chain().focus().toggleTaskList().run()
@@ -160,7 +160,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Quote',
         description: 'Insert a quote block',
-        icon: 'fa-regular fa-quote-right',
+        icon: 'fa-solid fa-quote-right',
         command: (editor: Editor) => {
             editor.chain().focus().toggleBlockquote().run()
         },
@@ -168,7 +168,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Code Block',
         description: 'Insert a code block',
-        icon: 'fa-regular fa-code',
+        icon: 'fa-solid fa-code',
         command: (editor: Editor) => {
             editor.chain().focus().toggleCodeBlock().run()
         },
@@ -176,7 +176,7 @@ const commands: SlashCommandItem[] = [
     {
         title: 'Horizontal Rule',
         description: 'Insert a divider',
-        icon: 'fa-regular fa-minus',
+        icon: 'fa-solid fa-minus',
         command: (editor: Editor) => {
             editor.chain().focus().setHorizontalRule().run()
         },

@@ -20,7 +20,7 @@ $traits = $entity->child->personality;
                     @if (!$entity->child->is_personality_visible)
                         <x-icon class="lock" tooltip title="{{ __('characters.hints.personality_not_visible') }}" />
                     @else
-                        <x-icon class="fa-regular fa-lock-open" tooltip title="{{ __('characters.hints.personality_visible') }}" />
+                        <x-icon class="fa-solid fa-lock-open" tooltip title="{{ __('characters.hints.personality_visible') }}" />
                     @endif
                 </div>
             @endif

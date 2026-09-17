@@ -1,6 +1,6 @@
 <template>
     <div v-if="loading" class="flex items-center align-middle">
-        <i class="fa-solid fa-spinner fa-spin" aria-label="Loading tasks"></i>
+        <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading tasks"></i>
     </div>
     <div
         v-else
@@ -22,8 +22,8 @@
             class="flex items-center gap-2 task"
             v-tippy="task.helper">
                 <div class="task-icon">
-                    <i class="fa-regular fa-square-check" aria-label="Completed" v-if="task.completed"></i>
-                    <i class="fa-regular fa-square" aria-label="Pending" v-else></i>
+                    <i class="fa-solid fa-square-check" aria-label="Completed" v-if="task.completed"></i>
+                    <i class="fa-solid fa-square" aria-label="Pending" v-else></i>
                 </div>
                 <a
                     v-if="!task.completed"

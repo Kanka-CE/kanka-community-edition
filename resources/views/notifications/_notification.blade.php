@@ -5,7 +5,7 @@ use \Illuminate\Support\Str;
 <tr class="@if(!$notification->read()) info @endif">
     <td>
         @if (!empty($notification->data['icon']))
-            <i class="fa-regular fa-{{ $notification->data['icon'] }} text-{{ $notification->data['colour'] }}"></i>
+            <i class="fa-solid fa-{{ $notification->data['icon'] }} text-{{ $notification->data['colour'] }}"></i>
             @if(Arr::has($notification->data['params'], 'link'))
                 @php
                     $url = $notification->data['params']['link'];

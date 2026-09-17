@@ -22,7 +22,7 @@
                         :label="__('maps/markers.fields.icon')"
                         :helper="__('filters.helpers.icon', [
             'fontawesome' => '<a href=\'' . config('fontawesome.search') . '\' class=\'text-link\'>FontAwesome</a>',
-            'example' => '<i class=\'fa-regular fa-user-beard-bolt\' aria-hidden=\'true\'></i> <code>fa-solid fa-horse</code>',
+            'example' => '<i class=\'fa-solid fa-user\' aria-hidden=\'true\'></i> <code>fa-solid fa-horse</code>',
             ])">
                     <input type="text" name="icon" value="fa-solid fa-th-list" maxlength="191" class="w-full"
                            autocomplete="off"/>
@@ -34,7 +34,7 @@
                     <x-slot name="helper">
                         {!! __('filters.helpers.icon-premium', [
                             'fontawesome' => '<a href="' . config('fontawesome.search') . '" class="text-link">FontAwesome</a>',
-                            'example' => '<i class=\'fa-regular fa-user-beard-bolt\' aria-hidden=\'true\'></i> <code>fa-solid fa-horse</code>',
+                            'example' => '<i class=\'fa-solid fa-user\' aria-hidden=\'true\'></i> <code>fa-solid fa-horse</code>',
                             'premium' => '<a href="https://kanka.io/premium" class="text-link">' . __('concept.premium-campaign') . '</a>',
                         ]) !!}
                     </x-slot>

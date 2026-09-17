@@ -3,6 +3,6 @@
     {{ $attributes->merge(['class' => 'btn2 btn-ghost btn-sm']) }}
     data-toggle="tooltip"
     data-title="{{ __('general.documentation') }}">
-    <x-icon class="fa-regular fa-book" />
+    <x-icon class="fa-solid fa-book" />
     {{ __('general.learn-more') }}
 </a>

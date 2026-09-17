@@ -42,14 +42,14 @@ $direct = $entity->child->entities()->count();
             <div class="dropdown-menu hidden" role="menu">
                 <x-dropdowns.item
                     :link="route('entities.show', [$campaign, $entity, 'm' => \App\Enums\Descendants::Direct, '#tag-children'])"
-                    icon="fa-regular fa-filter"
+                    icon="fa-solid fa-filter"
                     :active="!$allMembers"
                 >
                     {{ __('crud.filters.lists.desktop.filtered', ['count' => $direct]) }}
                 </x-dropdowns.item>
                 <x-dropdowns.item
                     :link="route('entities.show', [$campaign, $entity, 'm' => \App\Enums\Descendants::All, '#tag-children'])"
-                    icon="fa-regular fa-filter-list"
+                    icon="fa-solid fa-filter"
                     :active="$allMembers"
                 >
                     {{ __('crud.filters.lists.desktop.all', ['count' => $all]) }}
@@ -62,7 +62,7 @@ $direct = $entity->child->entities()->count();
             @can('update', $entity)
                 <div class="dropdown flex items-center">
                     <button role="button" data-dropdown aria-expanded="false" aria-haspopup="menu" class="btn2 btn-sm">
-                        <x-icon class="fa-regular fa-ellipsis-h" />
+                        <x-icon class="fa-solid fa-ellipsis-h" />
                     </button>
                     <div class="dropdown-menu hidden" role="menu">
                         <x-dropdowns.item
@@ -75,7 +75,7 @@ $direct = $entity->child->entities()->count();
                         <x-dropdowns.item
                             :link="route('tags.transfer', [$campaign, $entity->child])"
                             :dialog="route('tags.transfer', [$campaign, $entity->child])"
-                            icon="fa-regular fa-arrow-right"
+                            icon="fa-solid fa-arrow-right"
                         >
                             {{ __('tags.transfer.transfer') }}
                         </x-dropdowns.item>

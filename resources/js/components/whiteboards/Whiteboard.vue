@@ -2,14 +2,14 @@
     <div class="w-full h-screen flex items-center justify-center align-middle text-2xl" v-if="loading || error">
 
         <div class="flex items-center gap-2" v-if="loading && !error">
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true" />
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true" />
             <span>Joining the whiteboard</span>
         </div>
         <div class="flex flex-col gap-2 text-error-content" v-else-if="error">
             <i class="fa-reguar fa-circle-exclamation" aria-hidden="true" />
             <span v-html="error"></span>
             <button class="btn2 btn-default btn-sm" @click="reload()">
-                <i class="fa-regular fa-rotate-right" aria-hidden="true"></i>
+                <i class="fa-solid fa-rotate-right" aria-hidden="true"></i>
                 <span>Retry</span>
             </button>
         </div>
@@ -18,7 +18,7 @@
     <div class="toolbar fixed w-full bg-base-100 p-2 flex items-center justify-between gap-2 z-50" v-if="!loading && !error">
         <div class="flex gap-1 items-center">
             <a :href="urls.overview" :title="trans('back')" class="flex items-center gap-1">
-                <i class="fa-regular fa-left-to-bracket" aria-hidden="true"></i>
+                <i class="fa-solid fa-left-to-bracket" aria-hidden="true"></i>
                 <span v-html="name"></span>
             </a>
 
@@ -26,7 +26,7 @@
                 <button @click="settingsOpen = !settingsOpen"
                         v-show="false"
                         class="btn2 btn-default btn-sm flex items-center gap-1">
-                    <i class="fa-regular fa-gear" aria-hidden="true"></i>
+                    <i class="fa-solid fa-gear" aria-hidden="true"></i>
                 </button>
 
                 <div v-if="settingsOpen" class="absolute left-0 mt-1 border shadow-md bg-base-100 rounded z-20 w-36">
@@ -47,7 +47,7 @@
 
             <a v-if="props.creator" href="#" @click="openQQ()"  class="quick-creator-button btn2 btn-primary btn-sm"
                tabindex="0">
-                <i class="flex-none fa-regular fa-plus" aria-hidden="true"></i>
+                <i class="flex-none fa-solid fa-plus" aria-hidden="true"></i>
                 <span class="grow hidden sm:inline-block" v-html="trans('create')"></span>
                 <span class="flex-none keyboard-shortcut" id="qq-kb-shortcut" data-toggle="tooltip" :data-title="trans('qq-keyboard-shortcut')" data-html="true" data-placement="bottom" >N</span>
             </a>
@@ -285,7 +285,7 @@
                     :class="{ 'btn-disabled': strokeSize === 1 }"
                     @click.stop="strokeSize = 1"
                 >
-                    <i class="fa-regular fa-paintbrush-fine" aria-hidden="true"></i>
+                    <i class="fa-solid fa-paintbrush-fine" aria-hidden="true"></i>
                     <span class="sr-only" v-html="trans('thin-stroke')"></span>
                 </button>
                 <button
@@ -294,7 +294,7 @@
                     :class="{ 'btn-disabled': strokeSize === 3 }"
                     @click.stop="strokeSize = 3"
                 >
-                    <i class="fa-regular fa-paintbrush" aria-hidden="true"></i>
+                    <i class="fa-solid fa-paintbrush" aria-hidden="true"></i>
                     <span class="sr-only" v-html="trans('large-stroke')"></span>
                 </button>
                 <button
@@ -303,14 +303,14 @@
                     :style="{'color': currentColor}"
                     @click.stop="openColorPicker"
                 >
-                    <i class="fa-regular fa-palette" aria-hidden="true"></i>
+                    <i class="fa-solid fa-palette" aria-hidden="true"></i>
                     <span class="sr-only" v-html="trans('color')"></span>
                 </button>
                 <button
                     @click="toggleDrawing"
                     class="btn2 btn-sm join-item"
                     :title="trans('end-drawing')">
-                    <i class="fa-regular fa-check" aria-hidden="true" />
+                    <i class="fa-solid fa-check" aria-hidden="true" />
                     <span class="sr-only" v-html="trans('end-drawing')"></span>
                 </button>
             </div>
@@ -323,7 +323,7 @@
                     :title="selectedShape.is_locked ? trans('unlock') : trans('lock')"
                     @click.stop="toggleLock"
                 >
-                    <i class="fa-regular" :class="selectedShape.is_locked ? 'fa-lock' : 'fa-lock-open'" aria-hidden="true"></i>
+                    <i class="fa-solid" :class="selectedShape.is_locked ? 'fa-lock' : 'fa-lock-open'" aria-hidden="true"></i>
                     <span class="sr-only">{{ selectedShape.is_locked ? trans('unlock') : trans('lock') }}</span>
                 </button>
 
@@ -332,7 +332,7 @@
                     :title="trans('duplicate')"
                     @click.stop="duplicateSelected"
                 >
-                    <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                    <i class="fa-solid fa-copy" aria-hidden="true"></i>
                     <span class="sr-only">{{ trans('duplicate') }}</span>
                 </button>
 
@@ -341,7 +341,7 @@
                     :title="trans('color')"
                     @click.stop="openColorPicker"
                 >
-                    <i class="fa-regular fa-palette" aria-hidden="true"></i>
+                    <i class="fa-solid fa-palette" aria-hidden="true"></i>
                     <span class="sr-only" v-html="trans('color')"></span>
                 </button>
 
@@ -351,7 +351,7 @@
                     :title="trans('reset-rotation')"
                     @click.stop="resetRotation()"
                 >
-                    <i class="fa-regular fa-rotate" aria-hidden="true"></i>
+                    <i class="fa-solid fa-rotate" aria-hidden="true"></i>
                     <span class="sr-only">{{ trans('reset-rotation') }}</span>
                 </button>
             </div>
@@ -363,7 +363,7 @@
                     :title="trans('auto-font')"
                     @click.stop="autoFont()"
                 >
-                    <i class="fa-regular fa-text-size" aria-hidden="true"></i>
+                    <i class="fa-solid fa-text-height" aria-hidden="true"></i>
                     <span class="sr-only">{{ trans('auto-font') }}</span>
                 </button>
 
@@ -374,7 +374,7 @@
                     :title="trans('fmaller-font')"
                     @click.stop="smallerFont()"
                 >
-                    <i class="fa-regular fa-minus" aria-hidden="true"></i>
+                    <i class="fa-solid fa-minus" aria-hidden="true"></i>
                     <span class="sr-only">{{ trans('smaller-font') }}</span>
                 </button>
 
@@ -384,7 +384,7 @@
                     :title="trans('larger-font')"
                     @click.stop="biggerFont()"
                 >
-                    <i class="fa-regular fa-plus" aria-hidden="true"></i>
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
                     <span class="sr-only">{{ trans('larger-font') }}</span>
                 </button>
             </div>
@@ -395,7 +395,7 @@
                     :title="trans('push-to-front')"
                     @click.stop="pushTo('front')"
                 >
-                    <i class="fa-regular fa-up-to-line" aria-hidden="true"></i>
+                    <i class="fa-solid fa-up-to-line" aria-hidden="true"></i>
                     <span class="sr-only" v-html="trans('push-to-front')"></span>
                 </button>
                 <button
@@ -403,7 +403,7 @@
                     :title="trans('push-to-back')"
                     @click.stop="pushTo('back')"
                 >
-                    <i class="fa-regular fa-down-to-line" aria-hidden="true"></i>
+                    <i class="fa-solid fa-down-to-line" aria-hidden="true"></i>
                     <span class="sr-only" v-html="trans('push-to-back')"></span>
                 </button>
             </div>
@@ -412,7 +412,7 @@
                 :title="trans('delete')"
                 @click.stop="deleteSelected"
             >
-                <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
+                <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
                 <span class="sr-only" v-html="trans('delete')"></span>
             </button>
         </div>
@@ -423,7 +423,7 @@
                     class="btn2 btn-sm join-item"
                     :title="trans('select-shapes')"
                     :class="{ 'btn-disabled': toolbarMode === 'select' }">
-                    <i class="fa-regular fa-mouse-pointer" aria-hidden="true"></i>
+                    <i class="fa-solid fa-mouse-pointer" aria-hidden="true"></i>
                     <span class="sr-only" v-html="trans('select-shapes')"></span>
                 </button>
                 <button
@@ -431,7 +431,7 @@
                     class="btn2 btn-sm join-item"
                     :title="trans('add-square')"
                     :class="{ 'btn-disabled': toolbarMode === 'rect' }">
-                    <i class="fa-regular fa-square" aria-hidden="true" />
+                    <i class="fa-solid fa-square" aria-hidden="true" />
                     <span class="sr-only" v-html="trans('add-square')"></span>
                 </button>
                 <button
@@ -439,7 +439,7 @@
                     class="btn2 btn-sm join-item"
                     :title="trans('add-circle')"
                     :class="{ 'btn-disabled': toolbarMode === 'circle' }">
-                    <i class="fa-regular fa-circle" aria-hidden="true" />
+                    <i class="fa-solid fa-circle" aria-hidden="true" />
                     <span class="sr-only" v-html="trans('add-circle')"></span>
                 </button>
                 <button
@@ -447,14 +447,14 @@
                     class="btn2 btn-sm join-item"
                     :title="trans('add-text')"
                     :class="{ 'btn-disabled': toolbarMode === 'text' }">
-                    <i class="fa-regular fa-text" aria-hidden="true" />
+                    <i class="fa-solid fa-font" aria-hidden="true" />
                     <span class="sr-only" v-html="trans('add-text')"></span>
                 </button>
                 <button
                     @click="toggleDrawing"
                     :title="trans('start-drawing')"
                     class="btn2 btn-sm join-item">
-                    <i class="fa-regular fa-scribble" aria-hidden="true" />
+                    <i class="fa-solid fa-scribble" aria-hidden="true" />
                     <span class="sr-only" v-html="trans('start-drawing')"></span>
                 </button>
             </div>
@@ -464,7 +464,7 @@
                     class="btn2 btn-sm join-item"
                     :title="trans('add-entity')"
                     :class="{ 'btn-disabled': toolbarMode === 'drawing' }">
-                    <i class="fa-regular fa-search" aria-hidden="true" />
+                    <i class="fa-solid fa-search" aria-hidden="true" />
                     <span class="sr-only" v-html="trans('add-entity')"></span>
                 </button>
                 <button
@@ -472,7 +472,7 @@
                     :title="trans('add-image')"
                     class="btn2 btn-sm join-item"
                     :class="{ 'btn-disabled': toolbarMode === 'drawing' }">
-                    <i class="fa-regular fa-file-image" aria-hidden="true" />
+                    <i class="fa-solid fa-file-image" aria-hidden="true" />
                     <span class="sr-only" v-html="trans('add-image')"></span>
                 </button>
             </div>

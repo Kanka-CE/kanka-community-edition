@@ -24,7 +24,7 @@
     <x-dialog.footer>
         <x-slot:cancel>
             <button type="submit" class="btn2 btn-error btn-outline" name="action" value="reject">
-                <x-icon class="fa-regular fa-times" />
+                <x-icon class="fa-solid fa-times" />
                 {{ __('campaigns/applications.actions.reject') }}
             </button>
         </x-slot:cancel>

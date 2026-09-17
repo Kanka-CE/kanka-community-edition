@@ -126,7 +126,7 @@
                     :selected="old('is_personality_visible', $source->child->is_personality_visible ?? $model->is_personality_visible ?? 1)"
                     :options="[
                         1 => '' . __('characters.personality_visibility.all'),
-                        0 => '<i class=\'fa-regular fa-lock\' aria-hidden=\'true\'></i> ' . __('characters.personality_visibility.admin', ['admin' => '<a href=\'' . route('campaigns.campaign_roles.admin', $campaign) . '\' class=\'text-link\'>' . $campaign->adminRoleName() . '</a>']),
+                        0 => '<i class=\'fa-solid fa-lock\' aria-hidden=\'true\'></i> ' . __('characters.personality_visibility.admin', ['admin' => '<a href=\'' . route('campaigns.campaign_roles.admin', $campaign) . '\' class=\'text-link\'>' . $campaign->adminRoleName() . '</a>']),
     ]">
                 </x-forms.select>
             </x-forms.field>

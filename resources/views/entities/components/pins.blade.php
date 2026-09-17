@@ -13,8 +13,8 @@ if (auth()->check() && auth()->user()->can('update', $entity)) {
         <div class="col-span-2 sidebar-section-box entity-pins overflow-hidden flex flex-col gap-2 {{ $entity->hasPins() ? '' : 'entity-empty-pin' }}">
             <div class="sidebar-section-title cursor-pointer user-select border-b element-toggle flex items-center gap-2 justify-between group" data-animate="collapse" data-target="#sidebar-pinned-elements">
                 <div>
-                    <x-icon class="fa-regular fa-chevron-up icon-show transition-transform duration-200 group-hover:-translate-y-0.5" />
-                    <x-icon class="fa-regular fa-chevron-down icon-hide transition-transform duration-200 group-hover:translate-y-0.5" />
+                    <x-icon class="fa-solid fa-chevron-up icon-show transition-transform duration-200 group-hover:-translate-y-0.5" />
+                    <x-icon class="fa-solid fa-chevron-down icon-hide transition-transform duration-200 group-hover:translate-y-0.5" />
                     <span class="text-lg ">{{ __('entities/pins.title') }}</span>
                 </div>
                 <a href="https://docs.kanka.io/en/latest/features/profile-sidebar.html" data-toggle="tooltip" data-title="{{ __('general.documentation') }}" class="text-link">

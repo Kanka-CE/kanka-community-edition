@@ -151,7 +151,7 @@ const handleMentionConfigKeydown = (event: KeyboardEvent) => {
                 class="hover:text-warning"
                 title="Clear config"
             >
-                <i class="fa-regular fa-times" />
+                <i class="fa-solid fa-times" />
             </button>
         </template>
         <template v-else>
@@ -173,13 +173,13 @@ const handleMentionConfigKeydown = (event: KeyboardEvent) => {
                     :href="editor.getAttributes('mention').url"
                     title="Go to entity"
                 >
-                    <i class="fa-regular fa-external-link-alt" aria-hidden="true" />
+                    <i class="fa-solid fa-external-link-alt" aria-hidden="true" />
                 </a>
             </template>
             <!-- Unknown entity: show warning -->
             <template v-else>
                 <span class="text-neutral-content flex items-center gap-1">
-                    <i class="fa-regular fa-exclamation-triangle" aria-hidden="true" />
+                    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true" />
                     Unknown entity
                 </span>
             </template>
@@ -189,14 +189,14 @@ const handleMentionConfigKeydown = (event: KeyboardEvent) => {
                 :class="{ 'text-primary': editor.getAttributes('mention').config }"
                 title="Customize mention"
             >
-                <i class="fa-regular fa-cog" aria-hidden="true" />
+                <i class="fa-solid fa-cog" aria-hidden="true" />
             </button>
             <button
                 @click.prevent="deleteMention"
                 class="hover:text-error-content"
                 title="Remove mention"
             >
-                <i class="fa-regular fa-trash" aria-hidden="true" />
+                <i class="fa-solid fa-trash" aria-hidden="true" />
             </button>
         </template>
     </div>

@@ -30,7 +30,7 @@ $bragiName = $entity->isCharacter() ? $entity->name : null;
                 @if (!$campaign->superboosted())
                     <x-helper>
                         <p class="text-xs">
-                            <x-icon class="fa-regular fa-question-circle"></x-icon>
+                            <x-icon class="fa-solid fa-question-circle"></x-icon>
                             {{ __('post_layouts.premium') }}
                             <a
                                 href="#"

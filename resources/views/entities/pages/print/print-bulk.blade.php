@@ -19,7 +19,7 @@
 @section('content')
 
     <button class="btn2 btn-lg btn-print btn-primary fixed top-5 right-5" onclick="javascript:window.print();">
-        <x-icon class="fa-regular fa-print" />
+        <x-icon class="fa-solid fa-print" />
         {{ __('crud.actions.print') }}
     </button>
 

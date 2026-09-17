@@ -65,7 +65,7 @@
                 @includeWhen($mode === 'bulk', '.entities.creator.forms.template')
 
                 <span role="button" class="qq-action-more text-uppercase cursor-pointer text-sm border-dotted border-base-300 border-b" x-show="!showMore" @click.prevent="showMore = true">
-                    <x-icon class="fa-regular fa-caret-down" />
+                    <x-icon class="fa-solid fa-caret-down" />
                     {{ __('entities.creator.actions.more') }}
                 </span>
                 <div class="qq-more-fields flex flex-col gap-5" x-show="showMore">
@@ -115,7 +115,7 @@
                     </button>
                     <button type="submit" class="join-item btn2 btn-primary quick-creator-submit" name="next" data-entity-type="{{ $entityType->code ?? 'post' }}" value="more" title="{{ __('entities.creator.tooltips.create_more') }}">
                         <span>
-                            <x-icon class="fa-regular fa-plus-square" />
+                            <x-icon class="fa-solid fa-plus-square" />
                         </span>
                     </button>
                 </div>

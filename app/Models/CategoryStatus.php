@@ -48,7 +48,7 @@ class CategoryStatus extends Model
 
     public function icon(): string
     {
-        return 'fa-regular ' . ($this->icon ?? '');
+        return 'fa-solid ' . ($this->icon ?? '');
     }
 
     public function isCustom(): bool

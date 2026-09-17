@@ -8,7 +8,7 @@
             <i class="fa-solid fa-times" aria-hidden="true"></i>
         </div>
         <div class="flex-none p-2" v-else>
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
         </div>
 
     </div>

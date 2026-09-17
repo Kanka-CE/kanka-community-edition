@@ -3,7 +3,7 @@
 
     @if (!empty($docs))
         <a href="https://docs.kanka.io/en/latest/{{ $docs }}" class="text-link">
-            <x-icon class="fa-regular fa-book" />
+            <x-icon class="fa-solid fa-book" />
             @if (empty($doc))
             {{ __('general.documentation') }}
             @else

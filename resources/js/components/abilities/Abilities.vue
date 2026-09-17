@@ -1,7 +1,7 @@
 <template>
     <div class="viewport box-abilities relative flex flex-col gap-5">
         <div v-if="loading" class="load more text-center text-2xl">
-            <i class="fa-solid fa-spin fa-spinner" aria-hidden="true"></i>
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
         </div>
 
         <div class="flex gap-5 flex-wrap">

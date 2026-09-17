@@ -59,7 +59,7 @@
                         class="px-2 py-1 rounded-lg hover:bg-base-300 text-xs text-neutral-content"
                         @click="cancelAdd"
                     >
-                        <i class="fa-regular fa-xmark" aria-hidden="true" />
+                        <i class="fa-solid fa-xmark" aria-hidden="true" />
                     </button>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 :class="addBtnClass"
                 @click="toggleAddForm"
             >
-                <i class="fa-regular fa-plus text-xs" aria-hidden="true" />
+                <i class="fa-solid fa-plus text-xs" aria-hidden="true" />
                 {{ i18n.addAlias }}
             </button>
             <alias-pill
@@ -101,7 +101,7 @@
                 />
             </div>
             <div v-if="isAliasLimitReached" class="bg-amber-100 text-amber-700 border-amber-700 p-3 rounded-xl text-xs flex gap-1 ">
-                <i class="fa-regular fa-warning text-base" aria-hidden="true"></i>
+                <i class="fa-solid fa-warning text-base" aria-hidden="true"></i>
                 <span v-html="i18n.aliasLimitReached"></span>
             </div>
         </template>

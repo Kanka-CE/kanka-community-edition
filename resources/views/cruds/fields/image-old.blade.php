@@ -80,7 +80,7 @@ if (!empty($model->entity) && !empty($model->entity->image) && !$canBrowse) {
 
 
             <x-helper class="text-xs">
-                <p><x-icon class="fa-regular fa-question-circle" />
+                <p><x-icon class="fa-solid fa-question-circle" />
                     @if ($isUnlimited)
                         {{ __('crud.hints.image_formats', ['formats' => $formats]) }}
                     @else

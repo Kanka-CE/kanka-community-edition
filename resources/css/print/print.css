@@ -178,7 +178,7 @@ body, #app.wrapper, .wrapper, .content-wrapper, .box {
 }
 
 
-.btn-primary, .btn-xs, .btn-secondary, .btn-warning, .fa-solid.fa-edit {
+.btn-primary, .btn-xs, .btn-secondary, .btn-warning, .fa-solid.fa-pen-to-square {
     display: none;
 }
 .btn-print {

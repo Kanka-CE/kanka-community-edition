@@ -37,7 +37,7 @@
             @if($plugin->hasUpdate($plugin->created_by === auth()->user()->id))
                 <x-form :action="['campaign_plugins.update', $campaign, $plugin]" class="inline-block">
                     <button type="submit" class="btn2 btn-primary btn-sm">
-                        <x-icon class="fa-regular fa-download" />
+                        <x-icon class="fa-solid fa-download" />
                         {{ __('campaigns/plugins.actions.update-to', ['version' => $plugin->updateVersionNumber()]) }}
                     </button>
                 </x-form>

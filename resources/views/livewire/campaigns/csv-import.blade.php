@@ -118,7 +118,7 @@
                                 <button type="button"
                                         wire:click="removeAppearance({{ $index }})"
                                         class="btn2 btn-sm btn-error btn-outline">
-                                    <x-icon class="fa-regular fa-trash-can" tooltip :title="__('generic.remove')" />
+                                    <x-icon class="fa-solid fa-trash-can" tooltip :title="__('generic.remove')" />
                                 </button>
                             </div>
                         @endforeach

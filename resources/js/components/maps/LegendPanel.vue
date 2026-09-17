@@ -12,7 +12,7 @@
                         class="cursor-pointer"
                         @click="toggleAll"
                     >
-                        <i class="fa-regular fa-sort" aria-hidden="true" />
+                        <i class="fa-solid fa-sort" aria-hidden="true" />
                     </button>
                     <button
                         class="btn2 btn-default btn-sm flex-none"
@@ -75,7 +75,7 @@
             class="btn2 btn-default btn-sm"
             @click="$emit('add-group')"
         >
-            <i class="fa-regular fa-plus" aria-hidden="true" />
+            <i class="fa-solid fa-plus" aria-hidden="true" />
             <span>{{ i18n.add_group }}</span>
         </button>
     </aside>

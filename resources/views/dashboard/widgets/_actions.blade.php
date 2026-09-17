@@ -18,7 +18,7 @@
             data-target="apply-dialog"
             data-placement="bottom"
     >
-        <x-icon class="fa-regular fa-door-open" />
+        <x-icon class="fa-solid fa-door-open" />
         {{ __('dashboard.actions.join') }}
     </button>
 @endcan
@@ -27,11 +27,11 @@
     @if(!empty($dashboards))
         <div class="dropdown ">
             <button type="button" class="btn2 btn-sm btn-outline" data-dropdown aria-expanded="false">
-                <x-icon class="fa-regular fa-th-large" />
+                <x-icon class="fa-solid fa-th-large" />
             </button>
             <div class="dropdown-menu hidden" role="menu">
                 @if (!empty($dashboard))
-                    <x-dropdowns.item :link="route('dashboard', [$campaign, 'dashboard' => 'default'])" icon="fa-regular fa-home">
+                    <x-dropdowns.item :link="route('dashboard', [$campaign, 'dashboard' => 'default'])" icon="fa-solid fa-home">
                         {{ __('dashboard.dashboards.default.title')}}
                     </x-dropdowns.item>
                 @endif
@@ -39,7 +39,7 @@
                     @if (!empty($dashboard) && $dash->id == $dashboard->id)
                         @continue
                     @endif
-                    <x-dropdowns.item :link="route('dashboard', [$campaign, 'dashboard' => $dash->id])" icon="fa-regular fa-th-large">
+                    <x-dropdowns.item :link="route('dashboard', [$campaign, 'dashboard' => $dash->id])" icon="fa-solid fa-th-large">
                         {!! $dash->name !!}
                     </x-dropdowns.item>
                 @endforeach
@@ -47,7 +47,7 @@
                 @can('dashboard', $campaign)
                     <x-dropdowns.divider />
 
-                    <x-dropdowns.item :link="route('dashboard.setup', !empty($dashboard) ? [$campaign, 'dashboard' => $dashboard->id] : [$campaign])" icon="fa-regular fa-cog">
+                    <x-dropdowns.item :link="route('dashboard.setup', !empty($dashboard) ? [$campaign, 'dashboard' => $dashboard->id] : [$campaign])" icon="fa-solid fa-cog">
                         {{ __('dashboard.actions.customise') }}
                     </x-dropdowns.item>
                 @endcan
@@ -65,7 +65,7 @@
 @can('update', $campaign)
     <div class="dropdown">
         <button class="btn2 btn-sm btn-outline" data-dropdown aria-expanded="false">
-            <x-icon class="fa-regular fa-ellipsis-h" />
+            <x-icon class="fa-solid fa-ellipsis-h" />
         </button>
         <div class="dropdown-menu hidden" role="menu">
 
@@ -88,7 +88,7 @@
                 <x-dropdowns.item
                     link="{{ route('campaign.share.setup', $campaign) }}"
                     :dialog="route('campaign.share.setup', $campaign)"
-                    icon="fa-regular fa-share-nodes"
+                    icon="fa-solid fa-share-nodes"
                 >
                     {{ __('campaigns/share.title') }}
                 </x-dropdowns.item>
@@ -99,7 +99,7 @@
             </x-dropdowns.section>
             @endif
             @if (!empty($dashboard))
-                <x-dropdowns.item :link="route('dashboard', [$campaign, 'dashboard' => 'default'])" icon="fa-regular fa-home">
+                <x-dropdowns.item :link="route('dashboard', [$campaign, 'dashboard' => 'default'])" icon="fa-solid fa-home">
                     {{ __('dashboard.dashboards.default.title')}}
                 </x-dropdowns.item>
             @endif
@@ -107,7 +107,7 @@
                 @if (!empty($dashboard) && $dash->id == $dashboard->id)
                     @continue
                 @endif
-                <x-dropdowns.item :link="route('dashboard', [$campaign, 'dashboard' => $dash->id])" icon="fa-regular fa-th-large">
+                <x-dropdowns.item :link="route('dashboard', [$campaign, 'dashboard' => $dash->id])" icon="fa-solid fa-th-large">
                     {!! $dash->name !!}
                 </x-dropdowns.item>
             @endforeach
@@ -119,14 +119,14 @@
                 {{ __('campaigns.show.actions.edit') }}
             </x-dropdowns.item>
 
-            <x-dropdowns.item :link="route('campaign_users.index', $campaign)" icon="fa-regular fa-users">
+            <x-dropdowns.item :link="route('campaign_users.index', $campaign)" icon="fa-solid fa-users">
                 {{ __('campaigns.show.tabs.members') }}
             </x-dropdowns.item>
-            <x-dropdowns.item :link="route('campaign_roles.index', $campaign)" icon="fa-regular fa-user-shield">
+            <x-dropdowns.item :link="route('campaign_roles.index', $campaign)" icon="fa-solid fa-user-shield">
                 {{ __('campaigns.show.tabs.roles') }}
             </x-dropdowns.item>
 
-            <x-dropdowns.item :link="route('campaign.modules', $campaign)" icon="fa-regular fa-floppy-disks">
+            <x-dropdowns.item :link="route('campaign.modules', $campaign)" icon="fa-solid fa-floppy-disk">
                 {{ __('campaigns/categories.tab') }}
             </x-dropdowns.item>
         </div>

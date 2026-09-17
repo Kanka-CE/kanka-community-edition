@@ -110,39 +110,39 @@ const toggleHeaderRow = () => {
             :class="buttonClass(false)"
             title="Add column"
         >
-            <i class="fa-regular fa-table-columns" aria-hidden="true" />
-            <i class="fa-regular fa-plus text-[8px]" aria-hidden="true" />
+            <i class="fa-solid fa-table-columns" aria-hidden="true" />
+            <i class="fa-solid fa-plus text-[8px]" aria-hidden="true" />
         </button>
         <button
             @click.prevent="addRowAfter"
             :class="buttonClass(false)"
             title="Add row"
         >
-            <i class="fa-regular fa-table-rows" aria-hidden="true" />
-            <i class="fa-regular fa-plus text-[8px]" aria-hidden="true" />
+            <i class="fa-solid fa-table-rows" aria-hidden="true" />
+            <i class="fa-solid fa-plus text-[8px]" aria-hidden="true" />
         </button>
         <button
             @click.prevent="deleteColumn"
             :class="buttonClass(false)"
             title="Delete column"
         >
-            <i class="fa-regular fa-table-columns" aria-hidden="true" />
-            <i class="fa-regular fa-minus text-[8px]" aria-hidden="true" />
+            <i class="fa-solid fa-table-columns" aria-hidden="true" />
+            <i class="fa-solid fa-minus text-[8px]" aria-hidden="true" />
         </button>
         <button
             @click.prevent="deleteRow"
             :class="buttonClass(false)"
             title="Delete row"
         >
-            <i class="fa-regular fa-table-rows" aria-hidden="true" />
-            <i class="fa-regular fa-minus text-[8px]" aria-hidden="true" />
+            <i class="fa-solid fa-table-rows" aria-hidden="true" />
+            <i class="fa-solid fa-minus text-[8px]" aria-hidden="true" />
         </button>
         <button
             @click.prevent="toggleHeaderRow"
             :class="buttonClass(false)"
             title="Toggle header row"
         >
-            <i class="fa-regular fa-heading" aria-hidden="true" />
+            <i class="fa-solid fa-heading" aria-hidden="true" />
         </button>
 
         <span class="w-px h-4 bg-base-content/20 mx-1" />
@@ -152,28 +152,28 @@ const toggleHeaderRow = () => {
             :class="buttonClass(hasBordered)"
             title="Toggle bordered"
         >
-            <i class="fa-regular fa-border-all" aria-hidden="true" />
+            <i class="fa-solid fa-border-all" aria-hidden="true" />
         </button>
         <button
             @click.prevent="toggleStriped"
             :class="buttonClass(hasStriped)"
             title="Toggle striped"
         >
-            <i class="fa-regular fa-bars" aria-hidden="true" />
+            <i class="fa-solid fa-bars" aria-hidden="true" />
         </button>
         <button
             @click.prevent="toggleLeft"
             :class="buttonClass(hasLeft)"
             title="Align left"
         >
-            <i class="fa-regular fa-align-left" aria-hidden="true" />
+            <i class="fa-solid fa-align-left" aria-hidden="true" />
         </button>
         <button
             @click.prevent="toggleRight"
             :class="buttonClass(hasRight)"
             title="Align right"
         >
-            <i class="fa-regular fa-align-right" aria-hidden="true" />
+            <i class="fa-solid fa-align-right" aria-hidden="true" />
         </button>
 
         <span class="w-px h-4 bg-base-content/20 mx-1" />
@@ -183,7 +183,7 @@ const toggleHeaderRow = () => {
             class="hover:text-error-content px-2 py-1"
             title="Delete table"
         >
-            <i class="fa-regular fa-trash" aria-hidden="true" />
+            <i class="fa-solid fa-trash" aria-hidden="true" />
         </button>
     </div>
 </template>

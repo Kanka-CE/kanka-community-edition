@@ -53,7 +53,7 @@ class Reminder extends Layout
                         return '';
                     }
 
-                    return '<i class="fa-regular fa-comment" data-title="' .
+                    return '<i class="fa-solid fa-comment" data-title="' .
                         $model->comment .
                         '" data-toggle="tooltip"></i>';
                 },
@@ -65,7 +65,7 @@ class Reminder extends Layout
                         return '';
                     }
 
-                    return '<i class="fa-regular fa-refresh" data-title="' .
+                    return '<i class="fa-solid fa-refresh" data-title="' .
                         __('calendars.fields.is_recurring') .
                         '" data-toggle="tooltip"></i>';
                 },

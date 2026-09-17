@@ -36,16 +36,16 @@
         ],
         [
             'field' => 'mirror_id',
-            'label' => '<i class="fa-regular fa-link" title="' . __('entities/relations.hints.mirrored.title') . '" aria-hidden="true"></i><span class="sr-only">' . __('entities/relations.hints.mirrored.title') . '</span>',
+            'label' => '<i class="fa-solid fa-link" title="' . __('entities/relations.hints.mirrored.title') . '" aria-hidden="true"></i><span class="sr-only">' . __('entities/relations.hints.mirrored.title') . '</span>',
             'render' => function (\App\Models\Relation $model) {
-                return $model->isMirrored() ? '<i class="fa-regular fa-link" aria-hidden="true" data-toggle="tooltip" data-title="' . __('entities/relations.hints.mirrored.title') . '"></i>' : null;
+                return $model->isMirrored() ? '<i class="fa-solid fa-link" aria-hidden="true" data-toggle="tooltip" data-title="' . __('entities/relations.hints.mirrored.title') . '"></i>' : null;
             }
         ],
         [
             'field' => 'is_pinned',
-            'label' => '<i class="fa-regular fa-thumbtack" title="' . __('entities/relations.fields.is_star') . '" aria-hidden="true"></i><span class="sr-only">' . __('entities/relations.fields.is_star') . '</span>',
+            'label' => '<i class="fa-solid fa-thumbtack" title="' . __('entities/relations.fields.is_star') . '" aria-hidden="true"></i><span class="sr-only">' . __('entities/relations.fields.is_star') . '</span>',
             'render' => function (\App\Models\Relation $model) {
-                return $model->isPinned() ? '<i class="fa-regular fa-thumbtack" aria-hidden="true"></i><span class="sr-only">' . __('entities/relations.fields.is_star') . '</span>' : null;
+                return $model->isPinned() ? '<i class="fa-solid fa-thumbtack" aria-hidden="true"></i><span class="sr-only">' . __('entities/relations.fields.is_star') . '</span>' : null;
             }
         ],
         [
@@ -54,7 +54,7 @@
         ],
         [
             'field' => 'visibility_id',
-            'label' => '<i class="fa-regular fa-eye" title="' . __('crud.fields.visibility') . '" aria-hidden="true"></i><span class="sr-only">' . __('crud.fields.visibility') . '</span>',
+            'label' => '<i class="fa-solid fa-eye" title="' . __('crud.fields.visibility') . '" aria-hidden="true"></i><span class="sr-only">' . __('crud.fields.visibility') . '</span>',
             'render' => function (\App\Models\Relation $model) {
                 return view('icons.visibility', ['icon' => $model->visibilityIcon()]);
             }

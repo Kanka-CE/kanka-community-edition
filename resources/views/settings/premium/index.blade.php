@@ -36,7 +36,7 @@
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-1 mb-3">
                         <div class="flex items-center">
                             <div class="p-1 w-12 flex-none text-center">
-                                <x-icon class="fa-regular fa-palette fa-2x text-neutral-content" />
+                                <x-icon class="fa-solid fa-palette fa-2x text-neutral-content" />
                             </div>
                             <div class="p-1">
                                 {{ __('settings/boosters.pitch.benefits.customisable') }}
@@ -44,7 +44,7 @@
                         </div>
                         <div class="flex items-center">
                             <div class="p-1 w-12 flex-none text-center">
-                                <x-icon class="fa-regular fa-puzzle-piece fa-2x text-neutral-content" />
+                                <x-icon class="fa-solid fa-puzzle-piece fa-2x text-neutral-content" />
                             </div>
                             <div class="p-1">
                                 {{ __('settings/boosters.pitch.benefits.plugins') }}
@@ -52,7 +52,7 @@
                         </div>
                         <div class="flex items-center">
                             <div class="p-1 w-12 flex-none text-center">
-                                <x-icon class="fa-regular fa-hourglass-half fa-2x text-neutral-content" />
+                                <x-icon class="fa-solid fa-hourglass-half fa-2x text-neutral-content" />
                             </div>
                             <div class="p-1">
                                 {{ __('settings/boosters.pitch.benefits.backup', ['amount' => config('entities.hard_delete')]) }}
@@ -60,7 +60,7 @@
                         </div>
                         <div class="flex items-center">
                             <div class="p-1 w-12 flex-none text-center">
-                                <x-icon class="fa-regular fa-horse-head fa-2x text-neutral-content" />
+                                <x-icon class="fa-solid fa-horse-head fa-2x text-neutral-content" />
                             </div>
                             <div class="p-1">
                                 {{ __('settings/boosters.pitch.benefits.icons') }}
@@ -68,7 +68,7 @@
                         </div>
                         <div class="flex items-center">
                             <div class="p-1 w-12 flex-none text-center">
-                                <x-icon class="fa-regular fa-camera fa-2x text-neutral-content" />
+                                <x-icon class="fa-solid fa-camera fa-2x text-neutral-content" />
                             </div>
                             <div class="p-1">
                                 {{ __('settings/boosters.pitch.benefits.upload') }}
@@ -76,7 +76,7 @@
                         </div>
                         <div class="flex items-center">
                             <div class="p-1 w-12 flex-none text-center">
-                                <x-icon class="fa-regular fa-circle-nodes fa-2x text-neutral-content" />
+                                <x-icon class="fa-solid fa-circle-nodes fa-2x text-neutral-content" />
                             </div>
                             <div class="p-1">
                                 {{ __('settings/boosters.pitch.benefits.visual') }}

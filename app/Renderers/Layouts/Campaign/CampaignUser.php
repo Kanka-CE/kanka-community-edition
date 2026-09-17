@@ -47,7 +47,7 @@ class CampaignUser extends Layout
                         '</a>';
                     if ($model->user->isBanned()) {
                         $html .=
-                            '<i class="fa-regular fa-ban" aria-hidden="true" data-toggle="tooltip" data-title = "' .
+                            '<i class="fa-solid fa-ban" aria-hidden="true" data-toggle="tooltip" data-title = "' .
                             __('campaigns.members.fields.banned') .
                             '"></i>';
                     }
@@ -89,7 +89,7 @@ class CampaignUser extends Layout
                                 $this->campaign,
                                 $model->id,
                             ]) .
-                            '" class="fa-regular fa-pencil cursor-pointer"
+                            '" class="fa-solid fa-pencil cursor-pointer"
                             data-toggle="dialog-ajax" data-target="new-invite" data-url="' .
                             route('campaign.members.roles', [
                                 $this->campaign,
@@ -128,7 +128,7 @@ class CampaignUser extends Layout
                     }
 
                     if (! $model->user->has_last_login_sharing) {
-                        return '<i class="fa-regular fa-user-lock" aria-hidden="true" data-toggle="tooltip" data-title="' .
+                        return '<i class="fa-solid fa-user-lock" aria-hidden="true" data-toggle="tooltip" data-title="' .
                             __('campaigns.members.fields.last_login_private') .
                             '"></i>';
                     }
@@ -149,13 +149,13 @@ class CampaignUser extends Layout
         return [
             'switch' => [
                 'label' => 'campaigns.members.actions.switch',
-                'icon' => 'fa-regular fa-sign-in-alt',
+                'icon' => 'fa-solid fa-sign-in-alt',
                 'can' => 'switch',
                 'route' => 'identity.switch',
             ],
             'delete' => [
                 'label' => 'campaigns.members.actions.remove',
-                'icon' => 'fa-regular fa-trash-can',
+                'icon' => 'fa-solid fa-trash-can',
                 'can' => 'delete',
                 'type' => 'dialog-ajax',
                 'route' => 'campaign_users.delete',
