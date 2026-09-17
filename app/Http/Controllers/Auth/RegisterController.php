@@ -50,6 +50,10 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:users', new AccountEmail],
             'password' => ['required', 'string', 'min:8'],
         ];
+        // Invitation password required?
+        if (config('auth.register_by_invitation.required')) {
+            $rules['invite_password'] = ['required', 'string'];
+        }
         if (config('auth.recaptcha.enabled')) {
             $rules['g-recaptcha-response'] = ['required', 'string', new Recaptcha];
         }
@@ -64,6 +68,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // Check invitation password if required
+        if (config('auth.register_by_invitation.required')) {
+            if (request('invite_password') !== config('auth.register_by_invitation.password')) {
+                throw ValidationException::withMessages([
+                    'invite_password' => ['Invalid invitation password.'],
+                ]);
+            }
+        }
+
         $referrer = $this->referralService->referrer();
         $user = User::create([
             'name' => $data['name'],
