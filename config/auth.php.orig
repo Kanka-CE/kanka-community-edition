@@ -107,14 +107,6 @@ return [
     'register_enabled' => env('APP_REGISTRATION_ENABLED', true),
 
     /**
-     * If set to true, user registration requires an invitation password.
-     */
-    'register_by_invitation' => [
-        'required' => env('APP_INVITATION_REQUIRED', false),
-        'password' => env('APP_INVITATION_PASSWORD'),
-    ],
-
-    /**
      * If set to true, show a dropdown of users for the login instead of a text field
      */
     'user_list' => env('APP_LOGIN_LIST', false),
