@@ -48,8 +48,19 @@ class SubscriptionCancelEmailJob implements ShouldQueue
             ->send(new CancelledSubscriptionMail($cancellation));
 
         // Send an email to the user
-        Mail::to($user->email)
-            ->send(new CancelledUserSubscriptionMail($cancellation));
+        try {
+            Mail::to($user->email)
+                ->send(new CancelledUserSubscriptionMail($cancellation));
+        } catch (\GuzzleHttp\Exception\ServerException $e) {
+            // Silence
+        } catch (TransportExceptionInterface $e) {
+            // Mail isn't configured or the server is unreachable. This is allowed, so don't rethrow.
+            Log::warning('Cancel subscription email not send: ' . $e->getMessage());
+        } catch (Exception $e) {
+            // Something went wrong with mailgun, or the email is invalid. Silence these errors
+            // to avoid spamming sentry.
+            Log::error('Cancel subscription email not send: ' . $e->getMessage());
+        }
 
         UserLogger::user($user)->log(UserAction::subCancelManual);
     }

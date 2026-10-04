@@ -46,9 +46,21 @@ class WelcomeSubscriptionEmailJob implements ShouldQueue
 
         $tier = Tier::find($this->tierId);
 
-        Mail::to($user->email)
-            ->send(
-                new NewSubscriberMail($user, $tier)
-            );
+        try {
+          Mail::to($user->email)
+              ->send(
+                  new NewSubscriberMail($user, $tier)
+              );
+        } catch (\GuzzleHttp\Exception\ServerException $e) {
+            // Silence
+        } catch (TransportExceptionInterface $e) {
+            // Mail isn't configured or the server is unreachable. This is allowed, so don't rethrow.
+            Log::debug('New subscription email not sent: ' . $e->getMessage());
+        } catch (Exception $e) {
+            // Something went wrong with mailgun, or the email is invalid. Silence these errors
+            // to avoid spamming sentry.
+            Log::error('New subscription email not sent: ' . $e->getMessage());
+        }
+
     }
 }

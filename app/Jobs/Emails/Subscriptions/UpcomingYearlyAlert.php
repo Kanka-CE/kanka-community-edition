@@ -42,11 +42,23 @@ class UpcomingYearlyAlert implements ShouldQueue
         }
 
         // Send an email to the user
-        Mail::to($user->email)
-            ->locale($user->locale)
-            ->send(
-                new UpcomingYearlyEmail($user)
-            );
+        try {
+          Mail::to($user->email)
+              ->locale($user->locale)
+              ->send(
+                  new UpcomingYearlyEmail($user)
+              );
+        } catch (\GuzzleHttp\Exception\ServerException $e) {
+            // Silence
+        } catch (TransportExceptionInterface $e) {
+            // Mail isn't configured or the server is unreachable. This is allowed, so don't rethrow.
+            Log::warning('Upcoming yearly renewal warning email not sent: ' . $e->getMessage());
+        } catch (Exception $e) {
+            // Something went wrong with mailgun, or the email is invalid. Silence these errors
+            // to avoid spamming sentry.
+            Log::error('Upcoming yearly renewal warning email not sent: ' . $e->getMessage());
+        }
+
         UserLogger::user($user)->log(UserAction::yearlyRenewWarning);
     }
 }

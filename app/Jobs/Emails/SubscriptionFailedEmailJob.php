@@ -60,11 +60,23 @@ class SubscriptionFailedEmailJob implements ShouldQueue
             );*/
 
         // Send an email to the user
-        Mail::to($user->email)
-            // ->bcc('hello@kanka.io')
-            ->send(
-                new FailedUserSubscriptionMail($user)
-            );
+        try {
+            Mail::to($user->email)
+                // ->bcc('hello@kanka.io')
+                ->send(
+                    new FailedUserSubscriptionMail($user)
+                );
+        } catch (\GuzzleHttp\Exception\ServerException $e) {
+            // Silence
+        } catch (TransportExceptionInterface $e) {
+            // Mail isn't configured or the server is unreachable. This is allowed, so don't rethrow.
+            Log::debug('Failed subscription email not send: ' . $e->getMessage());
+        } catch (Exception $e) {
+            // Something went wrong with mailgun, or the email is invalid. Silence these errors
+            // to avoid spamming sentry.
+            Log::error('Failed subscription email not sent: ' . $e->getMessage());
+        }
+
         UserLogger::user($user)->log(UserAction::failedChargeEmail);
     }
 }

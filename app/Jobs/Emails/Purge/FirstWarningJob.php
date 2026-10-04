@@ -66,10 +66,13 @@ class FirstWarningJob implements ShouldQueue
                 );
         } catch (ServerException $e) {
             // Silence
+        } catch (TransportExceptionInterface $e) {
+            // Mail isn't configured or the server is unreachable. This is allowed, so don't rethrow.
+            Log::debug('First purge warning email not sent: ' . $e->getMessage());
         } catch (Exception $e) {
             // Something went wrong with mailgun, or the email is invalid. Silence these errors
             // to avoid spamming sentry.
-            throw $e;
+            Log::error('First purge warning email not sent: ' . $e->getMessage());
         }
     }
 }

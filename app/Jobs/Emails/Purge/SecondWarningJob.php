@@ -66,10 +66,11 @@ class SecondWarningJob implements ShouldQueue
                 );
         } catch (ServerException $e) {
             // Silence
+            Log::debug('Second warning email not sent: ' . $e->getMessage());
         } catch (Exception $e) {
             // Something went wrong with mailgun, or the email is invalid. Silence these errors
             // to avoid spamming sentry.
-            throw $e;
+            Log::error('Second warning email not sent: ' . $e->getMessage());
         }
     }
 }

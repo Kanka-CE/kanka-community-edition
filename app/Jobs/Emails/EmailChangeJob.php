@@ -44,10 +44,21 @@ class EmailChangeJob implements ShouldQueue
         }
 
         // Send an email to the user
-        Mail::to($this->email)
-            ->locale($user->locale)
-            ->send(
-                new EmailChangeMail($user)
-            );
+        try {
+          Mail::to($this->email)
+              ->locale($user->locale)
+              ->send(
+                  new EmailChangeMail($user)
+              );
+        } catch (\GuzzleHttp\Exception\ServerException $e) {
+            // Silence
+        } catch (TransportExceptionInterface $e) {
+            // Mail isn't configured or the server is unreachable. This is allowed, so don't rethrow.
+            Log::error('Change email email not sent: ' . $e->getMessage());
+        } catch (Exception $e) {
+            // Something went wrong with mailgun, or the email is invalid. Silence these errors
+            // to avoid spamming sentry.
+            Log::error('Change email email not sent: ' . $e->getMessage());
+        }
     }
 }
