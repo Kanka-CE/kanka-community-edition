@@ -53,7 +53,7 @@ class SubscriptionFailedEmailJob implements ShouldQueue
             'red'
         ));
 
-        // Send an email to the admins
+        // Do not send emails to the upstream admins!
         /*Mail::to('hello@kanka.io')
             ->send(
                 new FailedSubscriptionMail($user)
