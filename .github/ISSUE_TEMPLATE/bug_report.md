@@ -1,1 +1,0 @@
-Please report bugs in Discord [![Discord](https://img.shields.io/discord/413623253366603777.svg)](https://discord.gg/rhsyZJ4). This github isn't used for bug tracking. 
