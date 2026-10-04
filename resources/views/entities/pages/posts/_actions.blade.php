@@ -17,7 +17,7 @@
             'clipboard' => $title,
             'toast' => __('entities/notes.copy_mention.success')
     ]; @endphp
-    <x-dropdowns.item link="#" :data="$data" icon="fa-regular fa-link">
+    <x-dropdowns.item link="#" :data="$data" icon="fa-solid fa-link">
         {{ __('entities/notes.copy_mention.copy') }}
     </x-dropdowns.item>
 @endif
@@ -25,12 +25,12 @@
     <x-dropdowns.item
         :link="route('posts.move', [$campaign, 'entity' => $entity, 'post' => $post, 'from' => 'main'])"
         :dialog="route('posts.move', [$campaign, 'entity' => $entity, 'post' => $post, 'from' => 'main'])"
-        icon="fa-regular fa-arrows-left-right">
+        icon="fa-solid fa-arrows-left-right">
         {{ __('articles.actions.move') }}
     </x-dropdowns.item>
 @endif
 @can('setPostTemplates', $campaign)
-    <x-dropdowns.item :link="route('posts.template', [$campaign, 'post' => $post])" :icon="($post->isTemplate() ? 'fa-regular' : 'fa-solid') . ' fa-star'">
+    <x-dropdowns.item :link="route('posts.template', [$campaign, 'post' => $post])" :icon="($post->isTemplate() ? 'fa-solid' : 'fa-solid') . ' fa-star'">
         @if ($post->isTemplate())
             {{ __('posts/templates.actions.unset') }}
         @else
@@ -39,7 +39,7 @@
     </x-dropdowns.item>
 @endcan
 @can('update', $entity)
-    <x-dropdowns.item :link="route('entities.posts.logs', [$campaign, $entity, $post])" icon="fa-regular fa-history">
+    <x-dropdowns.item :link="route('entities.posts.logs', [$campaign, $entity, $post])" icon="fa-solid fa-history">
         {{ __('crud.history.view') }}
     </x-dropdowns.item>
 @endcan

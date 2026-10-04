@@ -36,7 +36,7 @@ const initVisibilityPickers = () => {
                 // Show spinner on clicked option
                 option.dataset.loading = '1';
                 const statusEl = option.querySelector('.visibility-picker-status');
-                statusEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-primary" aria-hidden="true"></i>';
+                statusEl.innerHTML = '<i class="fa-solid fa-spinner fa-spinner text-primary" aria-hidden="true"></i>';
 
                 // Remove check from previous selection
                 const prevOption = dropdown.querySelector('.visibility-picker-option[aria-checked="true"]');
@@ -63,7 +63,7 @@ const initVisibilityPickers = () => {
 
                             const status = opt.querySelector('.visibility-picker-status');
                             status.innerHTML = isSelected
-                                ? '<i class="fa-regular fa-check text-primary" aria-hidden="true"></i>'
+                                ? '<i class="fa-solid fa-check text-primary" aria-hidden="true"></i>'
                                 : '';
                         });
 
@@ -76,7 +76,7 @@ const initVisibilityPickers = () => {
 
                         if (prevOption) {
                             prevOption.querySelector('.visibility-picker-status').innerHTML =
-                                '<i class="fa-regular fa-check text-primary" aria-hidden="true"></i>';
+                                '<i class="fa-solid fa-check text-primary" aria-hidden="true"></i>';
                         }
 
                         window.showToast('Failed to update visibility.', 'error');
@@ -138,7 +138,7 @@ const initVisibilityPickerFields = () => {
 
                     const status = opt.querySelector('.visibility-picker-field-status');
                     status.innerHTML = isSelected
-                        ? '<i class="fa-regular fa-check text-primary" aria-hidden="true"></i>'
+                        ? '<i class="fa-solid fa-check text-primary" aria-hidden="true"></i>'
                         : '';
                 });
 

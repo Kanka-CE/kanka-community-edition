@@ -73,15 +73,15 @@
         </div>
         <div class="flex-none text-2xl text-primary mb-2">
             @if ($stat['level'] === 0)
-                <x-icon class="fa-duotone fa-coin" />
+                <x-icon class="fa-solid fa-coin" />
             @elseif ($stat['level'] === 1)
-                <x-icon class="fa-duotone fa-coins" />
+                <x-icon class="fa-solid fa-coins" />
             @elseif ($stat['level'] === 2)
-                <x-icon class="fa-duotone fa-gem" />
+                <x-icon class="fa-solid fa-gem" />
             @elseif ($stat['level'] === 3)
-                <x-icon class="fa-duotone fa-treasure-chest" />
+                <x-icon class="fa-solid fa-sack-dollar" />
             @elseif ($stat['level'] === 4)
-                <x-icon class="fa-duotone fa-crown" />
+                <x-icon class="fa-solid fa-crown" />
             @endif
         </div>
     </div>

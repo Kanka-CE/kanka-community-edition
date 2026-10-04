@@ -47,7 +47,7 @@ use App\Enums\Widget;
 
                     @if (in_array($widget->widget, [Widget::Recent, Widget::Random]))
                         <div class="rounded bg-base-200 text-neutral-content px-2 py-1 text-xs truncate">
-                            <x-icon class="fa-regular fa-search" />
+                            <x-icon class="fa-solid fa-search" />
                         @if ($widget->entityType)
                             {!! $widget->entityType->plural() !!}
                         @elseif (!empty($widget->conf('singular')))
@@ -59,7 +59,7 @@ use App\Enums\Widget;
 
                         @if (!empty($widget->conf('filters')))
                             <div class="rounded bg-base-200 text-neutral-content px-2 py-1 text-xs truncate">
-                                <x-icon class="fa-regular fa-filter" tooltip title="{{ $widget->conf('filters') }}" />
+                                <x-icon class="fa-solid fa-filter" tooltip title="{{ $widget->conf('filters') }}" />
                                 {{ $widget->conf('filters') }}
                             </div>
                         @endif
@@ -68,7 +68,7 @@ use App\Enums\Widget;
                     @php $galleryFolder = \App\Models\Image::find($widget->conf('folder_id')); @endphp
                     @if ($galleryFolder)
                         <p class="text-neutral-content text-sm">
-                            <x-icon class="fa-regular fa-folder" />
+                            <x-icon class="fa-solid fa-folder" />
                             {{ $galleryFolder->name }}
                         </p>
                     @endif

@@ -7,14 +7,14 @@
             <li class="px-2 section-dashboard">
                 <x-sidebar.element
                     :url="route('dashboard', [$campaign])"
-                    icon="fa-duotone fa-house"
+                    icon="fa-solid fa-house"
                     :text="__('sidebar.dashboard')"
                 ></x-sidebar.element>
             </li>
             <li class="px-2 section-overview {{ $active('overview') }}">
                 <x-sidebar.element
                     :url="route('overview', [$campaign])"
-                    icon="fa-duotone fa-block"
+                    icon="fa-solid fa-cube"
                     :text="__('crud.tabs.overview')"
                 ></x-sidebar.element>
             </li>
@@ -22,7 +22,7 @@
                 <li class="px-2 section-overview {{ $active('recovery') }}">
                     <x-sidebar.element
                         :url="route('recovery', [$campaign])"
-                        icon="fa-duotone fa-trash-restore"
+                        icon="fa-solid fa-trash-restore"
                         :text="__('campaigns.show.tabs.recovery')"
                         premium
                     ></x-sidebar.element>
@@ -32,7 +32,7 @@
             <li class="px-2 section-achievements {{ $active('achievements') }}">
                 <x-sidebar.element
                     :url="route('campaign.achievements', [$campaign])"
-                    icon="fa-duotone fa-trophy"
+                    icon="fa-solid fa-trophy"
                     :text="__('campaigns.show.tabs.achievements')"
                     premium
                 ></x-sidebar.element>
@@ -41,7 +41,7 @@
             <li class="px-2 section-stats {{ $active('stats') }}">
                 <x-sidebar.element
                     :url="route('campaign.stats', [$campaign])"
-                    icon="fa-duotone fa-bars"
+                    icon="fa-solid fa-bars"
                     :text="__('campaigns.show.tabs.stats')"
                 ></x-sidebar.element>
             </li>
@@ -53,7 +53,7 @@
                             <li class="px-2 section-members {{ $active('campaign_users') }}">
                                 <x-sidebar.element
                                     :url="route('campaign_users.index', [$campaign])"
-                                    icon="fa-duotone fa-users"
+                                    icon="fa-solid fa-users"
                                     :text="__('campaigns.show.tabs.members')"
                                 ></x-sidebar.element>
                             </li>
@@ -62,7 +62,7 @@
                             <li class="px-2 section-roles {{ $active('campaign_roles') }}">
                                 <x-sidebar.element
                                     :url="route('campaign_roles.index', [$campaign])"
-                                    icon="fa-duotone fa-user-shield"
+                                    icon="fa-solid fa-user-shield"
                                     :text="__('campaigns.show.tabs.roles')"
                                 ></x-sidebar.element>
                             </li>
@@ -71,7 +71,7 @@
                             <li class="px-2 section-applications {{ $active('applications') }}">
                                 <x-sidebar.element
                                     :url="route('applications.index', [$campaign])"
-                                    icon="fa-duotone fa-inbox"
+                                    icon="fa-solid fa-inbox"
                                     :text="__('campaigns/applications.title')"
                                 ></x-sidebar.element>
                             </li>
@@ -88,7 +88,7 @@
                         <li class="px-2 section-modules {{ $active(['modules', 'entity_types']) }}">
                             <x-sidebar.element
                                 :url="route('campaign.modules', [$campaign])"
-                                icon="fa-duotone fa-floppy-disks"
+                                icon="fa-solid fa-floppy-disk"
                                 :text="__('campaigns/categories.tab')"
                             ></x-sidebar.element>
                         </li>
@@ -97,7 +97,7 @@
                         <li class="px-2 section-defaults {{ $active('campaign-defaults') }}">
                             <x-sidebar.element
                                 :url="route('campaign-defaults', [$campaign])"
-                                icon="fa-duotone fa-sliders"
+                                icon="fa-solid fa-sliders"
                                 :text="__('campaigns.show.tabs.defaults')"
                                 premium
                             ></x-sidebar.element>
@@ -107,7 +107,7 @@
                     <li class="px-2 section-placeholders {{ $active('placeholder-images') }}">
                         <x-sidebar.element
                             :url="route('campaign.default-images', [$campaign])"
-                            icon="fa-duotone fa-image"
+                            icon="fa-solid fa-image"
                             :text="__('campaigns/default-images.title')"
                             premium
                         ></x-sidebar.element>
@@ -118,7 +118,7 @@
                         <li class="px-2 section-styles {{ $active(['campaign_styles', 'theme-builder']) }}">
                             <x-sidebar.element
                                 :url="route('campaign_styles.index', [$campaign])"
-                                icon="fa-duotone fa-palette"
+                                icon="fa-solid fa-palette"
                                 :text="__('campaigns.show.tabs.styles')"
                                 premium
                             ></x-sidebar.element>
@@ -129,7 +129,7 @@
                         <li class="px-2 section-plugins {{ $active('plugins') }}">
                             <x-sidebar.element
                                 :url="route('campaign_plugins.index', [$campaign])"
-                                icon="fa-duotone fa-puzzle-piece"
+                                icon="fa-solid fa-puzzle-piece"
                                 :text="__('campaigns.show.tabs.plugins')"
                                 premium
                             ></x-sidebar.element>
@@ -139,7 +139,7 @@
                         <li class="px-2 section-sidebar {{ $active('sidebar-setup') }}">
                             <x-sidebar.element
                                 :url="route('campaign-sidebar', [$campaign])"
-                                icon="fa-duotone fa-bars-staggered"
+                                icon="fa-solid fa-bars-staggered"
                                 :text="__('campaigns.show.tabs.sidebar')"
                                 premium
                             ></x-sidebar.element>
@@ -156,7 +156,7 @@
                         <li class="px-2 section-export {{ $active('campaign-export') }}">
                             <x-sidebar.element
                                 :url="route('campaign.export', [$campaign])"
-                                icon="fa-duotone fa-download"
+                                icon="fa-solid fa-download"
                                 :text="__('campaigns.show.tabs.export')"
                             ></x-sidebar.element>
                         </li>
@@ -164,7 +164,7 @@
                         <li class="px-2 section-import {{ $active('campaign-import') }}">
                             <x-sidebar.element
                                 :url="route('campaign.import', [$campaign])"
-                                icon="fa-duotone fa-upload"
+                                icon="fa-solid fa-upload"
                                 :text="__('campaigns.show.tabs.import')"
                             ></x-sidebar.element>
                         </li>
@@ -172,7 +172,7 @@
                             <li class="px-2 section-webhooks {{ $active('webhooks') }}">
                                 <x-sidebar.element
                                     :url="route('webhooks.index', [$campaign])"
-                                    icon="fa-duotone fa-webhook"
+                                    icon="fa-solid fa-arrows-turn-to-dots"
                                     :text="__('campaigns.show.tabs.webhooks')"
                                     premium
                                 ></x-sidebar.element>
@@ -182,7 +182,7 @@
                             <li class="px-2 section-logs {{ $active('logs') }}">
                                 <x-sidebar.element
                                     :url="route('campaign.logs', [$campaign])"
-                                    icon="fa-duotone fa-history"
+                                    icon="fa-solid fa-history"
                                     :text="__('campaigns/logs.title')"
                                 ></x-sidebar.element>
                             </li>
@@ -199,7 +199,7 @@
                         <li class="px-2 section-deletion {{ $active('deletion') }}">
                             <x-sidebar.element
                                 :url="route('campaign.delete', [$campaign])"
-                                icon="fa-duotone fa-radiation"
+                                icon="fa-solid fa-radiation"
                                 :text="__('campaigns.show.tabs.deletion')"
                             ></x-sidebar.element>
                         </li>

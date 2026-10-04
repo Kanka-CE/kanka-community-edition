@@ -10,12 +10,12 @@ $isPrivate = old('is_private', $source->is_private ?? $model->is_private ?? $cam
     <input type="hidden" name="is_private" :value="private ? 1 : 0" />
 
     <button type="button" class="btn2 btn-outline " @click="open = !open" :aria-expanded="open">
-        <i class="fa-regular fa-lock" x-show="private" x-cloak aria-hidden="true"></i>
-        <i class="fa-regular fa-eye" x-show="!private" aria-hidden="true"></i>
+        <i class="fa-solid fa-lock" x-show="private" x-cloak aria-hidden="true"></i>
+        <i class="fa-solid fa-eye" x-show="!private" aria-hidden="true"></i>
         <span x-show="private" x-cloak class="hidden md:inline">{{ __('entities/permissions.toggle.private.title') }}</span>
         <span x-show="!private" class="hidden md:inline">{{ __('entities/permissions.toggle.public.title') }}</span>
         <span class="hidden md:inline">
-            <x-icon class="fa-regular fa-chevron-down text-xs " />
+            <x-icon class="fa-solid fa-chevron-down text-xs " />
         </span>
     </button>
 
@@ -26,7 +26,7 @@ $isPrivate = old('is_private', $source->is_private ?? $model->is_private ?? $cam
             @click="private = false; open = false">
 
             <div class="bg-base-300 rounded w-7 h-7 flex items-center justify-center flex-none" :class="!private ? 'bg-primary text-primary-content' : ''">
-                <x-icon class="fa-regular fa-eye" />
+                <x-icon class="fa-solid fa-eye" />
             </div>
             <div class="flex flex-col gap-0">
 

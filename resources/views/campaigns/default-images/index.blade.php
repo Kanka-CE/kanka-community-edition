@@ -29,7 +29,7 @@
                 @endif
 
                 <a href="#" class="btn2 btn-sm" data-toggle="dialog" data-target="reset-confirm">
-                    <x-icon class="fa-regular fa-eraser" />
+                    <x-icon class="fa-solid fa-eraser" />
                     {{ __('crud.actions.reset') }}
                 </a>
             @endcan

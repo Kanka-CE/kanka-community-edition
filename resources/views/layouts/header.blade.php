@@ -52,7 +52,7 @@
                         @endphp
                         <div class="dropdown">
                             <button type="button" class="text-neutral-content hover:text-accent text-2xl" data-dropdown aria-expanded="false">
-                                <x-icon class="fa-regular fa-gem" />
+                                <x-icon class="fa-solid fa-gem" />
                             </button>
                             <div class="dropdown-menu hidden" role="menu">
                                 @if (request()->has('_boosted'))
@@ -70,7 +70,7 @@
                         </div>
                         <div class="dropdown">
                             <button type="button" class="text-neutral-content hover:text-accent text-2xl" data-dropdown aria-expanded="false">
-                                <x-icon class="fa-regular fa-palette" />
+                                <x-icon class="fa-solid fa-palette" />
                             </button>
                             <div class="dropdown-menu hidden" role="menu">
                                 @if (request()->has('_theme'))

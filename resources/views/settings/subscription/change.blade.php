@@ -108,7 +108,7 @@
 
                 <div class="text-neutral-content flex flex-col gap-2 text-left">
                     <div class="flex gap-1">
-                        <x-icon class="fa-regular fa-question-circle w-5 flex-none" />
+                        <x-icon class="fa-solid fa-question-circle w-5 flex-none" />
                         <p class="text-xs">
                             @if ($isYearly)
                                 {!! __('subscriptions/confirm.helpers.auto-renew.yearly', ['date' => $nextBillingDate->isoFormat('MMMM D, Y')]) !!}
@@ -118,12 +118,12 @@
                         </p>
                     </div>
                     <div class="flex gap-1">
-                        <x-icon class="fa-regular fa-shield w-5 flex-none" />
+                        <x-icon class="fa-solid fa-shield w-5 flex-none" />
                         <p class="text-xs">{!! __('settings.subscription.helpers.stripe', ['stripe' => '<a href="https://stripe.com" class="text-link">Stripe</a>']) !!}</p>
                     </div>
                     @if($isYearly)
                         <div class="flex gap-1">
-                            <x-icon class="fa-regular fa-handshake w-5 flex-none" />
+                            <x-icon class="fa-solid fa-handshake w-5 flex-none" />
                             <p class="text-xs grow">
                                 {!! __('subscriptions/confirm.helpers.refund', ['email' => '<a href="mailto' . config('app.email') . '" class="text-link">' . config('app.email') . '</a>']) !!}
                             </p>

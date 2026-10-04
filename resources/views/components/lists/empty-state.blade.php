@@ -16,12 +16,12 @@
 
     <div class="flex gap-4 items-center justify-center flex-col lg:flex-row">
         <a href="{{ \App\Facades\Domain::toFront('campaigns') }}" class="text-link">
-            <x-icon class="fa-regular fa-sparkles" />
+            <x-icon class="fa-solid fa-sparkles" />
             {{ __('lists.actions.public') }}
         </a>
         @if (isset($enityType) && $enityType->isStandard())
             <a href="https://docs.kanka.io/en/latest/entries/{{ ($entityType->isAttributeTemplate() ? 'property-kits' : \Illuminate\Support\Str::replace('_', '-', $entityType->pluralCode())) }}.html" class="text-link">
-                <x-icon class="fa-regular fa-book" />
+                <x-icon class="fa-solid fa-book" />
                 {{ __('lists.actions.learn') }}
             </a>
         @endif

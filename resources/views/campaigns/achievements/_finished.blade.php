@@ -5,7 +5,7 @@
 
     <div class="flex gap-2 md:gap-5 items-center grow">
         <div class="flex-none text-accent text-4xl border-accent border-opacity-20 rounded-full border-4 flex items-center justify-center w-20 h-20">
-            <x-icon class="fa-duotone fa-crown" />
+            <x-icon class="fa-solid fa-crown" />
         </div>
         <div class="grow">
             <p class="text-neutral-content">

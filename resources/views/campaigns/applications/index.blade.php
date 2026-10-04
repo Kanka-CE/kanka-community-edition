@@ -42,32 +42,32 @@
         <div class="flex gap-2 items-center justify-end">
             <div class="dropdown">
                 <button type="button" class="btn2 btn-default btn-sm" data-dropdown aria-expanded="false">
-                    <i class="fa-regular fa-filter" aria-hidden="true"></i>
+                    <i class="fa-solid fa-filter" aria-hidden="true"></i>
                     {{ __('campaigns/applications.filters.title') }}
                 </button>
                 <div class="dropdown-menu hidden" role="menu">
                     <x-dropdowns.item
                         :link="route('applications.index', ['campaign' => $campaign])"
-                        icon="fa-regular fa-clock"
+                        icon="fa-solid fa-clock"
                         :css="!isset($filter) ? 'font-semibold' : ''">
                         {{ __('campaigns/applications.filters.pending') }}
                     </x-dropdowns.item>
                     <x-dropdowns.item
                         :link="route('applications.index', ['campaign' => $campaign, 'filter' => 'approved'])"
-                        icon="fa-regular fa-check"
+                        icon="fa-solid fa-check"
                         :css="($filter ?? '') === 'approved' ? 'font-semibold' : ''">
                         {{ __('campaigns/applications.filters.approved') }}
                     </x-dropdowns.item>
                     <x-dropdowns.item
                         :link="route('applications.index', ['campaign' => $campaign, 'filter' => 'rejected'])"
-                        icon="fa-regular fa-xmark"
+                        icon="fa-solid fa-xmark"
                         :css="($filter ?? '') === 'rejected' ? 'font-semibold' : ''">
                         {{ __('campaigns/applications.filters.rejected') }}
                     </x-dropdowns.item>
                     <x-dropdowns.divider />
                     <x-dropdowns.item
                         :link="route('applications.index', ['campaign' => $campaign, 'filter' => 'all'])"
-                        icon="fa-regular fa-filter-slash"
+                        icon="fa-solid fa-filter-circle-xmark"
                         :css="($filter ?? '') === 'all' ? 'font-semibold' : ''">
                         {{ __('campaigns/applications.filters.all') }}
                     </x-dropdowns.item>

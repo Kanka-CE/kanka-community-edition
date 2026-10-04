@@ -22,7 +22,7 @@ use App\Facades\Datagrid ?>
                 <x-learn-more url="features/campaigns/theming.html" />
                 @if ($campaign->boosted())
                     <a href="{{ route('campaign_styles.builder', $campaign) }}" class="btn2 btn-primary btn-sm">
-                        <x-icon class="fa-regular fa-palette" />
+                        <x-icon class="fa-solid fa-palette" />
                         {{ __('campaigns/styles.actions.builder') }}
                     </a>
                     <a href="{{ route('campaign_styles.create', $campaign) }}" class="btn2 btn-primary btn-sm">

@@ -106,7 +106,7 @@ $traits = $model->characterTraits()->personality()->orderBy('default_order')->ge
                         @if (!$model->is_personality_visible)
                             <x-icon class="lock" tooltip :title="__('characters.hints.personality_not_visible')" />
                         @else
-                            <x-icon class="fa-regular fa-lock-open" tooltip :title="__('characters.hints.personality_visible')" />
+                            <x-icon class="fa-solid fa-lock-open" tooltip :title="__('characters.hints.personality_visible')" />
                         @endif
                     @endif
                 </div>

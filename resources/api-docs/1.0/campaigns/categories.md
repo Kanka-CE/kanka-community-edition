@@ -40,7 +40,7 @@ Since campaigns have their own configuration, enabling/disabling categories, ren
             "code": "god",
             "singular": "God",
             "plural": "Gods",
-            "icon": "fa-duotone fa-user-beard-bolt",
+            "icon": "fa-solid fa-user",
             "is_custom": true,
             "is_enabled": true,
             "is_nested": true,
