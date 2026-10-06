@@ -119,6 +119,7 @@ return [
 
     'name' => env('APP_NAME', 'Miscellany'),
     'email' => env('APP_EMAIL', 'you@example.com'),
+    'email_enabled' => env('APP_EMAIL_ENABLED', true),
 
     /*
     |--------------------------------------------------------------------------

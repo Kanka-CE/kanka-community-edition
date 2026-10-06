@@ -54,18 +54,24 @@ class WelcomeEmailJob implements ShouldQueue
         }
         Log::info('WelcomeEmailJob', ['user' => $this->userId]);
 
-        // try {
-        Mail::to($user->email)
-            ->locale($this->language)
-            ->send(
-                new WelcomeEmail($user)
-            );
-        /*} catch (\GuzzleHttp\Exception\ServerException $e) {
-            // Silence
-        } catch (Exception $e) {
-            // Something went wrong with mailgun, or the email is invalid. Silence these errors
-            // to avoid spamming sentry.
-            throw $e;
-        }*/
+        if ( config('app.email_enabled') )
+        {
+            try {
+                Mail::to($user->email)
+                    ->locale($this->language)
+                    ->send(
+                        new WelcomeEmail($user)
+                    );
+            } catch (\GuzzleHttp\Exception\ServerException $e) {
+                // Silence
+            } catch (TransportExceptionInterface $e) {
+                // Mail isn't configured or the server is unreachable. This is allowed, so don't rethrow.
+                Log::debug('Welcome email not sent: ' . $e->getMessage());
+            } catch (Exception $e) {
+                // Something went wrong with mailgun, or the email is invalid. Silence these errors
+                // to avoid spamming sentry.
+                Log::error('Welcome email not sent: ' . $e->getMessage());
+            }
+        }
     }
 }

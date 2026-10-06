@@ -54,22 +54,28 @@ class FirstWarningJob implements ShouldQueue
         $campaigns = $service->user($user)->flaggedCampaigns();
         UserLogger::user($user)->log(UserAction::purgeWarningFirst);
 
-        $target = app()->isProduction() ? $user->email : config('mail.from.address');
-        if (empty($target)) {
-            return;
-        }
-        try {
-            Mail::to($target)
-                ->locale($user->locale ?? 'en-US')
-                ->send(
-                    new FirstWarning($user, $campaigns)
-                );
-        } catch (ServerException $e) {
-            // Silence
-        } catch (Exception $e) {
-            // Something went wrong with mailgun, or the email is invalid. Silence these errors
-            // to avoid spamming sentry.
-            throw $e;
+        if ( config('app.email_enabled') ) 
+        {
+            $target = app()->isProduction() ? $user->email : config('mail.from.address');
+            if (empty($target)) {
+                return;
+            }
+            try {
+                Mail::to($target)
+                    ->locale($user->locale ?? 'en-US')
+                    ->send(
+                        new FirstWarning($user, $campaigns)
+                    );
+            } catch (ServerException $e) {
+                // Silence
+            } catch (TransportExceptionInterface $e) {
+                // Mail isn't configured or the server is unreachable. This is allowed, so don't rethrow.
+                Log::debug('First purge warning email not sent: ' . $e->getMessage());
+            } catch (Exception $e) {
+                // Something went wrong with mailgun, or the email is invalid. Silence these errors
+                // to avoid spamming sentry.
+                Log::error('First purge warning email not sent: ' . $e->getMessage());
+            }
         }
     }
 }

@@ -44,10 +44,24 @@ class EmailValidationJob implements ShouldQueue
         $userValidation = UserValidation::find($this->token);
         $url = route('validation.email', ['userValidation' => $userValidation]);
 
-        Mail::to($user->email)
-            ->locale($user->locale)
-            ->send(
-                new ValidationEmail($user, $url)
-            );
+        if ( config('app.email_enabled') )
+        {
+            try {
+                Mail::to($user->email)
+                    ->locale($user->locale)
+                    ->send(
+                        new ValidationEmail($user, $url)
+                    );
+            } catch (\GuzzleHttp\Exception\ServerException $e) {
+                // Silence
+            } catch (TransportExceptionInterface $e) {
+                // Mail isn't configured or the server is unreachable. This is allowed, so don't rethrow.
+                Log::warning('Email validation email not sent: ' . $e->getMessage());
+            } catch (Exception $e) {
+                // Something went wrong with mailgun, or the email is invalid. Silence these errors
+                // to avoid spamming sentry.
+                Log::error('Email validation email not sent: ' . $e->getMessage());
+            }
+        }
     }
 }

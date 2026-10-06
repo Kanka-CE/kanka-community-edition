@@ -54,22 +54,26 @@ class SecondWarningJob implements ShouldQueue
 
         UserLogger::user($user)->log(UserAction::purgeWarningSecond);
 
-        $target = app()->isProduction() ? $user->email : config('mail.from.address');
-        if (empty($target)) {
-            return;
-        }
-        try {
-            Mail::to($target)
-                ->locale($user->locale ?? 'en-US')
-                ->send(
-                    new SecondWarning($user, $campaigns)
-                );
-        } catch (ServerException $e) {
-            // Silence
-        } catch (Exception $e) {
-            // Something went wrong with mailgun, or the email is invalid. Silence these errors
-            // to avoid spamming sentry.
-            throw $e;
+        if ( config('app.email_enabled') )
+        {
+            $target = app()->isProduction() ? $user->email : config('mail.from.address');
+            if (empty($target)) {
+                return;
+            }
+            try {
+                Mail::to($target)
+                    ->locale($user->locale ?? 'en-US')
+                    ->send(
+                        new SecondWarning($user, $campaigns)
+                    );
+            } catch (ServerException $e) {
+                // Silence
+                Log::debug('Second warning email not sent: ' . $e->getMessage());
+            } catch (Exception $e) {
+                // Something went wrong with mailgun, or the email is invalid. Silence these errors
+                // to avoid spamming sentry.
+                Log::error('Second warning email not sent: ' . $e->getMessage());
+            }
         }
     }
 }
