@@ -1,0 +1,101 @@
+name: Build Release Manually
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to publish (e.g. 13.1 or 13.1.1)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ inputs.version }}
+    steps:
+      - name: Checkout kanka-community-edition
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.WORKFLOWS }}
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Validate version and derive upstream tag
+        id: version
+        run: |
+          # Check that the version has the format x.y or x.y.z
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+(\.[0-9]+)?$ ]]; then
+            echo "::error::Version '$VERSION' is not in the format x.y or x.y.z"
+            exit 1
+          fi
+
+          # The new version must not already exist on origin
+          if git ls-remote --exit-code --tags --refs origin "refs/tags/$VERSION" >/dev/null 2>&1; then
+            echo "::error::Tag '$VERSION' already exists on origin"
+            exit 1
+          fi
+
+          # Upstream uses x.y -> drop the z part
+          UPSTREAM_TAG=$(echo "$VERSION" | cut -d. -f1,2)
+          echo "upstream_tag=$UPSTREAM_TAG" >> "$GITHUB_OUTPUT"
+          echo "Publishing $VERSION based on upstream $UPSTREAM_TAG"
+
+      - name: Add upstream remote and fetch upstream tag
+        env:
+          UPSTREAM_TAG: ${{ steps.version.outputs.upstream_tag }}
+        run: |
+          git remote add upstream https://github.com/owlchester/kanka.git
+
+          if ! git ls-remote --exit-code --tags --refs upstream "refs/tags/$UPSTREAM_TAG" >/dev/null 2>&1; then
+            echo "::error::Upstream tag '$UPSTREAM_TAG' does not exist in owlchester/kanka"
+            exit 1
+          fi
+
+          git fetch --no-tags upstream "refs/tags/$UPSTREAM_TAG:refs/upstream-tags/$UPSTREAM_TAG"
+
+      - name: Checkout upstream tag
+        env:
+          UPSTREAM_TAG: ${{ steps.version.outputs.upstream_tag }}
+        run: |
+          git checkout --detach "refs/upstream-tags/$UPSTREAM_TAG"
+
+      - name: Get patch tooling
+        run: |
+          git clone --depth 1 https://github.com/Kanka-CE/kanka-ce-container.git ce-tools
+          chmod +x ce-tools/apply-patches.sh
+
+      - name: Apply patches
+        run: |
+          ./ce-tools/apply-patches.sh
+
+      - name: Create the tag and push the tag
+        run: |
+          git tag "$VERSION"
+          git push origin "refs/tags/$VERSION"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.version }}
+          name: Release ${{ inputs.version }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Repository dispatch to trigger docker-kanka-ce build
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.PAT }}
+          repository: Kanka-CE/kanka-ce-container
+          event-type: ce-release-published
+          client-payload: '{"version": "${{ inputs.version }}"}'
