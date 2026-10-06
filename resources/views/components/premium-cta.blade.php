@@ -22,7 +22,7 @@
             <p>
                 <a
                     href="https://docs.kanka.io/en/latest/{{ $doc }}" class="link text-link">
-                    <x-icon class="fa-regular fa-book" />
+                    <x-icon class="fa-solid fa-book" />
                     {{ __('general.documentation') }}
                 </a>
             </p>

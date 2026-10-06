@@ -7,7 +7,7 @@
     @if ($asset->hiddenImage()) @continue @endif
     @if ($asset->isAudio())
         <div class="pinned-asset child icon" data-asset="{{ \Illuminate\Support\Str::slug($asset->name) }}" data-target="{{ $asset->id }}">
-                <x-icon class="fa-regular fa-file-music" />
+                <x-icon class="fa-solid fa-file-audio" />
                 {!! $asset->name !!}
             <audio controls preload="none" class="music-player w-full h-8" onloadstart="this.volume=0.25">
                 <source src="{{ $asset->url() }}" type="{{ $asset->metadata['type'] }}">

@@ -16,7 +16,7 @@ $adminLink = '<a href="' . e($adminUrl) . '" class="text-link">' . e($adminName)
 <span id="{{ $id }}" class="visibility-picker-field" data-selected="{{ $selected }}">
     <input type="hidden" name="visibility_id" value="{{ $selected }}">
     <button class="btn2 btn-outline visibility-picker-field-trigger" type="button">
-        <i class="{{ $iconMap[$selected] ?? 'fa-regular fa-eye' }}" aria-hidden="true"></i>
+        <i class="{{ $iconMap[$selected] ?? 'fa-solid fa-eye' }}" aria-hidden="true"></i>
         <span class="sr-only">{{ __('visibilities.title') }}</span>
     </button>
 
@@ -44,7 +44,7 @@ $adminLink = '<a href="' . e($adminUrl) . '" class="text-link">' . e($adminName)
                     </div>
                     <div class="visibility-picker-field-status w-5 shrink-0 mt-0.5 text-center">
                         @if ($value === $selected)
-                            <i class="fa-regular fa-check text-primary" aria-hidden="true"></i>
+                            <i class="fa-solid fa-check text-primary" aria-hidden="true"></i>
                         @endif
                     </div>
                 </button>

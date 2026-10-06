@@ -18,7 +18,7 @@ class CharacterSubmenu extends BaseSubmenu implements EntitySubmenu
 
             'button' => $canEdit ? [
                 'url' => $this->entity->url('edit'),
-                'icon' => 'fa-regular fa-pencil',
+                'icon' => 'fa-solid fa-pencil',
                 'tooltip' => __('entities/profile.actions.edit_profile'),
             ] : null,
         ];

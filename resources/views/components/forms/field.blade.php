@@ -24,11 +24,11 @@
     {!! $slot !!}
     @if (isset($helper) && !empty($helper))
         <p class="m-0 text-neutral-content text-xs @if ($tooltip) md:hidden @endif">
-            <x-icon class="fa-regular fa-circle-info" />
+            <x-icon class="fa-solid fa-circle-info" />
             {!! $helper !!}
             @if (isset($link))
                 <a href="{{ $link }}" class="text-link">
-                    <x-icon class="fa-regular fa-book" />
+                    <x-icon class="fa-solid fa-book" />
                     {{ __('general.documentation') }}
                 </a>
             @endif

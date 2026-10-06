@@ -3,7 +3,7 @@
         <header class="flex gap-6 items-center p-4 md:p-6 justify-between">
             <h4 v-html="trans('whiteboard-settings')" class="text-lg font-normal"></h4>
             <button type="button" class="text-base-content" @click="closeDialog()" title="Close">
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">trans('close')</span>
             </button>
         </header>

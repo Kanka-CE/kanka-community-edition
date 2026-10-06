@@ -7,7 +7,7 @@
 <div class="flex flex-col gap-4" x-data="{ showPrice: {{ $entity->isLocation() ? 'true' : 'false' }}, showQuantity: true, showWeight: false, showSize: false }">
     <div class="flex gap-2 inventory-toggles flex-wrap justify-center md:justify-start join">
         <span role="button" @click="showQuantity = !showQuantity" class="btn2 btn-sm">
-            <x-icon class="fa-regular fa-hashtag" />
+            <x-icon class="fa-solid fa-hashtag" />
             <span x-cloak x-show="!showQuantity">
                 {{ __('entities/inventories.togglers.show.quantity') }}
             </span>
@@ -16,7 +16,7 @@
             </span>
         </span>
         <span role="button" @click="showPrice = !showPrice" class="btn2 btn-sm">
-            <x-icon class="fa-regular fa-coins" />
+            <x-icon class="fa-solid fa-coins" />
             <span x-cloak x-show="!showPrice">
                 {{ __('entities/inventories.togglers.show.price') }}
             </span>
@@ -25,7 +25,7 @@
             </span>
         </span>
         <span role="button" @click="showSize = !showSize" class="btn2 btn-sm">
-            <x-icon class="fa-regular fa-up-right-and-down-left-from-center" />
+            <x-icon class="fa-solid fa-up-right-and-down-left-from-center" />
             <span x-cloak x-show="!showSize">
                 {{ __('entities/inventories.togglers.show.size') }}
             </span>
@@ -34,7 +34,7 @@
             </span>
         </span>
         <span role="button" @click="showWeight = !showWeight" class="btn2 btn-sm">
-            <x-icon class="fa-regular fa-weight-hanging" />
+            <x-icon class="fa-solid fa-weight-hanging" />
             <span x-cloak x-show="!showWeight">
                 {{ __('entities/inventories.togglers.show.weight') }}
             </span>
@@ -47,7 +47,7 @@
         <div class="flex flex-col gap-4" data-position="{{ \Illuminate\Support\Str::slug($position) }}">
             <div class="section-title flex justify-between gap-4 items-center">
                 <div class="overflow-hidden text-xl flex items-center gap-1 cursor-pointer inventory-position grow" data-animate="collapse" data-target="#inventory-section-body-{{ \Illuminate\Support\Str::slug($position) }}">
-                    <x-icon class="fa-regular fa-chevron-up collapsed:flip transition-all duration-150" />
+                    <x-icon class="fa-solid fa-chevron-up collapsed:flip transition-all duration-150" />
                     <span class="truncate">{!! $position ?? __('entities/inventories.show.unsorted') !!}</span>
                 </div>
                 <div class="flex items-center gap-2 lg:gap-4">

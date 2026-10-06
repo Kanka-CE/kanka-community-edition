@@ -2,6 +2,6 @@
 @if (auth()->check() && $feature->uservote)
     <i class="fa-solid fa-heart" aria-hidden="true"></i>
 @else
-    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <i class="fa-solid fa-heart" aria-hidden="true"></i>
 @endif
 {{ \Illuminate\Support\Number::format($feature->upvote_count) }}

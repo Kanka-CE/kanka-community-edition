@@ -8,7 +8,7 @@
         <header class="flex gap-6 items-center p-4 md:p-6 justify-between">
             <h4 v-html="trans('title')" class="text-lg font-normal"></h4>
             <button type="button" class="text-base-content" @click="close()" title="Close">
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">Close</span>
             </button>
         </header>
@@ -39,24 +39,24 @@
 
                     <div class="flex flex-col gap-4">
                         <div :class="typeClass('worldbuilding')" @click="select('worldbuilding')" tabindex="0" @keydown="handleKeydown($event, 'worldbuilding')">
-                            <i class="fa-regular fa-check-square text-xl" aria-label="Selected" v-if="selected === 'worldbuilding'"></i>
-                            <i class="fa-regular fa-globe text-xl" aria-hidden="true" v-else></i>
+                            <i class="fa-solid fa-check-square text-xl" aria-label="Selected" v-if="selected === 'worldbuilding'"></i>
+                            <i class="fa-solid fa-globe text-xl" aria-hidden="true" v-else></i>
                             <div class="flex flex-col gap-1">
                                 <span class="text-lg" v-html="trans('worldbuilding')"></span>
                                 <p class="text-xs text-neutral-content" v-html="trans('worldbuilding-description')"></p>
                             </div>
                         </div>
                         <div :class="typeClass('campaign')" @click="select('campaign')" tabindex="0" @keydown="handleKeydown($event, 'campaign')">
-                            <i class="fa-regular fa-check-square text-xl" aria-label="Selected" v-if="selected === 'campaign'"></i>
-                            <i class="fa-regular fa-dice-d20 text-xl" aria-hidden="true" v-else></i>
+                            <i class="fa-solid fa-check-square text-xl" aria-label="Selected" v-if="selected === 'campaign'"></i>
+                            <i class="fa-solid fa-dice-d20 text-xl" aria-hidden="true" v-else></i>
                             <div class="flex flex-col gap-1">
                                 <span class="text-lg" v-html="trans('campaign')"></span>
                                 <p class="text-xs text-neutral-content" v-html="trans('campaign-description')"></p>
                             </div>
                         </div>
                         <div :class="typeClass('story')" @click="select('story')" tabindex="0" @keydown="handleKeydown($event, 'story')">
-                            <i class="fa-regular fa-check-square text-xl" aria-label="Selected" v-if="selected === 'story'"></i>
-                            <i class="fa-regular fa-pen-fancy text-xl" aria-hidden="true" v-else></i>
+                            <i class="fa-solid fa-check-square text-xl" aria-label="Selected" v-if="selected === 'story'"></i>
+                            <i class="fa-solid fa-pen-fancy text-xl" aria-hidden="true" v-else></i>
                             <div class="flex flex-col gap-1">
                                 <span class="text-lg" v-html="trans('story')"></span>
                                 <p class="text-xs text-neutral-content" v-html="trans('story-description')"></p>
@@ -83,7 +83,7 @@
                     class="btn2 btn-primary btn-disabled"
                     disabled="disabled"
                     v-else>
-                    <i class="fa-solid fa-spinner fa-spin" aria-label="Saving"></i>
+                    <i class="fa-solid fa-spinner fa-spinner" aria-label="Saving"></i>
                 </span>
             </div>
         </article>

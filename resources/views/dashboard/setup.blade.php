@@ -26,7 +26,7 @@ $hasDashboards = !$dashboards->isEmpty() || !empty($dashboard);
                             {{ __('dashboard.dashboards.default.title') }}
                         @endif
 
-                        <x-icon class="fa-regular fa-caret-down group-hover:text-primary duration-150 transition-colors" />
+                        <x-icon class="fa-solid fa-caret-down group-hover:text-primary duration-150 transition-colors" />
                     </h4>
 
                     <div class="dropdown-menu hidden" role="menu">
@@ -59,7 +59,7 @@ $hasDashboards = !$dashboards->isEmpty() || !empty($dashboard);
             <div class="flex items-center gap-2">
                 <div class="inline-block">
                     <a href="{{ route('dashboard', isset($dashboard) ? [$campaign, 'dashboard' => $dashboard->id] : [$campaign]) }}" class="btn2 btn-sm" title="{{ __('dashboard.setup.actions.back_to_dashboard') }}">
-                        <x-icon class="fa-regular fa-arrow-left" />
+                        <x-icon class="fa-solid fa-arrow-left" />
                         <span class="hidden sm:inline">{{ __('dashboard.setup.actions.back_to_dashboard') }}</span>
                     </a>
                 </div>
@@ -70,7 +70,7 @@ $hasDashboards = !$dashboards->isEmpty() || !empty($dashboard);
                 <div class="dropdown">
                     <button type="button" class="btn2 btn-sm" data-dropdown aria-expanded="false">
                         <span class="hidden sm:inline">{{ __('crud.actions.actions') }}</span>
-                        <x-icon class="fa-regular fa-caret-down" />
+                        <x-icon class="fa-solid fa-caret-down" />
                     </button>
                     <div class="dropdown-menu hidden" role="menu">
 
@@ -133,7 +133,7 @@ $hasDashboards = !$dashboards->isEmpty() || !empty($dashboard);
                             </div>
                             <div class="flex-none">
                                 <div class="rounded-lg flex items-center justify-center w-10 h-10 text-lg bg-red-100 text-red-700" tooltip title="{{ __('dashboards/widgets/campaign.name') }}">
-                                    <x-icon class="fa-regular fa-th-list" />
+                                    <x-icon class="fa-solid fa-th-list" />
                                 </div>
                             </div>
                             <div class="flex flex-col gap-1 grow">

@@ -9,10 +9,10 @@
                 <div v-if="entity.is_private && !selecting"
                      class="bubble-private absolute left-1.5 top-1.5 text-xs shadow-xs flex justify-center items-center aspect-square rounded-full w-6 h-6 bg-box opacity-80 text-base-content"
                      :title="i18n.is_private">
-                    <i class="fa-regular fa-lock" :aria-label="i18n.is_private" />
+                    <i class="fa-solid fa-lock" :aria-label="i18n.is_private" />
                 </div>
                 <div v-else-if="selecting" :class="selectorClass">
-                    <i v-if="entity.selected" class="fa-regular fa-check" aria-label="selected" />
+                    <i v-if="entity.selected" class="fa-solid fa-check" aria-label="selected" />
                 </div>
                 <!-- Avatar bubbles for children -->
                 <div v-if="nested && entity.children_preview?.length" class="absolute bottom-2 right-2 flex flex-row-reverse">
@@ -35,13 +35,13 @@
                    v-html="entity.name" @click="handleNameClick" />
                 <a v-if="entity.explore?.url" :href="entity.explore.url" target="_blank" rel="noopener"
                    class="text-link shrink-0" :title="exploreColumn?.label" @click="handleNameClick">
-                    <i class="fa-regular fa-map" aria-hidden="true"></i>
+                    <i class="fa-solid fa-map" aria-hidden="true"></i>
                 </a>
-                <i v-else-if="entity.explore?.status === 'error'" class="fa-regular fa-exclamation-triangle text-warning shrink-0" :title="exploreColumn?.label" aria-hidden="true"></i>
-                <i v-else-if="entity.explore?.status === 'running'" class="fa-solid fa-spinner fa-spin shrink-0" aria-hidden="true"></i>
+                <i v-else-if="entity.explore?.status === 'error'" class="fa-solid fa-exclamation-triangle text-warning shrink-0" :title="exploreColumn?.label" aria-hidden="true"></i>
+                <i v-else-if="entity.explore?.status === 'running'" class="fa-solid fa-spinner fa-spinner shrink-0" aria-hidden="true"></i>
                 <a v-if="entity.draw?.url" :href="entity.draw.url" target="_blank" rel="noopener"
                    class="text-link shrink-0" :title="drawColumn?.label" @click="handleNameClick">
-                    <i class="fa-regular fa-chalkboard" aria-hidden="true"></i>
+                    <i class="fa-solid fa-chalkboard" aria-hidden="true"></i>
                 </a>
             </div>
             <a v-else :href="entity.urls.show" class="block text-center relative truncate h-12 p-4 text-link"
@@ -62,10 +62,10 @@
             <div v-if="entity.is_private && !selecting"
                  class="bubble-private absolute left-1.5 top-1.5 text-xs shadow-xs flex justify-center items-center aspect-square rounded-full w-6 h-6 bg-box opacity-80 text-base-content"
                  :title="i18n.is_private">
-                <i class="fa-regular fa-lock" :aria-label="i18n.is_private" />
+                <i class="fa-solid fa-lock" :aria-label="i18n.is_private" />
             </div>
             <div v-else-if="selecting" :class="selectorClass">
-                <i v-if="entity.selected" class="fa-regular fa-check" aria-label="selected" />
+                <i v-if="entity.selected" class="fa-solid fa-check" aria-label="selected" />
             </div>
         </a>
         <div v-if="hasExploreOrDraw" class="flex items-center gap-1.5 h-12 px-4">
@@ -74,13 +74,13 @@
                v-html="entity.name" @click="handleNameClick" />
             <a v-if="entity.explore?.url" :href="entity.explore.url" target="_blank" rel="noopener"
                class="text-link shrink-0" :title="exploreColumn?.label" @click="handleNameClick">
-                <i class="fa-regular fa-map" aria-hidden="true"></i>
+                <i class="fa-solid fa-map" aria-hidden="true"></i>
             </a>
-            <i v-else-if="entity.explore?.status === 'error'" class="fa-regular fa-exclamation-triangle text-warning shrink-0" :title="exploreColumn?.label" aria-hidden="true"></i>
-            <i v-else-if="entity.explore?.status === 'running'" class="fa-solid fa-spinner fa-spin shrink-0" aria-hidden="true"></i>
+            <i v-else-if="entity.explore?.status === 'error'" class="fa-solid fa-exclamation-triangle text-warning shrink-0" :title="exploreColumn?.label" aria-hidden="true"></i>
+            <i v-else-if="entity.explore?.status === 'running'" class="fa-solid fa-spinner fa-spinner shrink-0" aria-hidden="true"></i>
             <a v-if="entity.draw?.url" :href="entity.draw.url" target="_blank" rel="noopener"
                class="text-link shrink-0" :title="drawColumn?.label" @click="handleNameClick">
-                <i class="fa-regular fa-chalkboard" aria-hidden="true"></i>
+                <i class="fa-solid fa-chalkboard" aria-hidden="true"></i>
             </a>
         </div>
         <a v-else :href="entity.urls.show" class="block text-center relative truncate h-12 p-4 text-link"

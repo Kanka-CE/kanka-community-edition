@@ -15,7 +15,7 @@ $i = 0;
                 @include('entities.creator.selection._full')
             @else
                 <a href="#" class="quick-creator-selection flex gap-2 items-center text-link" data-toggle="entity-creator" data-url="{{ route('entity-creator.post', [$campaign]) }}" data-entity-type="post">
-                    <x-icon class="w-4 text-center fa-duotone fa-pen" />
+                    <x-icon class="w-4 text-center fa-solid fa-pen" />
                     <span class="truncate block min-w-0">{!! __('entities.article') !!}</span>
                 </a>
             @endif

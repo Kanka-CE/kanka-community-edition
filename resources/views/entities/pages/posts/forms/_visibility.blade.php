@@ -7,11 +7,11 @@
 use App\Enums\Visibility;
 
 $iconMap = [
-    Visibility::All->value => 'fa-regular fa-eye',
-    Visibility::Admin->value => 'fa-regular fa-lock',
-    Visibility::AdminSelf->value => 'fa-regular fa-user-lock',
-    Visibility::Self->value => 'fa-regular fa-user-secret',
-    Visibility::Member->value => 'fa-regular fa-users',
+    Visibility::All->value => 'fa-solid fa-eye',
+    Visibility::Admin->value => 'fa-solid fa-lock',
+    Visibility::AdminSelf->value => 'fa-solid fa-user-lock',
+    Visibility::Self->value => 'fa-solid fa-user-secret',
+    Visibility::Member->value => 'fa-solid fa-users',
 ];
 
 $visibilitySelected = (int) old('visibility_id', isset($model) && $model->exists
@@ -33,7 +33,7 @@ if (isset($model) && $model->exists) {
         ?>
         <input type="hidden" name="visibility_id" value="{{ $lockedValue }}" />
         <button class="btn2 btn-default opacity-50 cursor-not-allowed" type="button" disabled>
-            <i class="{{ $iconMap[$lockedValue] ?? 'fa-regular fa-eye' }}" aria-hidden="true"></i>
+            <i class="{{ $iconMap[$lockedValue] ?? 'fa-solid fa-eye' }}" aria-hidden="true"></i>
             <span class="sr-only">{{ __('visibilities.title') }}</span>
         </button>
         <?php return;

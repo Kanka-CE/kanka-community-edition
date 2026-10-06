@@ -4,7 +4,7 @@
         v-if="loading || error || isTilingRunning"
     >
         <div class="flex items-center gap-2" v-if="loading && !error && !isTilingRunning">
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true" />
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true" />
             <span>{{ loadingText }}</span>
         </div>
         <div
@@ -17,7 +17,7 @@
             class="flex flex-col items-center gap-2"
             v-else-if="isTilingRunning"
         >
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true" />
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true" />
             <span>{{ data.i18n.tiling.running }}</span>
         </div>
     </div>
@@ -31,7 +31,7 @@
                 class="legend-toggle btn2 btn-default"
                 @click="toggleLegend"
             >
-                <i class="fa-regular fa-list" aria-hidden="true" />
+                <i class="fa-solid fa-list" aria-hidden="true" />
             </button>
             <div>
                 <button
@@ -45,7 +45,7 @@
                         :href="data.map.show_url"
                         class="flex items-center gap-2 px-2 py-1.5 hover:bg-base-200 rounded-xl text-xs text-base-content"
                     >
-                        <i class="fa-regular fa-arrow-right w-5 text-center text-neutral-content" aria-hidden="true" />
+                        <i class="fa-solid fa-arrow-right w-5 text-center text-neutral-content" aria-hidden="true" />
                         <span>{{ data.i18n.header.overview }}</span>
                     </a>
                     <template v-if="canEdit">
@@ -54,14 +54,14 @@
                             class="flex items-center gap-2 px-2 py-1.5 hover:bg-base-200 rounded-xl text-xs text-base-content text-left w-full"
                             @click="openSettings"
                         >
-                            <i class="fa-regular fa-gear w-5 text-center text-neutral-content" aria-hidden="true" />
+                            <i class="fa-solid fa-gear w-5 text-center text-neutral-content" aria-hidden="true" />
                             <span>{{ data.i18n.header.settings }}</span>
                         </button>
                         <a
                             :href="data.map.edit_url"
                             class="flex items-center gap-2 px-2 py-1.5 hover:bg-base-200 rounded-xl text-xs text-base-content"
                         >
-                            <i class="fa-regular fa-pencil w-5 text-center text-neutral-content" aria-hidden="true" />
+                            <i class="fa-solid fa-pencil w-5 text-center text-neutral-content" aria-hidden="true" />
                             <span>{{ data.i18n.header.edit }}</span>
                         </a>
                     </template>
@@ -85,7 +85,7 @@
 
             <i
                 v-if="presenceError"
-                class="fa-regular fa-triangle-exclamation text-warning flex-none"
+                class="fa-solid fa-triangle-exclamation text-warning flex-none"
                 aria-hidden="true"
                 v-tippy="presenceError"
             />

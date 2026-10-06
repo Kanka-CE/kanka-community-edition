@@ -33,7 +33,7 @@ class Item extends Component
                 $this->shortcut = str_ireplace('ctrl', '⌘', $this->shortcut);
             }
         }
-        $this->shortcut = Str::replace('Shift', '<i class="fa-regular fa-up" aria-hidden="true"></i>', $this->shortcut);
+        $this->shortcut = Str::replace('Shift', '<i class="fa-solid fa-up" aria-hidden="true"></i>', $this->shortcut);
     }
 
     /**

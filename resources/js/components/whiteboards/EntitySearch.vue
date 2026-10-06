@@ -1,11 +1,11 @@
 <template>
-    <i class="fa-solid fa-spinner fa-spin" aria-hidden="true" v-if="loading" />
+    <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true" v-if="loading" />
 
     <dialog class="dialog rounded-2xl text-center bg-base-100 text-base-content" id="gallery-dialog" ref="dialog" aria-modal="true" aria-labelledby="modal-card-label">
         <header class="flex gap-6 items-center p-4 md:p-6 justify-between">
             <h4 v-html="trans('entity-search')" class="text-lg font-normal"></h4>
             <button type="button" class="text-base-content" @click="closeDialog()" title="Close">
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">trans('close')</span>
             </button>
         </header>
@@ -26,7 +26,7 @@
             </div>
 
             <div class="text-center flex items-center justify-center w-full" v-if="loading || searching">
-                <i class="fa-solid fa-spinner fa-spin" aria-label="Loading"></i>
+                <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading"></i>
             </div>
 
             <div class="flex flex-col gap-0.5 w-full" v-if="!loading && !searching">

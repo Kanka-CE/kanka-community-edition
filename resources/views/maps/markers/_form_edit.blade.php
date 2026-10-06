@@ -43,7 +43,7 @@ $sizeOptions = [
                             </x-helper>
                         </div>
                         <a href="#" id="reset-polygon" class="btn2 btn-error btn-outline btn-sm">
-                            <x-icon class="fa-regular fa-eraser" />
+                            <x-icon class="fa-solid fa-eraser" />
                             {{ __('maps/markers.actions.reset-polygon') }}
                         </a>
                     </div>

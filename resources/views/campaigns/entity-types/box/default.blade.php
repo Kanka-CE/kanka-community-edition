@@ -10,9 +10,9 @@ $enabled = $campaign->enabled($entityType);
     <div class="flex justify-between items-center gap-2">
         <div class="flex gap-1 items-center text-lg">
             @if ($enabled)
-                <x-icon class="fa-regular fa-check-circle text-success-content" tooltip title="{{ __('campaigns/modules.states.enabled') }}" ></x-icon>
+                <x-icon class="fa-solid fa-check-circle text-success-content" tooltip title="{{ __('campaigns/modules.states.enabled') }}" ></x-icon>
             @else
-                <x-icon class="fa-regular fa-times text-error-content" tooltip title="{{ __('campaigns/modules.states.disabled') }}" ></x-icon>
+                <x-icon class="fa-solid fa-times text-error-content" tooltip title="{{ __('campaigns/modules.states.disabled') }}" ></x-icon>
             @endif
             <span class="break-all">
                 {!! $entityType->plural() !!}
@@ -39,7 +39,7 @@ $enabled = $campaign->enabled($entityType);
     @if ($entityType->isDeprecated())
         <div class="text-xs">
             <span data-toggle="tooltip" data-title="{{ __('campaigns.settings.deprecated.help') }}">
-                <x-icon class="fa-regular fa-exclamation-triangle" />
+                <x-icon class="fa-solid fa-exclamation-triangle" />
                 {{ __('campaigns.settings.deprecated.title') }}
             </span>
             <span class="md:hidden">{{ __('campaigns.settings.deprecated.help') }}</span>

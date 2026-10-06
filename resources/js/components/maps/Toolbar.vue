@@ -67,23 +67,23 @@ const emit = defineEmits(["mode-change", "rapid-change"]);
 const modes = computed(() => [
     {
         key: "pin",
-        icon: "fa-regular fa-location-dot",
+        icon: "fa-solid fa-location-dot",
         label: props.i18n.toolbar.pin,
     },
-    { key: "text", icon: "fa-regular fa-font", label: props.i18n.toolbar.text },
+    { key: "text", icon: "fa-solid fa-font", label: props.i18n.toolbar.text },
     {
         key: "area",
-        icon: "fa-regular fa-draw-polygon",
+        icon: "fa-solid fa-draw-polygon",
         label: props.i18n.toolbar.area,
     },
     {
         key: "circle",
-        icon: "fa-regular fa-circle",
+        icon: "fa-solid fa-circle",
         label: props.i18n.toolbar.circle,
     },
     {
         key: "path",
-        icon: "fa-regular fa-route",
+        icon: "fa-solid fa-route",
         label: props.i18n.toolbar.path,
     },
 ]);
