@@ -50,7 +50,8 @@ class SubscriptionDowngradedEmailJob implements ShouldQueue
         $reason = $this->reason === 'custom' ? 'other' : $this->reason;
         $newTier = $this->newTierId ? Tier::find($this->newTierId) : null;
 
-        Mail::to('hello@kanka.io')
-            ->send(new DowngradedSubscriptionMail($user, $reason, $this->custom, $newTier, $this->oldPledge));
+        // Do not send emails to the upstream admins!
+        //Mail::to('hello@kanka.io')
+        //    ->send(new DowngradedSubscriptionMail($user, $reason, $this->custom, $newTier, $this->oldPledge));
     }
 }

@@ -43,9 +43,9 @@ class SubscriptionCancelEmailJob implements ShouldQueue
             return;
         }
 
-        // Send an email to the admins
-        Mail::to('hello@kanka.io')
-            ->send(new CancelledSubscriptionMail($cancellation));
+        // Do not send emails to the upstream admins!
+        //Mail::to('hello@kanka.io')
+        //    ->send(new CancelledSubscriptionMail($cancellation));
 
         // Send an email to the user
         if ( config('app.email_enabled') )
