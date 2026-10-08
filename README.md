@@ -4,7 +4,10 @@ If you want to self-host Kanka-CE, take a look at the [kanka-ce-container](https
 
 Kanka CE is **not** affiliated with the official Kanka project.
 
-> **Want to self-host Kanka CE?** You don't need anything from this repo directly —
+> [!NOTE]
+> **Want to self-host Kanka CE?**
+>
+> You don't need anything from this repo directly,
 > go to **[kanka-ce-deploy](https://github.com/Kanka-CE/kanka-ce-deploy)**, which has the full
 > Quick Start guide, docker-compose file, and `.env` example.
 
@@ -33,7 +36,7 @@ If you're modifying the application itself (not just deploying it), see the
 for running a local dev build.
 
 If you just want to self-host Kanka CE, use
-**[kanka-ce-container](https://github.com/Kanka-CE/kanka-ce-container)** instead — no need to touch this repo.
+**[kanka-ce-container](https://github.com/Kanka-CE/kanka-ce-container)** instead, no need to touch this repo.
 
 ## Contributing
 Kanka Community Edition only exists because of community contributions. If you've
@@ -51,6 +54,7 @@ No contribution is too small, even a typo fix helps.
 |---|---|
 | [kanka-ce-deploy](https://github.com/Kanka-CE/kanka-ce-deploy) | Self-hosting: docker-compose, `.env`, and the patches applied to this repo |
 | [docker-kanka-ce](https://github.com/Kanka-CE/docker-kanka-ce) | The Dockerfile used to build the Kanka CE image from this source |
+| [kanka-ce-deploy-quadlets](https://github.com/Kanka-CE/kanka-ce-deploy-quadlets) | Quadlets to run KankaCE via Podman |
 
 ## License
 This repository contains a modified version of the official Kanka source code, which is licensed under *Commons Clause License Condition v1.0*
