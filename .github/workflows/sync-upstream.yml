@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  workflows: write
 
 env:
   UPSTREAM_REPO: https://github.com/owlchester/kanka.git
