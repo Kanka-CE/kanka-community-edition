@@ -29,7 +29,7 @@ jobs:
       - name: Checkout kanka-community-edition
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_WITH_WORKFLOW }}
+          token: ${{ secrets.WORKFLOWS}}
           fetch-depth: 0
 
       - name: Configure Git identity
