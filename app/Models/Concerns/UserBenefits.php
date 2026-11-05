@@ -15,7 +15,8 @@ trait UserBenefits
      */
     public function availableBenefits(): int
     {
-        return $this->maxBenefits() - $this->boosting();
+        // do not decrease the number of available benefits
+        return $this->maxBenefits();
     }
 
     /**
@@ -35,25 +36,7 @@ trait UserBenefits
      */
     public function maxBenefits(): int
     {
-        // Allows admins to give boosters to members of the community
-        $base = 0;
-        if (! empty($this->booster_count)) {
-            $base += $this->booster_count;
-        }
-
-        if (! $this->isSubscriber()) {
-            return $base;
-        }
-
-        if ($this->hasRole('admin')) {
-            return max(config('limits.benefits.admin'), $base);
-        }
-
-        $levels = config('limits.benefits.standard');
-        if ($this->hasLegacyBoosterNomenclature()) {
-            $levels = config('limits.benefits.legacy');
-        }
-
-        return Arr::get($levels, $this->pledge ?? 'unknown', 0) + $base;
+        // Hardcode `100` available benefits.
+        RETURN 100;
     }
 }

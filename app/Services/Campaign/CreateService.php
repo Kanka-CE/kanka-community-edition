@@ -15,6 +15,7 @@ use App\Models\CampaignUser;
 use App\Models\EntityType;
 use App\Notifications\Header;
 use App\Services\Users\CampaignService;
+use App\Services\Campaign\BoostService;
 use App\Traits\RequestAware;
 use App\Traits\UserAware;
 use Exception;
@@ -61,6 +62,19 @@ class CreateService
         } catch (Exception $e) {
             DB::rollBack();
             throw $e;
+        }
+
+        // Always enable premium for newly created campaigns:
+        try {
+            $boostService = app(BoostService::class);
+
+            $boostService
+                ->user($this->user)
+                ->campaign($this->campaign)
+                ->premium(automaticallyAssigned: true);
+        } catch (\Throwable $e) {
+            // Never fail campaign creation because of the boost
+            report($e);
         }
 
         return $this->campaign;

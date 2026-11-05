@@ -142,9 +142,8 @@ class User extends \Illuminate\Foundation\Auth\User implements OAuthenticatable
     /**
      * Determine if a user is a subscriber
      */
-    public function isSubscriber(): bool
-    {
-        return $this->hasRole(Pledge::ROLE) || $this->hasRole('admin') || $this->onTrial();
+    public function isSubscriber(): bool {
+        return true;
     }
 
     /**
@@ -166,9 +165,8 @@ class User extends \Illuminate\Foundation\Auth\User implements OAuthenticatable
     /**
      * Determine if a user is an elemental
      */
-    public function isElemental(): bool
-    {
-        return (bool) (! empty($this->pledge) && $this->pledge == Pledge::ELEMENTAL);
+    public function isElemental(): bool {
+        return true;
     }
 
     public function isOwlbear(): bool
@@ -398,11 +396,8 @@ class User extends \Illuminate\Foundation\Auth\User implements OAuthenticatable
     /**
      * Check if the user is subscribed via a manual sub
      */
-    public function hasManualSubscription(): bool
-    {
-        return $this->subscribed('kanka') &&
-            $this->subscription('kanka') &&
-            Str::startsWith($this->subscription('kanka')->stripe_id, 'manual_');
+    public function hasManualSubscription(): bool {
+        return true;
     }
 
     /**
