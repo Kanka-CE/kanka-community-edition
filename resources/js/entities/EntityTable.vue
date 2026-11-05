@@ -14,7 +14,7 @@
                                 class="text-link flex items-center gap-1">
                             <span v-html="col.label"></span>
                             <i v-if="isOrdering(col.sortKey || col.key)" :class="orderByIcon(col.sortKey || col.key)"></i>
-                            <i v-else class="fa-regular fa-sort text-neutral-content" aria-hidden="true"></i>
+                            <i v-else class="fa-solid fa-sort text-neutral-content" aria-hidden="true"></i>
                         </button>
                         <span v-else v-html="col.label"></span>
                     </th>

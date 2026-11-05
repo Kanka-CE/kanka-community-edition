@@ -5,7 +5,7 @@
         {{ translate('load_previous') }}
       </div>
       <div class="load-more text-center text-2xl" v-if="loadingPrevious || initializing">
-        <i class="fa-solid fa-spin fa-spinner" aria-label="Loading"></i>
+        <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading"></i>
       </div>
       <div v-if="error" class="text-error-content text-center" role="alert">{{ error }}</div>
       <Message
@@ -20,7 +20,7 @@
       </Message>
 
       <div v-if="sending" class="text-center">
-        <i class="fa-solid fa-spin fa-spinner"></i>
+        <i class="fa-solid fa-spinner fa-spinner"></i>
       </div>
     </div>
 

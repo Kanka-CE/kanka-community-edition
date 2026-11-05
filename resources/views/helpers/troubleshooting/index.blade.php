@@ -19,7 +19,7 @@
                 <p>
                     <strong>{{ __('assistance.success.token') }}</strong><br />
                     <a href="#" data-clipboard="{{ $token }}" data-toggle="tooltip" data-toast="Token copied to the clipboard" data-title="{{__('campaigns.invites.actions.copy') }}" class="text-link">
-                        <x-icon class="fa-regular fa-copy" />
+                        <x-icon class="fa-solid fa-copy" />
                         {{ $token }}
                     </a>
                 </p>

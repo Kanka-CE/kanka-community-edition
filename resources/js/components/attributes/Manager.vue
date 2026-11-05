@@ -1,25 +1,25 @@
 
 <template>
     <div class="text-center text-4xl p-4" v-if="loading">
-        <i class="fa-solid fa-spinner fa-spin" aria-label="Loading" />
+        <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading" />
     </div>
     <div class="flex flex-col gap-2 lg:gap-5 relative h-full min-h-0 " v-else>
         <!-- Toolbar -->
         <div class="attributes-toolbar flex gap-2 lg:gap-2 items-center flex-wrap flex-none">
             <a role="button" v-bind:class="deleteClass()" @click="deleteAll()" v-if="hasSelected()">
-                <i class="fa-regular fa-trash-can" aria-hidden="true" />
+                <i class="fa-solid fa-trash-can" aria-hidden="true" />
                 <span v-html="trans('columns.delete')"></span>
                 <span v-html="countSelected()" class="font-extrabold"></span>
             </a>
             <a role="button" @click="togglePrivate()" v-bind:class="togglePrivateClass()" v-if="isAdmin() && hasSelected()" >
-                <i class="fa-regular fa-lock-open" aria-hidden="true" />
+                <i class="fa-solid fa-lock-open" aria-hidden="true" />
                 <span v-html="trans('actions.toggle')"></span>
                 <span v-html="countSelected()" class="font-extrabold"></span>
             </a>
             <input type="text" v-bind:placeholder="trans('actions.search')" class="grow md:flex-none md:w-80" v-model="searchTerm" v-if="!hasSelected()" />
             <div class="relative" v-if="!hasSelected()">
                 <a role="button" @click="toggleFilters()" class="btn2 btn-outline btn-sm">
-                    <i class="fa-regular fa-bars-filter" aria-hidden="true" />
+                    <i class="fa-solid fa-bars-filter" aria-hidden="true" />
                     <span v-html="trans('actions.filters')"></span>
                 </a>
                 <div class="border border-base-300 shadow-sm rounded bg-base-100 p-4 absolute right-0 flex flex-col gap-5 w-60" v-if="showFilters"  v-click-outside="onClickOutside">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <a href="https://docs.kanka.io/en/latest/features/properties.html" class="btn2 btn-ghost btn-sm" v-if="!hasSelected()">
-                <i class="fa-regular fa-question-circle" aria-hidden="true" />
+                <i class="fa-solid fa-question-circle" aria-hidden="true" />
                 <span v-html="trans('actions.help')"></span>
             </a>
         </div>
@@ -49,7 +49,7 @@
                     </draggable>
                 </div>
                     <button type="button" class="btn2 btn-outline btn-sm" @click="openSheetDialog()">
-                    <i class="fa-regular fa-plus" aria-hidden="true" />
+                    <i class="fa-solid fa-plus" aria-hidden="true" />
                     <span v-html="trans('sheets.add')"></span>
                 </button>
             </div>
@@ -115,7 +115,7 @@
             <h4 v-html="trans('templates.title')" class="text-lg font-normal"></h4>
 
             <button autofocus type="button" class="text-xl opacity-50 hover:opacity-100 focus:opacity-100 cursor-pointer text-decoration-none" aria-label="Close" v-on:click="closeModal()">
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">Close</span>
             </button>
         </header>
@@ -140,7 +140,7 @@
         <header class="flex gap-6 items-center p-4 md:p-6 justify-between">
             <h4 class="text-lg font-normal" v-html="trans('sheets.title')"></h4>
             <button autofocus type="button" class="text-xl opacity-50 hover:opacity-100 focus:opacity-100 cursor-pointer" aria-label="Close" @click="closeSheetDialog()">
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">Close</span>
             </button>
         </header>
@@ -152,7 +152,7 @@
             </p>
             <div v-if="unattachedSheets.length" class="flex flex-col gap-2">
                 <button v-for="option in unattachedSheets" :key="option.id" type="button" class="btn2 btn-outline justify-start text-base-content" @click="addSheet(option)">
-                    <i class="fa-regular fa-file-lines" aria-hidden="true" />
+                    <i class="fa-solid fa-file-lines" aria-hidden="true" />
                     <span class="font-medium text-base-content">{{ option.name }}</span>
                     <span class="ms-auto text-xs text-neutral-content" v-html="option.author"></span>
                 </button>

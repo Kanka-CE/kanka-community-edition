@@ -35,7 +35,7 @@ window.showToast = function(message, css) {
     }
     container.innerHTML = '<div class="toast-message p-2 flex gap-2 items-center">'
         + '<span class="grow"> ' + message + '</span>'
-        + '<span class="flex-none"><i class="fa-regular fa-circle-xmark cursor-pointer " data-toggle="dismiss"></i></span>'
+        + '<span class="flex-none"><i class="fa-solid fa-circle-xmark cursor-pointer " data-toggle="dismiss"></i></span>'
         + '</div>';
 
     document.querySelector('.toast-container').appendChild(container);

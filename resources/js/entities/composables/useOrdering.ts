@@ -78,8 +78,8 @@ export function useOrdering(options: OrderingOptions) {
 
     const orderByIcon = (field: string): string => {
         return isOrderingAscending(field)
-            ? 'fa-regular fa-arrow-down-a-z'
-            : 'fa-regular fa-arrow-down-z-a'
+            ? 'fa-solid fa-arrow-down-a-z'
+            : 'fa-solid fa-arrow-down-z-a'
     }
 
     return {

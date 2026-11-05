@@ -9,7 +9,7 @@
     <div class="dropdown entity-actions-dropdown flex items-center join-item">
 
         <div data-dropdown aria-expanded="false" aria-haspopup="menu" aria-controls="abilities-submenu" class="btn2 btn-sm join-item entity-actions-button">
-            <x-icon class="fa-regular fa-caret-down" />
+            <x-icon class="fa-solid fa-caret-down" />
         </div>
 
         <div class="dropdown-menu hidden" role="menu" id="abilities-submenu">
@@ -25,18 +25,18 @@
                 </x-dropdowns.item>
             @endif
 
-            <x-dropdowns.item :link="route('entities.entity_abilities.reset', [$campaign, $entity])" icon="fa-regular fa-redo">
+            <x-dropdowns.item :link="route('entities.entity_abilities.reset', [$campaign, $entity])" icon="fa-solid fa-redo">
                 <span class="grow">{{ __('entities/abilities.actions.reset') }}</span>
             </x-dropdowns.item>
 
             <x-dropdowns.item :link="route('entities.entity_abilities.reorder', [$campaign, $entity])"
-                              icon="fa-regular fa-arrow-up-arrow-down">
+                              icon="fa-solid fa-arrow-up-arrow-down">
                 <span class="grow">{{ __('entities/abilities.show.reorder') }}</span>
             </x-dropdowns.item>
 
             <x-dropdowns.divider />
 
-            <x-dropdowns.item :link="'https://docs.kanka.io/en/latest/entries/abilities.html#entity-abilities'" icon="fa-regular fa-book">
+            <x-dropdowns.item :link="'https://docs.kanka.io/en/latest/entries/abilities.html#entity-abilities'" icon="fa-solid fa-book">
                 <span class="grow">{{ __('general.learn-more') }}</span>
             </x-dropdowns.item>
         </div>

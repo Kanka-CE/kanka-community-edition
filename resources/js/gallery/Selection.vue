@@ -1,6 +1,6 @@
 <template>
     <div v-if="loading">
-        <i class="fa-solid fa-spin fa-spinner" aria-label="Loading"></i>
+        <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading"></i>
     </div>
     <div v-else class="relative">
         <!-- Drop zone -->
@@ -17,7 +17,7 @@
                 <!-- Empty / drag state -->
                 <template v-if="!hasImage() && !uploading">
                     <i
-                        class="fa-regular fa-camera text-xl text-neutral-content"
+                        class="fa-solid fa-camera text-xl text-neutral-content"
                         aria-hidden="true"
                     ></i>
                 </template>
@@ -59,7 +59,7 @@
                             @click.stop="cancelUpload"
                         >
                             <i
-                                class="fa-regular fa-xmark"
+                                class="fa-solid fa-xmark"
                                 aria-hidden="true"
                             ></i>
                             {{ trans.cancel }}
@@ -85,7 +85,7 @@
                 <div
                     class="flex items-center justify-center w-6 h-6 rounded text-xs shrink-0 text-neutral-content"
                 >
-                    <i class="fa-regular fa-upload" aria-hidden="true"></i>
+                    <i class="fa-solid fa-upload" aria-hidden="true"></i>
                 </div>
                 <div class="flex flex-col gap-0">
                     <span class="text-sm font-medium">{{ trans.upload }}</span>
@@ -105,7 +105,7 @@
                 <div
                     class="flex items-center justify-center w-6 h-6 rounded text-xs shrink-0 text-neutral-content"
                 >
-                    <i class="fa-regular fa-link" aria-hidden="true"></i>
+                    <i class="fa-solid fa-link" aria-hidden="true"></i>
                 </div>
                 <div class="flex flex-col gap-0">
                     <span class="text-sm font-medium">{{ trans.add_url }}</span>
@@ -123,7 +123,7 @@
                     class="flex items-center justify-center w-6 h-6 rounded text-xs shrink-0 text-neutral-content mt-0.5"
                 >
                     <i
-                        :class="downloading ? 'fa-solid fa-spin fa-spinner' : 'fa-regular fa-link'"
+                        :class="downloading ? 'fa-solid fa-spinner fa-spinner' : 'fa-solid fa-link'"
                         aria-hidden="true"
                     ></i>
                 </div>
@@ -154,7 +154,7 @@
                 <div
                     class="flex items-center justify-center w-6 h-6 rounded text-xs shrink-0 text-neutral-content"
                 >
-                    <i class="fa-regular fa-images" aria-hidden="true"></i>
+                    <i class="fa-solid fa-images" aria-hidden="true"></i>
                 </div>
                 <span class="text-sm font-medium">{{ trans.gallery }}</span>
             </button>
@@ -165,7 +165,7 @@
                 class="text-left px-3 py-2 hover:bg-base-200 transition-colors duration-150 flex gap-2 items-center"
                 @click.stop="openFocusPicker"
             >
-                <i class="fa-regular fa-crosshairs w-6 text-center text-neutral-content" aria-hidden="true"></i>
+                <i class="fa-solid fa-crosshairs w-6 text-center text-neutral-content" aria-hidden="true"></i>
                 <span class="text-sm font-medium">{{ trans.change_focus }}</span>
             </button>
 
@@ -183,7 +183,7 @@
                     class="flex items-center justify-center w-6 h-6 rounded text-xs shrink-0"
                 >
                     <i
-                        class="fa-regular fa-trash w-4 shrink-0 text-center"
+                        class="fa-solid fa-trash w-4 shrink-0 text-center"
                         aria-hidden="true"
                     ></i>
                 </div>
@@ -199,23 +199,23 @@
             <div class="mb-2 flex items-center justify-between gap-2">
                 <span class="text-sm font-medium">{{ trans.change_focus }}</span>
                 <button type="button" class="text-neutral-content" @click="cancelFocus" :aria-label="trans.cancel">
-                    <i class="fa-regular fa-xmark" aria-hidden="true"></i>
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
             </div>
             <p class="mb-2 text-xs text-neutral-content">{{ trans.focus_warning }}</p>
             <div v-if="focusLoading" class="flex h-40 items-center justify-center">
-                <i class="fa-solid fa-spin fa-spinner" aria-label="Loading"></i>
+                <i class="fa-solid fa-spinner fa-spinner" aria-label="Loading"></i>
             </div>
             <div v-else-if="focusUrl" ref="focusFrame" class="relative mx-auto flex max-h-56 w-fit max-w-full cursor-crosshair items-center justify-center overflow-hidden" @pointerdown="startFocusDrag" @pointermove="moveFocusPoint" @pointerup="endFocusDrag" @pointercancel="endFocusDrag">
                 <img ref="focusImage" :src="focusUrl" class="max-h-56 max-w-full select-none object-contain" draggable="false" alt="" @load="setFocusFromCoordinates" />
                 <span v-if="focusPoint" class="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 text-2xl text-white drop-shadow" :style="{ left: focusPoint.x + '%', top: focusPoint.y + '%' }" aria-hidden="true">
-                    <i class="fa-duotone fa-arrow-up-left-from-circle" aria-hidden="true"></i>
+                    <i class="fa-solid fa-arrow-up-left-from-circle" aria-hidden="true"></i>
                 </span>
             </div>
             <div class="mt-3 grid grid-cols-2 gap-2">
                 <button v-if="focusPoint" type="button" class="btn2 btn-error w-full min-w-0 px-2 text-sm" @click="removeFocusPoint">{{ trans.remove_focus }}</button>
                 <button type="button" class="btn2 btn-primary w-full min-w-0 px-2 text-sm" :class="{ 'col-span-2': !focusPoint }" :disabled="focusSaving || focusLoading" @click="saveFocusPoint">
-                    <i v-if="focusSaving" class="fa-solid fa-spin fa-spinner" aria-hidden="true"></i>
+                    <i v-if="focusSaving" class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
                     {{ trans.save_focus }}
                 </button>
             </div>
@@ -257,7 +257,7 @@
                 @click="closeDialog(cta)"
                 title="Close"
             >
-                <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 <span class="sr-only">Close</span>
             </button>
         </header>
@@ -270,7 +270,7 @@
         <footer class="p-4 md:px-6" v-if="!hasPremium">
             <menu class="">
                 <a v-bind:href="props.cta" class="btn2 btn-primary">
-                    <i class="fa-regular fa-gem" aria-hidden="true" />
+                    <i class="fa-solid fa-gem" aria-hidden="true" />
                     <span v-html="trans.cta_action"></span>
                 </a>
             </menu>

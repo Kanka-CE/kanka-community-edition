@@ -21,7 +21,7 @@
         >
             <x-slot name="actions">
                 <a href="#" class="btn2 btn-sm" data-toggle="dialog" data-target="reset-confirm">
-                    <x-icon class="fa-regular fa-eraser" />
+                    <x-icon class="fa-solid fa-eraser" />
                     {{ __('campaigns/sidebar.actions.reset') }}
                 </a>
             </x-slot>
@@ -73,7 +73,7 @@
                                 <div class="flex flex-col md:flex-row items-center gap-2">
                                     <div class="flex gap-2">
                                         <span class="bg-base-300 p-2 w-10 text-center flex-none rounded dnd-handle cursor-move">
-                                            <x-icon class="inline-block w-6 {{ $child['custom_icon'] ?? $child['icon'] ?? 'fa-regular fa-question-circle' }}" />
+                                            <x-icon class="inline-block w-6 {{ $child['custom_icon'] ?? $child['icon'] ?? 'fa-solid fa-question-circle' }}" />
                                         </span>
                                         <input type="text" class="w-20 lg:w-40" name="{{ $childName }}_icon" value="{{ $child['custom_icon'] ?? null }}" placeholder="{{ $child['icon'] ?? null }}" data-paste="fontawesome" maxlength="50" @disabled(!$campaign->boosted()) />
                                     </div>
@@ -81,7 +81,7 @@
                                     <span class="hidden md:flex text-neutral-content text-xs">
                                         ( {{ $child['label'] ?? __($child['label_key']) }}
                                         @if (\Illuminate\Support\Arr::get($child, 'disabled') === true)
-                                            <i class="fa-regular fa-exclamation-triangle" aria-hidden="true" data-toggle="tooltip" data-title="{{ __('campaigns/categories.errors.permission-disabled') }}"></i>
+                                            <i class="fa-solid fa-exclamation-triangle" aria-hidden="true" data-toggle="tooltip" data-title="{{ __('campaigns/categories.errors.permission-disabled') }}"></i>
                                         @endif
                                         )
                                     </span>

@@ -55,7 +55,7 @@
                 />
                 <i
                     v-else
-                    :class="pin.customIcon && pin.icon?.type === 'fa' ? pin.icon.value : 'fa-regular fa-cog'"
+                    :class="pin.customIcon && pin.icon?.type === 'fa' ? pin.icon.value : 'fa-solid fa-cog'"
                     aria-hidden="true"
                 />
             </button>

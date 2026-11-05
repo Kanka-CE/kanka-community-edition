@@ -21,7 +21,7 @@
         <br/>
         @guest
             <a href="{{ route('register', ['next' => 'dashboard.' . $campaign->slug]) }}" class="btn2 btn-block btn-primary">
-                <x-icon class="fa-regular fa-door-open" />
+                <x-icon class="fa-solid fa-door-open" />
                 {{ __('dashboards/widgets/join.register') }}
             </a>
         @endguest
@@ -32,7 +32,7 @@
                     data-target="apply-dialog"
                     data-placement="bottom"
             >
-                <x-icon class="fa-regular fa-door-open" />
+                <x-icon class="fa-solid fa-door-open" />
                 @if(auth()->user()->applications()->where('campaign_id', $campaign->id)->exists())
                     {{ __('dashboards/widgets/join.update') }}
                 @else

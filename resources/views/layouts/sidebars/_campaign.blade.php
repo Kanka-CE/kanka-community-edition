@@ -8,7 +8,7 @@
                     </div>
                     <a href="#" class="text-sidebar-content" data-toggle="dialog"
                        data-url="{{ route('campaign.sidebar.image', [$campaign]) }}" data-tooltip data-title="{{ __('campaigns/sidebar.tooltips.image') }}">
-                        <x-icon class="fa-regular fa-image" />
+                        <x-icon class="fa-solid fa-image" />
                     </a>
                 </div>
             @else

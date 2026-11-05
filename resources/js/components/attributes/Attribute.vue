@@ -7,7 +7,7 @@
             <i class="fa-light fa-grip-vertical handle cursor-move" aria-hidden="true"/>
         </div>
         <div class="w-6 md:w-8 pt-2" v-else>
-            <i class="fa-regular fa-user-secret" aria-hidden="true"/>
+            <i class="fa-solid fa-user-secret" aria-hidden="true"/>
         </div>
         <div class="w-6 md:w-8 pt-2">
             <input type="checkbox"
@@ -94,7 +94,7 @@
                 <i v-bind:class="privateClass(attribute)" v-bind:aria-label="privateLabel(attribute)" />
             </a>
             <a role="button" class="w-6 lg:w-16 inline-block text-center flex-none cursor-pointer hover:text-error-content text-base-content" @click="$emit('remove', attribute)" v-if="!attribute.is_hidden">
-                <i class="fa-regular fa-trash-can" v-bind:aria-label="trans('columns.delete')" v-bind:title="trans('columns.delete')" />
+                <i class="fa-solid fa-trash-can" v-bind:aria-label="trans('columns.delete')" v-bind:title="trans('columns.delete')" />
             </a>
         </div>
 
@@ -195,7 +195,7 @@ const pinnedClass = (attribute) => {
     if (attribute.is_pinned) {
         return 'fa-solid fa-thumbtack rotate-45 transition-all'
     }
-    return 'fa-regular fa-thumbtack transition-all'
+    return 'fa-solid fa-thumbtack transition-all'
 }
 
 const pinnedLabel = (attribute) => {
@@ -217,7 +217,7 @@ const privateClass = (attribute) => {
     if (attribute.is_private) {
         return 'fa-solid fa-lock-keyhole'
     }
-    return 'fa-regular fa-unlock-keyhole'
+    return 'fa-solid fa-unlock-keyhole'
 }
 
 const privateLabel = (attribute) => {

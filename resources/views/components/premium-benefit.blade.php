@@ -8,7 +8,7 @@
 
 <div class="flex gap-4 items-center">
     <div class="h-11 w-11 flex-none text-center rounded-xl flex items-center justify-center {{ $iconBg }}">
-        <x-icon class="fa-regular {{ $icon }} {{ $iconText }} text-lg" />
+        <x-icon class="fa-solid {{ $icon }} {{ $iconText }} text-lg" />
     </div>
     <div class="flex flex-col">
         <p class="font-semibold">

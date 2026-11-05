@@ -14,12 +14,12 @@
         <!-- Expand/collapse arrow (nested mode only) -->
         <td v-if="showExpandColumn" class="w-8 text-center">
             <button v-if="entity.children > 0 && depth < maxDepth" @click="toggleExpand" class="text-link hover:text-primary">
-                <i v-if="loadingChildren" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
-                <i v-else-if="expanded" class="fa-regular fa-angle-down" aria-hidden="true"></i>
-                <i v-else class="fa-regular fa-angle-right" aria-hidden="true"></i>
+                <i v-if="loadingChildren" class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
+                <i v-else-if="expanded" class="fa-solid fa-angle-down" aria-hidden="true"></i>
+                <i v-else class="fa-solid fa-angle-right" aria-hidden="true"></i>
             </button>
             <a v-else-if="entity.children > 0" :href="entity.urls.children" class="text-link text-xs">
-                <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
         </td>
 
@@ -79,7 +79,7 @@
 
             <!-- Private lock -->
             <template v-else-if="col.type === 'private'">
-                <i v-if="entity.is_private" class="fa-regular fa-lock" :aria-label="i18n.is_private" :title="i18n.is_private" />
+                <i v-if="entity.is_private" class="fa-solid fa-lock" :aria-label="i18n.is_private" :title="i18n.is_private" />
             </template>
 
             <!-- Count -->
@@ -95,16 +95,16 @@
             <!-- Map explore link -->
             <template v-else-if="col.type === 'explore'">
                 <a v-if="entity.explore?.url" :href="entity.explore.url" target="_blank" class="text-link" :title="col.tooltip">
-                    <i class="fa-regular fa-map" aria-hidden="true"></i>
+                    <i class="fa-solid fa-map" aria-hidden="true"></i>
                 </a>
-                <i v-else-if="entity.explore?.status === 'error'" class="fa-regular fa-exclamation-triangle text-warning" :title="col.tooltip" aria-hidden="true"></i>
-                <i v-else-if="entity.explore?.status === 'running'" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+                <i v-else-if="entity.explore?.status === 'error'" class="fa-solid fa-exclamation-triangle text-warning" :title="col.tooltip" aria-hidden="true"></i>
+                <i v-else-if="entity.explore?.status === 'running'" class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
             </template>
 
             <!-- Whiteboard draw link -->
             <template v-else-if="col.type === 'draw'">
                 <a v-if="entity.draw?.url" :href="entity.draw.url" target="_blank" class="text-link" :title="col.tooltip">
-                    <i class="fa-regular fa-chalkboard" aria-hidden="true"></i>
+                    <i class="fa-solid fa-chalkboard" aria-hidden="true"></i>
                 </a>
             </template>
         </td>
@@ -115,21 +115,21 @@
                 <button class="cursor-pointer rounded-full w-8 h-8 aspect-square hover:bg-base-200 flex items-center justify-center"
                         :ref="el => actionsBtnRef = el"
                         data-tree="escape">
-                    <i class="fa-regular fa-ellipsis-v" data-tree="escape" aria-hidden="true"></i>
+                    <i class="fa-solid fa-ellipsis-v" data-tree="escape" aria-hidden="true"></i>
                 </button>
                 <div ref="actionsMenuRef" class="flex flex-col gap-1" >
                     <a :href="entity.urls.relations" class="flex items-center gap-2 px-2 py-1.5 hover:bg-base-200 rounded-xl text-xs text-base-content">
-                        <i class="fa-regular fa-circle-nodes w-5 text-center text-neutral-content" aria-hidden="true"></i>
+                        <i class="fa-solid fa-circle-nodes w-5 text-center text-neutral-content" aria-hidden="true"></i>
                         <span v-html="i18n.relations"></span>
                     </a>
                     <a v-if="features?.inventories" :href="entity.urls.inventory" class="flex items-center gap-2 px-2 py-1.5 hover:bg-base-200 rounded-xl text-xs text-base-content">
-                        <i class="fa-regular fa-gem w-5 text-center text-neutral-content" aria-hidden="true"></i>
+                        <i class="fa-solid fa-gem w-5 text-center text-neutral-content" aria-hidden="true"></i>
                         <span v-html="i18n.inventory"></span>
                     </a>
                     <template v-if="entity.can_edit">
                         <hr class="m-0" />
                         <a :href="entity.urls.edit" class="flex items-center gap-2 px-2 py-1.5 hover:bg-base-200 rounded-xl text-xs text-base-content">
-                            <i class="fa-regular fa-pencil w-5 text-center text-neutral-content" aria-hidden="true"></i>
+                            <i class="fa-solid fa-pencil w-5 text-center text-neutral-content" aria-hidden="true"></i>
                             <span v-html="i18n.edit"></span>
                         </a>
                     </template>
@@ -162,7 +162,7 @@
                     :disabled="loadingMoreChildren"
                     @click="loadMoreChildren"
                 >
-                    <i v-if="loadingMoreChildren" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+                    <i v-if="loadingMoreChildren" class="fa-solid fa-spinner fa-spinner" aria-hidden="true"></i>
                     <span v-html="i18n.loadMore || 'Load more'"></span>
                 </button>
             </td>

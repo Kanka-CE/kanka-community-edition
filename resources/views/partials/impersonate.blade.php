@@ -1,7 +1,7 @@
 <x-alert type="warning">
     <div class="flex flex-col gap-2">
         <div class="m-0 p-0 text-lg">
-            <i class="icon fa-regular fa-exclamation-triangle" aria-hidden="true"></i>
+            <i class="icon fa-solid fa-exclamation-triangle" aria-hidden="true"></i>
             {{ __('campaigns.members.impersonating.title', ['name' => auth()->user()->name]) }}
         </div>
         <p class="text-justify">

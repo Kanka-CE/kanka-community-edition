@@ -25,7 +25,7 @@ class ImageResource extends JsonResource
             'author' => $image->author,
             'folder' => $image->isFolder(),
             'uuid' => $image->id,
-            'icon' => 'fa-regular fa-folder',
+            'icon' => 'fa-solid fa-folder',
             'url' => $image->isFolder() ? route('gallery.tiptap', [$image->campaign, 'folder' => $image->id]) : null,
             'thumbnail' => $image->getUrl(192, 144),
         ];

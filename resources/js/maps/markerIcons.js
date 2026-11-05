@@ -65,13 +65,13 @@ export function pinIconRender(iconCode, customIcon) {
     return { type: "fa", value: pinIconFa(iconCode, customIcon) };
 }
 
-// Maps App\Enums\MapMarkerShape ids to the same fa-regular icons Toolbar.vue uses for its
+// Maps App\Enums\MapMarkerShape ids to the same fa-solid icons Toolbar.vue uses for its
 // mode buttons, so a non-pin preset's badge matches how you'd draw that shape from the toolbar.
 export const SHAPE_ICON_BY_ID = {
-    2: "fa-regular fa-font",
-    3: "fa-regular fa-circle",
-    5: "fa-regular fa-draw-polygon",
-    6: "fa-regular fa-route",
+    2: "fa-solid fa-font",
+    3: "fa-solid fa-circle",
+    5: "fa-solid fa-draw-polygon",
+    6: "fa-solid fa-route",
 };
 
 // Reverse of App\Enums\MapMarkerShape — a preset's config.shape_id (int) back to the shape

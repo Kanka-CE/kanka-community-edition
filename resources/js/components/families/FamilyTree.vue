@@ -1,37 +1,37 @@
 <template>
     <div class="flex gap-2 mb-5 justify-end items-center align-right" v-if="!isLoading && permission">
         <button class="btn2 btn-sm btn-primary" v-if="!isEditing" v-on:click="startEditing()">
-            <i class="fa-regular fa-edit" aria-hidden="true"></i>
+            <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
             {{ this.texts.actions.edit }}
         </button>
         <button class="btn2 btn-sm " v-if="showEditFounder()" v-on:click="createNewFounder()">
-            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
             {{ this.texts.actions.founder }}
         </button>
         <button class="btn2 btn-sm " v-if="isEditing" v-on:click="resetTree()">
-            <i class="fa-regular fa-redo" aria-hidden="true"></i>
+            <i class="fa-solid fa-redo" aria-hidden="true"></i>
             {{ this.texts.actions.reset }}
         </button>
         <button class="btn2 btn-sm " v-if="isEditing" v-on:click="clearTree()">
-            <i class="fa-regular fa-eraser" aria-hidden="true"></i>
+            <i class="fa-solid fa-eraser" aria-hidden="true"></i>
             {{ this.texts.actions.clear }}
         </button>
         <button class="btn2 btn-primary" v-if="isEditing && (isDirty)" v-on:click="saveTree()">
-            <i class="fa-regular fa-save" aria-hidden="true"></i>
+            <i class="fa-solid fa-save" aria-hidden="true"></i>
             {{ this.texts.actions.save }}
         </button>
     </div>
     <div class="family-tree overflow-auto w-full h-full min-h-50 block relative" ref="familytree">
         <div class="absolute top-0 right-0 z-10">
             <button class="btn2 btn-ghost btn-sm" aria-label="Close" v-on:click="zoom()">
-                <i class="fa-regular fa-square-plus" aria-hidden="true"></i>
+                <i class="fa-solid fa-square-plus" aria-hidden="true"></i>
             </button>
             <button class="btn-sm btn2 btn-ghost" aria-label="Close" v-on:click="unzoom()">
-                <i class="fa-regular fa-square-minus" aria-hidden="true"></i>
+                <i class="fa-solid fa-square-minus" aria-hidden="true"></i>
             </button>
         </div>
         <div class="text-center px-5" v-if="isLoading">
-            <i class="fa-solid fa-spinner fa-spin fa-2x" aria-hidden="true"></i>
+            <i class="fa-solid fa-spinner fa-spinner fa-2x" aria-hidden="true"></i>
             <span class="sr-only">Loading...</span>
         </div>
         <div v-else class="relative" v-bind:style="{width: '100%'}">
@@ -50,7 +50,7 @@
                 >
                 <div class="relative" v-bind:style="{width: dragWidth() + 'px', height: dragHeight() + 'px'}">
                     <a class="btn2 btn-primary" v-on:click="createNode()" v-if="showCreateNode()">
-                        <i class="fa-regular fa-plus" aria-hidden="true"></i>
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
                         {{ this.texts.actions.first }}
                     </a>
 
@@ -84,7 +84,7 @@
       <h4 v-else-if="isAddingNewFounder" class="text-lg font-normal">{{ this.texts.modals.entity.founder.title }}</h4>
 
       <button autofocus type="button" class="text-xl opacity-50 hover:opacity-100 focus:opacity-100 cursor-pointer text-decoration-none" aria-label="Close" v-on:click="closeModal()">
-        <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+        <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
         <span class="sr-only">Close</span>
       </button>
     </header>
@@ -159,7 +159,7 @@
           <h4 class="text-lg font-normal" v-html="texts.modals.pitch.title"></h4>
 
           <button autofocus type="button" class="text-xl opacity-50 hover:opacity-100 focus:opacity-100 cursor-pointer text-decoration-none" aria-label="Close" v-on:click="closePitchModal()">
-              <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+              <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
               <span class="sr-only">Close</span>
           </button>
       </header>

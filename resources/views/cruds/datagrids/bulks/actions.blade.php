@@ -23,7 +23,7 @@ if (auth()->check() && auth()->user()->can('admin', $campaign)) {
         $dropdownActions[] = [
              'data' => ['target' => 'primary-dialog', 'bulk-action' => 'ajax', 'toggle' => 'dialog', 'url' => route('bulk.templates', [$campaign, 'entity_type' => $entityType->id])],
             'class' => 'bulk-templates',
-            'icon' => 'fa-regular fa-th-list',
+            'icon' => 'fa-solid fa-th-list',
             'text' => __('crud.bulk.actions.kits')
         ];
     }
@@ -31,7 +31,7 @@ if (auth()->check() && auth()->user()->can('admin', $campaign)) {
         $dropdownActions[] = [
              'data' => ['target' => 'primary-dialog', 'bulk-action' => 'ajax', 'toggle' => 'dialog', 'url' => route('bulk.transform', [$campaign, 'entity_type' => $entityType->id])],
             'class' => 'bulk-transform',
-            'icon' => 'fa-regular fa-arrows-rotate',
+            'icon' => 'fa-solid fa-arrows-rotate',
             'text' => __('entities/actions.convert')
         ];
     }
@@ -39,7 +39,7 @@ if (auth()->check() && auth()->user()->can('admin', $campaign)) {
         $dropdownActions[] = [
             'data' => ['target' => 'primary-dialog', 'bulk-action' => 'ajax', 'toggle' => 'dialog', 'url' => route('bulk.copy-to-campaign', [$campaign, 'entity_type' => $entityType->id])],
             'class' => 'bulk-copy-campaign',
-            'icon' => 'fa-regular fa-clone',
+            'icon' => 'fa-solid fa-clone',
             'text' => __('crud.actions.copy_to_campaign')
         ];
     }
@@ -47,7 +47,7 @@ if (auth()->check() && auth()->user()->can('admin', $campaign)) {
 if ($datagridActions->hasBulkPrint()) {
     $dropdownActions[] = [
         'class' => 'bulk-print',
-        'icon' => 'fa-regular fa-print',
+        'icon' => 'fa-solid fa-print',
         'text' => __('crud.actions.print'),
     ];
 }

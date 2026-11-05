@@ -36,18 +36,18 @@
                 @if ($premiumCampaign)
                 <div class="flex flex-col gap-0.5">
                     <div>
-                        <x-icon class="fa-regular fa-times text-red-500"></x-icon>
+                        <x-icon class="fa-solid fa-times text-red-500"></x-icon>
                         {{ trans_choice('subscriptions/cancellation.loss.premium.title', $premiumCampaigns->count() - 1, ['campaign' => $premiumCampaign->name, 'count' => $premiumCampaigns->count() - 1 ]) }}
                     </div>
                     @if ($players > 0)
                     <div class="pl-4">
-                        <x-icon class="fa-regular fa-arrow-right"></x-icon>
+                        <x-icon class="fa-solid fa-arrow-right"></x-icon>
                         {{ trans_choice('subscriptions/cancellation.loss.premium.players', $players, ['count' => $players]) }}
                     </div>
                     @endif
                     @if ($plugins > 0)
                     <div class="pl-4">
-                        <x-icon class="fa-regular fa-arrow-right"></x-icon>
+                        <x-icon class="fa-solid fa-arrow-right"></x-icon>
                         {{ trans_choice('subscriptions/cancellation.loss.premium.plugins', $plugins, ['count' => $plugins]) }}
                     </div>
                     @endif
@@ -56,7 +56,7 @@
 
                 <div class="flex flex-col gap-0.5">
                     <div>
-                        <x-icon class="fa-regular fa-times text-red-500"></x-icon>
+                        <x-icon class="fa-solid fa-times text-red-500"></x-icon>
                         {{ __('subscriptions/cancellation.loss.ads.title') }}
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                 @if ($discord)
                 <div class="flex flex-col gap-0.5">
                     <div>
-                        <x-icon class="fa-regular fa-times text-red-500"></x-icon>
+                        <x-icon class="fa-solid fa-times text-red-500"></x-icon>
                         {{ __('subscriptions/cancellation.loss.discord.title', ['role' => auth()->user()->pledge]) }}
                     </div>
                 </div>

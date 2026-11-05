@@ -79,13 +79,13 @@ $breadcrumb = Breadcrumb::campaign($campaign)->entity($entity)->list();
                     </x-dropdowns.item>
                     <x-dropdowns.item
                         link="#"
-                        icon="fa-regular fa-copy"
+                        icon="fa-solid fa-copy"
                         :data="['clipboard' => $imageUrl, 'toast' => __('entities/image.actions.copy_url_success')]">
                         {{ __('entities/image.actions.copy_url') }}
                     </x-dropdowns.item>
                     <x-dropdowns.divider />
                     <x-dropdowns.item
-                        icon="fa-regular fa-shuffle"
+                        icon="fa-solid fa-shuffle"
                         :link="route('entities.image.replace', [$campaign, $entity])"
                         :dialog="route('entities.image.replace', [$campaign, $entity])">
                         {{ __('entities/image.actions.replace_image') }}
@@ -93,20 +93,20 @@ $breadcrumb = Breadcrumb::campaign($campaign)->entity($entity)->list();
 
                     @if ($campaign->boosted())
                         <x-dropdowns.item
-                            icon="fa-regular fa-crosshairs"
+                            icon="fa-solid fa-crosshairs"
                             :link="route('entities.image.focus', [$campaign, $entity])">
                             {{ __('entities/image.actions.change_focus') }}</x-dropdowns.item>
                     @else
                         <x-dropdowns.item
                             link="#"
-                            icon="fa-regular fa-crosshairs"
+                            icon="fa-solid fa-crosshairs"
                             popup="booster-cta">
                             {{ __('entities/image.actions.change_focus') }}</x-dropdowns.item>
                     @endif
 
                     @if ($entity->image)
                     <x-dropdowns.item
-                        icon="fa-regular fa-eye"
+                        icon="fa-solid fa-eye"
                         :link="route('gallery.file.visibility', [$campaign, $entity->image])"
                         :dialog="route('gallery.file.visibility', [$campaign, $entity->image])"
                         >
@@ -120,7 +120,7 @@ $breadcrumb = Breadcrumb::campaign($campaign)->entity($entity)->list();
                     >
                         <div class="flex gap-1">
                             <span class="shrink-0 w-6 text-neutral-content text-center flex-none">
-                                <x-icon class="fa-regular fa-align-left" />
+                                <x-icon class="fa-solid fa-align-left" />
                             </span>
                             <span>{{ $entity->image->description }}</span>
                         </div>
@@ -133,7 +133,7 @@ $breadcrumb = Breadcrumb::campaign($campaign)->entity($entity)->list();
                     >
                         <div class="flex gap-1">
                             <span class="shrink-0 w-6 text-neutral-content text-center flex-none">
-                                <x-icon class="fa-regular fa-user" />
+                                <x-icon class="fa-solid fa-user" />
                             </span>
                             <span>{{ __('campaigns/gallery.fields.credit', ['author' => $entity->image->author]) }}</span>
                         </div>
@@ -183,8 +183,8 @@ $breadcrumb = Breadcrumb::campaign($campaign)->entity($entity)->list();
             @endif
             @can('admin', $campaign)
                 <span role="button" tabindex="0" class="entity-privacy-icon md:text-2xl hover:text-primary" data-toggle="dialog" data-url="{{ route('entities.quick-privacy', [$campaign, $entity]) }}" aria-haspopup="dialog">
-                        <i class="fa-regular fa-lock entity-icons" data-title="{{ __('entities/permissions.quick.title') }}" data-toggle="tooltip" aria-hidden="true"></i>
-                        <i class="fa-regular fa-lock-open entity-icons" data-title="{{ __('entities/permissions.quick.title') }}" data-toggle="tooltip" aria-hidden="true"></i>
+                        <i class="fa-solid fa-lock entity-icons" data-title="{{ __('entities/permissions.quick.title') }}" data-toggle="tooltip" aria-hidden="true"></i>
+                        <i class="fa-solid fa-lock-open entity-icons" data-title="{{ __('entities/permissions.quick.title') }}" data-toggle="tooltip" aria-hidden="true"></i>
                         <span class="sr-only">{{ __('entities/permissions.quick.screen-reader') }}</span>
                     </span>
             @endif
@@ -211,7 +211,7 @@ $breadcrumb = Breadcrumb::campaign($campaign)->entity($entity)->list();
         @endif
             @can('update', $entity)
                 <span role="button" tabindex="0" class="entity-tag-icon text-xl hover:text-primary" data-toggle="dialog" data-url="{{ $addTagsUrl }}" aria-haspopup="dialog">
-                    <x-icon class="fa-regular fa-tag" tooltip="1" :title="__('entities/tags.create.title')" />
+                    <x-icon class="fa-solid fa-tag" tooltip="1" :title="__('entities/tags.create.title')" />
                     <span class="sr-only">{{ __('entities/tags.create.title')  }}</span>
                 </span>
             @endcan
@@ -287,7 +287,7 @@ $breadcrumb = Breadcrumb::campaign($campaign)->entity($entity)->list();
 
     <x-dialog id="quick-privacy" :title="__('Loading')">
         <div class="p-5 text-center">
-            <x-icon class="fa-solid fa-spinner fa-spin fa-2x" />
+            <x-icon class="fa-solid fa-spinner fa-spinner fa-2x" />
         </div>
     </x-dialog>
 @endsection
@@ -297,7 +297,7 @@ $breadcrumb = Breadcrumb::campaign($campaign)->entity($entity)->list();
     <x-alert type="warning">
         <div class="flex items-center justify-between gap-4">
             <span>
-                <x-icon class="fa-regular fa-archive" />
+                <x-icon class="fa-solid fa-archive" />
                 {{ __('entries/archive.banner') }}
             </span>
             @can('update', $entity)

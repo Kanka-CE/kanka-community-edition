@@ -12,7 +12,7 @@ it('guides users without premium access to subscription plans when editing a mod
         ->assertSee(__('campaigns/modules.rename.premium.title'))
         ->assertSee(__('campaigns/modules.rename.premium.description'))
         ->assertSee(e(route('settings.subscription', ['f' => 'cta', 'w' => 1])), false)
-        ->assertSee('fa-regular fa-lock', false)
+        ->assertSee('fa-solid fa-lock', false)
         ->assertSee('disabled="disabled"', false);
 });
 
@@ -36,7 +36,7 @@ it('does not show premium guidance for a premium campaign', function () {
         ->assertOk()
         ->assertDontSee(__('campaigns/modules.rename.premium.title'))
         ->assertDontSee(__('campaigns/modules.rename.premium.description'))
-        ->assertDontSee('fa-regular fa-lock', false)
+        ->assertDontSee('fa-solid fa-lock', false)
         ->assertDontSee('disabled="disabled"', false);
 });
 

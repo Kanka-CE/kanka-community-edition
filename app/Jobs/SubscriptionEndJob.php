@@ -89,7 +89,7 @@ class SubscriptionEndJob implements ShouldQueue
         $user->notify(
             new Header(
                 $key,
-                'fa-regular fa-gem',
+                'fa-solid fa-gem',
                 'orange'
             )
         );

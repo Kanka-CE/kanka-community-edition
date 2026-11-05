@@ -60,7 +60,7 @@
         <!-- Name search results -->
         <template v-else-if="mode === 'name'">
             <div v-if="loading" class="cmd-loading">
-                <i class="fa-solid fa-spinner fa-spin"></i>
+                <i class="fa-solid fa-spinner fa-spinner"></i>
             </div>
             <template v-else>
                 <div v-if="typeSummary.length > 0" class="flex flex-wrap gap-1.5 pb-2">
@@ -124,7 +124,7 @@
         <!-- Full-text results -->
         <template v-else-if="mode === 'fulltext'">
             <div v-if="loading" class="cmd-loading">
-                <i class="fa-solid fa-spinner fa-spin"></i>
+                <i class="fa-solid fa-spinner fa-spinner"></i>
             </div>
             <template v-else>
                 <div v-if="results.length > 0">

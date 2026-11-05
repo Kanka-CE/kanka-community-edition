@@ -69,7 +69,7 @@
         </div>
 
         <div v-if="loading" class="p-4 flex items-center gap-2">
-            <i class="fa-solid fa-spinner fa-spin" aria-hidden="true" />
+            <i class="fa-solid fa-spinner fa-spinner" aria-hidden="true" />
             <span>{{ i18n.loading }}</span>
         </div>
 
@@ -112,7 +112,7 @@
                     <div
                         class="bg-primary text-primary-content flex-none rounded-lg p-1 w-8 h-8 flex items-center justify-center"
                     >
-                        <i class="fa-regular fa-link" aria-hidden="true"></i>
+                        <i class="fa-solid fa-link" aria-hidden="true"></i>
                     </div>
                     <div class="flex flex-col gap-0 grow overflow-hidden">
                         <span class="text-neutral-content text-2xs uppercase">
@@ -122,7 +122,7 @@
                     </div>
                     <div class="flex-none">
                         <i
-                            class="fa-regular fa-arrow-up-right"
+                            class="fa-solid fa-arrow-up-right"
                             aria-hidden="true"
                         ></i>
                     </div>
@@ -134,7 +134,7 @@
                     :href="mapLink.url"
                     class="btn2 btn-primary btn-block"
                 >
-                    <i class="fa-regular fa-map" aria-hidden="true" />
+                    <i class="fa-solid fa-map" aria-hidden="true" />
                     {{ i18n.explore_map.replace(':name', mapLink.name) }}
                 </a>
 
@@ -221,19 +221,19 @@ let previewRequest = null;
 
 const markerIcon = computed(() => {
     if (props.pin.shape === "label") {
-        return { kind: "fa", value: "fa-regular fa-font" };
+        return { kind: "fa", value: "fa-solid fa-font" };
     }
 
     if (props.pin.shape === "poly") {
-        return { kind: "fa", value: "fa-regular fa-draw-polygon" };
+        return { kind: "fa", value: "fa-solid fa-draw-polygon" };
     }
 
     if (props.pin.shape === "path") {
-        return { kind: "fa", value: "fa-regular fa-route" };
+        return { kind: "fa", value: "fa-solid fa-route" };
     }
 
     if (props.pin.shape === "circle") {
-        return { kind: "fa", value: "fa-regular fa-circle" };
+        return { kind: "fa", value: "fa-solid fa-circle" };
     }
 
     if (props.pin.icon?.type === "fa") {

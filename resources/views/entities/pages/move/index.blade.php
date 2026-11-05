@@ -44,7 +44,7 @@
         <x-dialog.footer class="px-0!">
             <button class="btn2 btn-primary">
                 @can('update', $entity)
-                    <x-icon class="fa-regular fa-share-from-square" />
+                    <x-icon class="fa-solid fa-share-from-square" />
                     {{ __('entities/actions.transfer') }}
                 @else
                     <x-icon class="copy" />

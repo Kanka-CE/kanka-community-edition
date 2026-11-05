@@ -20,7 +20,7 @@
         >
             <x-slot name="actions">
                 <a href="#" class="btn2 btn-sm btn-primary" data-toggle="dialog" data-target="export-confirm">
-                    <x-icon class="fa-regular fa-download" />
+                    <x-icon class="fa-solid fa-download" />
                     {{ __('campaigns/export.actions.export') }}
                 </a>
             </x-slot>
@@ -72,7 +72,7 @@
 
                                 <label for="json" class="w-full cursor-pointer flex flex-col gap-0.5">
                                     <span class="text-semibold text-lg">
-                                        <x-icon class="fa-regular fa-code" />
+                                        <x-icon class="fa-solid fa-code" />
                                         {{ __('campaigns/export.types.json') }}
                                     </span>
                                     <p class="text-xs text-neutral-content">

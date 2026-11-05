@@ -76,7 +76,7 @@
     <p>
         <a href="https://kanka.io/premium?utm_source=premium" class="text-link font-semibold">
             {!! __('callouts.premium.learn-more') !!}
-            <x-icon class="fa-regular fa-arrow-right" />
+            <x-icon class="fa-solid fa-arrow-right" />
         </a>
     </p>
 </div>

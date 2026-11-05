@@ -3,7 +3,7 @@
         @foreach ($presets as $preset)
             <div class="preset p-2 bg-base-300 hover:shadow-md flex gap-2  rounded">
                 <span role="button" class="preset-use cursor-pointer hover:underline grow" data-url="{{ route('preset_types.presets.show', [$campaign, $presetType, $preset]) }}">
-                    <i class="fa-solid fa-spin fa-spinner" style="display: none" aria-hidden="true"></i>
+                    <i class="fa-solid fa-spinner fa-spinner" style="display: none" aria-hidden="true"></i>
                     {{ $preset->name }}
                 </span>
                 <a href="{{ route('preset_types.presets.edit', [$campaign, $presetType, $preset, 'from' => $from]) }}" class="preset-edit px-1 text-link">
