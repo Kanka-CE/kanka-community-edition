@@ -39,9 +39,10 @@ class Converted implements ShouldQueue
         /** @var ?TierPrice $price */
         $price = TierPrice::where('stripe_id', $price)->first();
 
-        Mail::to('hello@kanka.io')
-            ->send(
-                new ConvertedMail($user, $price->period)
-            );
+        // Do not send emails to the upstream admins!
+        //Mail::to('hello@kanka.io')
+        //    ->send(
+        //        new ConvertedMail($user, $price->period)
+        //    );
     }
 }
